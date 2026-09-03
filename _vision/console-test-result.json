@@ -1,0 +1,41 @@
+{
+  "url": "file:///D:/Projects/Eva Aukema/Studio-Eef/site/index.html",
+  "viewport": "390x844",
+  "console": [],
+  "failures": [],
+  "pagina": {
+    "titel": "Studio EEF — Schilderwerken binnen en buiten",
+    "afbeeldingen": [
+      {
+        "src": "favicon.svg",
+        "ok": true
+      },
+      {
+        "src": "werk-woonkamer.jpg",
+        "ok": true
+      },
+      {
+        "src": "werk-gevel.jpg",
+        "ok": true
+      },
+      {
+        "src": "werk-detail.jpg",
+        "ok": true
+      },
+      {
+        "src": "logo.svg",
+        "ok": true
+      },
+      {
+        "src": "favicon.svg",
+        "ok": true
+      }
+    ],
+    "afbeeldingenKaput": [],
+    "links": 22,
+    "swatches": 6,
+    "actieveSwatch": "Mosterd",
+    "wandKleur": "rgb(214, 175, 41)",
+    "bodyKinderen": 6
+  }
+}

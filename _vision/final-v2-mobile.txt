@@ -1,0 +1,31 @@
+**Hero**  
+Mobiele leesbaarheid: prima, de grote titel is duidelijk leesbaar en de mosterd highlight geeft een sterk accent. HiÃ«rarchie: helder â€” eerst de titel, dan de introductie, dan twee duidelijke buttons. Witruimte: voldoende, de tekst heeft genoeg lucht. Contrast: de donkere tekst op mosterd en de lichte tekst op inkt zijn goed leesbaar. Huisstijl: inkt + mosterd + de houten plank werken sfeervol. Storende elementen: geen, de tape is bewust verborgen en dat is prima op mobiel.
+
+**Marquee**  
+Mobiele leesbaarheid: de schuine mosterd balk is een bewust decoratief element; de afkapping aan de randen hoort bij het marquee-effect en is geen fout. Contrast: mosterd met donkere tekst is prima. Huisstijl: typisch voor het concept. Storende elementen: niets storends.
+
+**Trustbar**  
+Mobiele leesbaarheid: de labels zijn klein maar netjes leesbaar, de drie items staan onder elkaar zoals bedoeld. HiÃ«rarchie: doorlopende structuur met mosterd accentlijn. Witruimte: ruim voldoende. Contrast: donker op licht, prima. Huisstijl: rustig en consistent. Storende elementen: geen.
+
+**Diensten-kaarten**  
+Mobiele leesbaarheid: kaarttitels zijn vet en groot, de beschrijvingen zijn goed leesbaar. HiÃ«rarchie: EEF-nummers en kleurvlakken geven duidelijke structuur. Witruimte: kaarten hebben prettige padding. Contrast: donkere tekst op wit, prima; de gekleurde koppen bevatten geen tekst, dus geen contrastprobleem. Huisstijl: mosterd, olijf en roze komen perfect terug. Storende elementen: niets storends.
+
+**Werk-impressies**  
+Mobiele leesbaarheid: de capsules "IMPRESSIE" en de bijbehorende tekst zijn goed leesbaar. HiÃ«rarchie: beeld eerst, daarna label. Witruimte: ruim voldoende. Contrast: tekst op licht, prima. Huisstijl: mooie combinatie van zachte beelden en mosterd accenten. Storende elementen: de derde afbeelding is deels afgekapt door de overlap, maar dat is inherent aan een scrollende pagina en geen fout.
+
+**Kleurengevel**  
+Mobiele leesbaarheid: titel en uitleg zijn duidelijk. De verfstalen in het 3x2 grid hebben nette naamlabels. HiÃ«rarchie: eerst de titel, dan de uitleg, dan de interactieve gevel en de stalen. Witruimte: goed, het grid voelt luchtig. Contrast: de stalen en labels hebben voldoende contrast. Huisstijl: alle vier de kleuren komen terug in de stalen. Storende elementen: geen.
+
+**Werkwijze**  
+Mobiele leesbaarheid: genummerde stappen met witte titels en lichtgekleurde bodytekst zijn goed leesbaar. HiÃ«rarchie: duidelijke opbouw van 1 naar 5. Witruimte: elke stap heeft voldoende ademruimte. Contrast: donkere achtergrond met lichte tekst, prima. Huisstijl: olijf/inkt met mosterd accenten, mooi. Storende elementen: de onderkant van stap 5 is deels afgekapt, maar dat is door de overlap van de screenshot en geen ontwerpfout.
+
+**Over-sectie**  
+Mobiele leesbaarheid: het nieuwe logo is groot en herkenbaar, de tekst is goed leesbaar. De placeholder [plaats + regio] heeft een mosterthalo + stippellijn, zoals bedoeld. HiÃ«rarchie: logo, kleuren, eyebrow, titel, tekst. Witruimte: ruim. Contrast: donker op licht, prima. Huisstijl: logo toont de vier huisstijlkleuren, erg sterk. Storende elementen: geen.
+
+**Contact**  
+Mobiele leesbaarheid: de placeholders (telefoon, e-mail, app) hebben een mosterthalo + stippellijn en zijn daardoor duidelijk leesbaar. HiÃ«rarchie: labels boven de placeholders, prima. Witruimte: de contactkaarten hebben prettige padding. Contrast: donkere tekst op mosterthalo en lichte tekst op olijf, goed. Huisstijl: olijf als achtergrond, mosterd als accent, perfect. Storende elementen: geen.
+
+**Footer**  
+Mobiele leesbaarheid: logo, bedrijfsnaam, KvK, BTW, adres en plaats zijn netjes onder elkaar geplaatst. De placeholders zijn bewust vormgegeven met mosterthalo + stippellijn. Contrast: donkere footer met lichte tekst, prima. Huisstijl: inkt met mosterdlijn en olijf accenten. Storende elementen: geen.
+
+OORDEEL: 9 â€” Een sterke mobiele uitvoering van het concept "Verse verf": alle huisstijlkleuren worden evenwichtig ingezet, de hiÃ«rarchie is helder, de leesbaarheid is goed en er zijn geen storende ontwerpfouten.

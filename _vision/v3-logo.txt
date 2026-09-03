@@ -1,0 +1,11 @@
+1) **Centrering:**  
+- **Horizontaal:** Ja, de inhoud is goed gecentreerd. De linkermarge (naast de letters) en rechtermarge (naast de blokken) zijn nagenoeg gelijk, geschat op ±40 pixels aan beide zijden.  
+- **Verticaal:** Nee, de inhoud hangt iets te hoog. De bovenmarge is duidelijk kleiner dan de ondermarge: geschat ±45 pixels boven en ±65 pixels onder. Voor een perfecte optische centrering zou de hele groep (letters + raster) een paar pixels naar beneden moeten.
+
+2) **Tegelrand:**  
+Nee, er is geen witte rand, kleurstaart of onopgevuld hoekje zichtbaar. De tegel is strak afgewerkt met nette, ronde hoeken en een egale inktkleur. 
+
+3) **Uitstraling:**  
+Ja, het geheel oogt een stuk netter en rustiger dan wanneer het linksboven zou hangen. De blokken en letters vormen samen een strak blok. Door de licht verhoogde positie is het verticaal nog een fractie uit balans, maar de compositie is verder professioneel en overzichtelijk.
+
+**OORDEEL:** 8/10 – Nette en strakke weergave, horizontaal goed gecentreerd; verticaal nog een kleine correctie naar beneden voor optimale balans.

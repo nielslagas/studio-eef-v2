@@ -1,0 +1,852 @@
+/* ============================================================
+   Studio EEF — schilderwerken
+   Tokens: papier, inkt en de vier verfkleuren uit het logo
+   ============================================================ */
+
+:root {
+  --paper: #FAF8F4;
+  --ink: #231F20;
+  --gold: #D6AF29;
+  /* mosterdtint voor kleine tekst op donker: ≥ 5,8:1 op olijf, ≥ 9,8:1 op inkt */
+  --gold-soft: #E8C558;
+  /* halo voor de TODO-markering, afgeleid van mosterd */
+  --gold-tint: rgba(214, 175, 41, 0.22);
+  --olive: #424631;
+  --pink: #F37C96;
+  --white: #FFFFFF;
+  --line: rgba(35, 31, 32, 0.14);
+  /* 0.72: leesbaarheid-headroom, ruim boven de AA-grens van 4.5:1 */
+  --soft: rgba(35, 31, 32, 0.72);
+  /* echte hoogte van de sticky header (min-hoogte + marge voor ankers) */
+  --header-h: 88px;
+  --font-display: "Archivo", system-ui, sans-serif;
+  --font-body: "Atkinson Hyperlegible", system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+  --radius: 14px;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+/* ankers niet laten verdwijnen onder de sticky header */
+section[id], footer[id] { scroll-margin-top: calc(var(--header-h) + 12px); }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 1.0625rem;
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 1080px;
+  margin-inline: auto;
+  padding-inline: 24px;
+}
+
+/* ---------- toegankelijkheid ---------- */
+
+.skip {
+  position: absolute;
+  left: -999px;
+  top: 12px;
+  background: var(--ink);
+  color: var(--paper);
+  padding: 10px 16px;
+  border-radius: 8px;
+  z-index: 100;
+}
+.skip:focus { left: 12px; }
+
+:focus-visible {
+  /* currentColor: inkt op lichte secties, papier op donkere — altijd zichtbaar */
+  outline: 3px solid currentColor;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* ---------- header ---------- */
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(250, 248, 244, 0.92);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--line);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  padding-block: 14px;
+  min-height: var(--header-h);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  color: var(--ink);
+  margin-right: auto;
+}
+
+.brand-mark {
+  width: 46px;
+  height: 46px;
+  border-radius: 10px;
+  display: block;
+}
+
+.brand-name {
+  font-family: var(--font-display);
+  font-stretch: 110%;
+  font-weight: 700;
+  font-size: 1.2rem;
+  letter-spacing: 0.01em;
+}
+
+.nav {
+  display: flex;
+  gap: 22px;
+}
+
+.nav a {
+  color: var(--ink);
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.95rem;
+  border-bottom: 2px solid transparent;
+  padding-bottom: 2px;
+  white-space: nowrap;
+}
+.nav a:hover { border-bottom-color: var(--gold); }
+
+/* ---------- mobiel menu (≤900px, zodra de navbalk te vol wordt) ---------- */
+
+.menu {
+  display: none;
+  position: relative;
+  margin-left: auto;
+}
+
+.menu summary {
+  list-style: none;
+  cursor: pointer;
+  font-family: var(--font-body);
+  font-weight: 700;
+  border: 2px solid var(--ink);
+  border-radius: 999px;
+  padding: 10px 20px;
+  user-select: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* hamburger die naar een kruisje draait als het menu open is */
+.menu-bars {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 16px;
+}
+.menu-bars span {
+  display: block;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--ink);
+  transition: transform 0.22s ease;
+}
+.menu[open] .menu-bars span:first-child { transform: translateY(3.5px) rotate(45deg); }
+.menu[open] .menu-bars span:last-child { transform: translateY(-3.5px) rotate(-45deg); }
+.menu summary::-webkit-details-marker { display: none; }
+
+.menu-nav {
+  position: absolute;
+  right: 0;
+  top: calc(100% + 10px);
+  z-index: 60;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: 0 18px 40px -24px rgba(35, 31, 32, 0.4);
+  display: flex;
+  flex-direction: column;
+  min-width: 200px;
+  padding: 8px;
+}
+
+.menu-nav a {
+  color: var(--ink);
+  text-decoration: none;
+  font-weight: 700;
+  padding: 10px 14px;
+  border-radius: 8px;
+}
+.menu-nav a:hover { background: var(--paper); }
+
+/* subtiele feedback tijdens het openen */
+.menu[open] .menu-nav { animation: menu-in 0.18s ease; }
+
+@keyframes menu-in {
+  from { opacity: 0; transform: translateY(-6px); }
+  to { opacity: 1; transform: none; }
+}
+
+/* ---------- knoppen ---------- */
+
+.btn {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 1rem;
+  text-decoration: none;
+  padding: 12px 22px;
+  border-radius: 999px;
+  border: 2px solid transparent;
+  transition: transform 0.15s ease, background-color 0.15s ease, color 0.15s ease;
+}
+.btn:active { transform: translateY(1px); }
+
+.btn-ink {
+  background: var(--ink);
+  color: var(--paper);
+}
+.btn-ink:hover { background: var(--olive); }
+
+.btn-gold {
+  background: var(--gold);
+  color: var(--ink);
+}
+.btn-gold:hover { background: var(--ink); color: var(--gold); }
+
+.btn-ghost {
+  border-color: var(--ink);
+  color: var(--ink);
+}
+.btn-ghost:hover { background: var(--ink); color: var(--paper); }
+
+/* ---------- hero ---------- */
+
+.hero { padding-block: 72px 64px; }
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 56px;
+  align-items: center;
+}
+
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--soft);
+  margin: 0 0 14px;
+}
+.eyebrow-light { color: rgba(250, 248, 244, 0.66); }
+
+.hero-title {
+  font-family: var(--font-display);
+  font-stretch: 110%;
+  font-weight: 700;
+  font-size: clamp(2.6rem, 5.4vw, 4.2rem);
+  line-height: 1.04;
+  letter-spacing: -0.015em;
+  margin: 0 0 28px;
+}
+
+/* accentwoord: inkt op een mosterd-verfstreek onderin de letters.
+   Goud als tekstkleur haalde ≈ 1,9:1 op papier; inkt-op-goud ≈ 7,8:1. */
+.accent {
+  position: relative;
+  white-space: nowrap;
+  color: var(--ink);
+  background-image: linear-gradient(var(--gold), var(--gold));
+  background-repeat: no-repeat;
+  background-size: 100% 0.34em;
+  background-position: 0 80%;
+  border-radius: 2px;
+  padding-inline: 0.04em 0.08em;
+}
+/* de druppel hangt aan de onderkant van de verfstreek: groter en met
+   wat afstand, zodat het leest als bewust detail en niet als vlekje */
+.accent .drip {
+  position: absolute;
+  left: 40%;
+  bottom: -0.12em;
+  width: 0.2em;
+  height: 0.4em;
+  fill: var(--gold);
+  transform-origin: top center;
+  animation: druppel 3.2s ease-in-out infinite;
+}
+
+@keyframes druppel {
+  0%, 100% { transform: scaleY(0.82); }
+  50% { transform: scaleY(1.06); }
+}
+
+.hero-sub {
+  font-size: 1.2rem;
+  max-width: 34rem;
+  margin: 0 0 30px;
+  color: var(--soft);
+}
+
+.hero-cta { display: flex; gap: 14px; flex-wrap: wrap; }
+
+/* ---------- interactieve gevel: de kaart is zélf een verfstaal ---------- */
+
+.hero-facade {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: 0 18px 40px -28px rgba(35, 31, 32, 0.35);
+  overflow: hidden; /* de kopband loopt tot aan de afgeronde kaartrand */
+}
+
+/* Kopband in de actieve kleur, met ringgat als de diensten-kaarten.
+   Lichte stalen (data-contrast="licht") krijgen inkt-tekst, donkere
+   een papier-tekst via .facade-band--donker; JS wisselt die klasse mee
+   met de gekozen staalkleur (--band). */
+.facade-band {
+  --band: var(--gold);
+  background: var(--band);
+  min-height: 84px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 3px;
+  padding: 14px 22px 14px 40px;
+  position: relative;
+  color: var(--ink);
+  transition: background-color 0.45s ease, color 0.45s ease;
+}
+.facade-band::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 14px;
+  transform: translateY(-50%);
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--paper);
+  border: 1.5px solid rgba(35, 31, 32, 0.35);
+  /* gestanst gat: schaduw valt bovenin naar binnen, niet een zwevende stip */
+  box-shadow: inset 0 2px 2px rgba(35, 31, 32, 0.30);
+}
+.facade-band--donker { color: var(--paper); }
+
+.facade-band-label {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  /* schaal van currentColor: volgt automatisch lichte/donkere band */
+  opacity: 0.82;
+}
+
+.facade-naam {
+  font-family: var(--font-display);
+  font-stretch: 110%;
+  font-weight: 700;
+  font-size: clamp(1.25rem, 2vw, 1.5rem);
+  line-height: 1.08;
+  letter-spacing: -0.01em;
+}
+
+.facade-body { padding: 14px 18px 18px; }
+
+.facade-wrap { display: flex; justify-content: center; }
+
+.facade { width: 100%; max-width: 320px; height: auto; display: block; }
+
+/* Gevelillustratie: vlakke vormtaal, omtreklijnen in inkt met beperkte
+   alpha (±2px) i.p.v. dikke contouren. Ruitjes en dak in de twee
+   toegestane extra tinten (kalkwit-staal = glas, houtblauw-staal =
+   pannen); alles verder op de vaste tokens. */
+.lucht { fill: var(--paper); }
+
+.dak-pannen {
+  fill: #3E5C76;
+  stroke: rgba(35, 31, 32, 0.5);
+  stroke-width: 2;
+  stroke-linejoin: round;
+}
+.dak-coursen {
+  fill: none;
+  stroke: rgba(250, 248, 244, 0.32);
+  stroke-width: 1.5;
+  stroke-linecap: round;
+}
+.schoorsteen rect { fill: var(--paper); stroke: rgba(35, 31, 32, 0.5); stroke-width: 2; }
+
+.wand {
+  fill: var(--gold);                /* startmosterd vóórdat JS kiest */
+  stroke: rgba(35, 31, 32, 0.5);
+  stroke-width: 2;
+  transition: fill 0.5s ease;       /* inline overschreven door JS, uit bij reduced motion */
+}
+.voegwerk { fill: url(#voeg); pointer-events: none; }
+
+.goot { fill: var(--paper); stroke: rgba(35, 31, 32, 0.55); stroke-width: 2; }
+.pijp rect { fill: var(--paper); stroke: rgba(35, 31, 32, 0.4); stroke-width: 1.5; }
+.pijp path { fill: none; stroke: rgba(35, 31, 32, 0.3); stroke-width: 1.5; stroke-linecap: round; }
+
+.kozijn { fill: var(--paper); stroke: rgba(35, 31, 32, 0.55); stroke-width: 2; }
+.ruit { fill: #F1EDE4; stroke: rgba(35, 31, 32, 0.35); stroke-width: 1.5; }
+.roede { fill: none; stroke: rgba(35, 31, 32, 0.45); stroke-width: 2; stroke-linecap: round; }
+.dorpel { fill: var(--paper); stroke: rgba(35, 31, 32, 0.5); stroke-width: 1.75; }
+.deur { fill: var(--ink); }
+.knop { fill: var(--gold); stroke: rgba(35, 31, 32, 0.35); stroke-width: 1; }
+
+.gevelsteen rect { fill: var(--paper); stroke: rgba(35, 31, 32, 0.55); stroke-width: 1.75; }
+.gravering { fill: none; stroke: rgba(35, 31, 32, 0.5); stroke-width: 1.5; stroke-linecap: round; }
+
+.stoep > rect { fill: var(--paper); stroke: rgba(35, 31, 32, 0.5); stroke-width: 2; }
+.voeg-ticks { fill: none; stroke: rgba(35, 31, 32, 0.18); stroke-width: 1.5; }
+
+/* microkopie: één actieve instructieregel boven de stalen */
+.facade-ingress {
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  color: var(--ink);
+  margin: 12px 0 0;
+}
+
+/* Stalen als net grid, naam altijd zichtbaar onder elk staal:
+   desktop 6 naast elkaar, mobiel (≤640px) 3×2 */
+.swatches {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.swatch {
+  --sw: var(--gold);
+  appearance: none;
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 6px;
+  min-width: 0; /* laat lange namen wrappen binnen de gridkolom */
+}
+
+.swatch-vlak {
+  display: block;
+  width: 100%;
+  height: 34px;
+  border-radius: 9px;
+  background: var(--sw);
+  /* duidelijke rand: ook het witte staal blijft zichtbaar op de kaart */
+  border: 2px solid rgba(35, 31, 32, 0.25);
+  transition: transform 0.12s ease, border-color 0.12s ease, box-shadow 0.12s ease;
+}
+.swatch:hover .swatch-vlak { transform: translateY(-2px); }
+.swatch[aria-pressed="true"] .swatch-vlak {
+  border-color: var(--ink);
+  box-shadow: 0 0 0 3px var(--white), 0 0 0 5px var(--ink);
+}
+
+/* namen mogen tot twee regels lopen (Prima-roze breekt na het koppelteken);
+   geen ellipsis: elke naam blijft volledig leesbaar */
+.swatch-tag {
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
+  line-height: 1.25;
+  color: var(--soft);
+  text-align: center;
+  transition: color 0.12s ease;
+}
+.swatch[aria-pressed="true"] .swatch-tag { color: var(--ink); font-weight: 500; }
+
+.facade-note {
+  font-size: 0.9rem;
+  color: var(--soft);
+  margin: 12px 0 0;
+}
+
+/* ---------- secties ---------- */
+
+.section { padding-block: 84px; }
+.section-ink { background: var(--ink); color: var(--paper); }
+
+.section-title {
+  font-family: var(--font-display);
+  font-stretch: 110%;
+  font-weight: 700;
+  font-size: clamp(1.9rem, 3.6vw, 2.6rem);
+  line-height: 1.12;
+  letter-spacing: -0.01em;
+  margin: 0 0 40px;
+  max-width: 22ch;
+}
+.section-title-light { color: var(--paper); }
+
+/* ---------- diensten als verfstalen ---------- */
+
+.chips {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 26px;
+}
+
+.chip {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+.chip:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 22px 44px -30px rgba(35, 31, 32, 0.4);
+}
+
+.chip-band {
+  --band: var(--gold);
+  background: var(--band);
+  height: 86px;
+  display: flex;
+  align-items: flex-end;
+  padding: 12px 16px;
+  position: relative;
+}
+/* het ringat van een echte verfstaal */
+.chip-band::before {
+  content: "";
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--paper);
+  border: 2px solid rgba(35, 31, 32, 0.35);
+}
+
+.chip-code {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+  color: var(--ink);
+  background: rgba(250, 248, 244, 0.85);
+  padding: 3px 10px;
+  border-radius: 999px;
+}
+
+.chip-body { padding: 20px 22px 26px; }
+
+.chip-body h3 {
+  font-family: var(--font-display);
+  font-stretch: 110%;
+  font-weight: 700;
+  font-size: 1.25rem;
+  line-height: 1.2;
+  /* twee regels reserveren: paragrafen starten op gelijke hoogte,
+     ook als één titel (zoals 'Onderhoud & kleine klussen') wrapt */
+  min-height: 2.4em;
+  margin: 0 0 10px;
+}
+.chip-body p { margin: 0; color: var(--soft); font-size: 0.98rem; }
+
+/* ---------- werk / impressies ---------- */
+
+.werk-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 26px;
+}
+
+.werk-card {
+  margin: 0;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+.werk-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 22px 44px -30px rgba(35, 31, 32, 0.4);
+}
+
+.werk-card img {
+  display: block;
+  width: 100%;
+  height: auto;
+  /* geen CSS aspect-ratio: de width/height-attributen in de HTML
+     reserveren de exacte verhouding (1216×832) zonder 3/2-verschil */
+}
+
+.werk-card figcaption {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 18px;
+  font-size: 0.92rem;
+  color: var(--soft);
+}
+
+.werk-tag {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--olive);
+  border: 1.5px solid var(--olive);
+  border-radius: 999px;
+  padding: 2px 10px;
+  white-space: nowrap;
+}
+
+/* ---------- werkwijze ---------- */
+
+.steps {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 30px 26px;
+}
+
+.steps li { position: relative; }
+
+.step-no {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 2px solid var(--gold);
+  color: var(--gold);
+  margin-bottom: 14px;
+}
+
+.steps h3 {
+  font-family: var(--font-display);
+  font-stretch: 110%;
+  font-weight: 700;
+  font-size: 1.1rem;
+  margin: 0 0 8px;
+}
+.steps p { margin: 0; font-size: 0.95rem; line-height: 1.55; color: rgba(250, 248, 244, 0.78); }
+
+/* ---------- over ---------- */
+
+.over-grid {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 56px;
+  align-items: center;
+}
+
+.over-logo img {
+  width: 240px;
+  height: auto;
+  display: block;
+  border-radius: 10px;
+}
+
+/* de vier kleuren uit het logo, als mini-verfstalen onder de tegel */
+.over-kleuren {
+  display: flex;
+  gap: 7px;
+  margin-top: 18px;
+}
+.over-kleuren span {
+  width: 17px;
+  height: 17px;
+  border-radius: 5px;
+  background: var(--k);
+}
+.over-kleuren-caption {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--soft);
+  margin: 8px 0 0;
+}
+
+.over-text p { margin: 0 0 18px; max-width: 52ch; }
+.over-text p:last-child { margin-bottom: 0; }
+.over-text strong { color: var(--olive); }
+
+/* ---------- contact ---------- */
+
+.section-contact { background: var(--olive); color: var(--paper); }
+
+.contact-sub { font-size: 1.15rem; margin: -18px 0 34px; color: rgba(250, 248, 244, 0.8); }
+
+.contact-actions {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.contact-card {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  background: rgba(250, 248, 244, 0.08);
+  border: 1px solid rgba(250, 248, 244, 0.25);
+  border-radius: var(--radius);
+  padding: 22px 24px;
+  text-decoration: none;
+  color: var(--paper);
+  transition: background-color 0.15s ease, transform 0.15s ease;
+}
+.contact-card:hover { background: rgba(250, 248, 244, 0.16); transform: translateY(-2px); }
+
+.contact-label {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  /* gold-soft i.p.v. gold: 5,8:1 op olijf i.p.v. 2,3:1 */
+  color: var(--gold-soft);
+}
+.contact-value {
+  font-family: var(--font-display);
+  font-stretch: 110%;
+  font-weight: 700;
+  font-size: 1.35rem;
+}
+
+/* ---------- TODO-markering ----------
+   Subtiele mosterthalo + stippellijn op placeholders die de eigenaar
+   nog moet invullen (telefoon, e-mail, KvK, adres...).
+   Zoek op class="todo" of op TODO in index.html. Na invullen: class weghalen. */
+.todo {
+  background: var(--gold-tint);
+  border-bottom: 2px dotted currentColor;
+  border-radius: 3px 3px 0 0;
+  padding: 0 0.15em;
+  cursor: help;
+}
+
+/* ---------- footer ---------- */
+
+.footer {
+  background: var(--ink);
+  color: rgba(250, 248, 244, 0.6);
+  padding-block: 26px;
+  font-size: 0.88rem;
+}
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.footer-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.footer-mark {
+  width: 38px;
+  height: 38px;
+  border-radius: 8px;
+  display: block;
+  /* tegel op de donkere footer een subtiele papieren rand geven */
+  box-shadow: 0 0 0 1.5px rgba(250, 248, 244, 0.45);
+}
+
+/* ---------- responsive ---------- */
+
+@media (max-width: 900px) {
+  /* vanaf hier naar het hamburgermenu: op tablet past de volledige
+     navbalk naast merk + Bel-knop niet meer netjes op één regel */
+  .nav { display: none; }
+  .menu { display: block; }
+  .hero-grid { grid-template-columns: 1fr; gap: 44px; }
+  .chips { grid-template-columns: 1fr 1fr; }
+  .werk-grid { grid-template-columns: 1fr 1fr; }
+  .steps { grid-template-columns: repeat(2, 1fr); gap: 32px 26px; }
+  /* stap 5 (Opleveren) is de slotstap: volle breedte, nummer links,
+     tekst rechts — geen wees in het grid maar een bewuste finale.
+     NB: deze regels cascaderen door tot ≤640px, waar het grid 1-koloms
+     wordt; de horizontale nummer-links/tekst-rechts-opzet blijft daar
+     bewust staan (grid-column 1/-1 is daar een no-op). Niet "repareren". */
+  .steps li:last-child {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    column-gap: 16px;
+    align-items: center;
+    margin-top: 4px;
+    padding-top: 26px;
+    border-top: 1px solid rgba(250, 248, 244, 0.16);
+  }
+  .steps li:last-child .step-no { grid-row: 1 / 3; margin-bottom: 0; }
+  .steps li:last-child h3 { grid-column: 2; }
+  .steps li:last-child p { grid-column: 2; }
+  .over-grid { grid-template-columns: 1fr; gap: 36px; }
+  .over-logo { text-align: center; }
+  .over-logo img { width: 190px; margin-inline: auto; }
+  .over-kleuren { justify-content: center; }
+  .contact-actions { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 640px) {
+  .header-inner { gap: 14px; }
+  .header-inner > .btn { display: none; } /* bellen kan via hero + contact */
+  .brand-name { font-size: 1.05rem; }
+  .hero { padding-block: 52px 44px; }
+  .section { padding-block: 60px; }
+  .chips { grid-template-columns: 1fr; }
+  .werk-grid { grid-template-columns: 1fr; }
+  .steps { grid-template-columns: 1fr; }
+  /* zes stalen naast elkaar passen niet op 390px met leesbare namen:
+     bewust 3×2 grid op smal scherm. De namen blijven onder elk staal
+     zichtbaar — geen hover-only labels, ook op touch. */
+  .swatches {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px 12px;
+  }
+  .swatch-vlak { height: 40px; }
+  /* band wat compacter op klein scherm */
+  .facade-band { min-height: 68px; padding: 12px 16px 12px 38px; }
+  .facade-naam { font-size: 1.15rem; }
+  /* verfstreek iets dunder op klein scherm: minder dominant onder de kleine letters */
+  .accent { background-size: 100% 0.28em; }
+  .footer-inner { flex-direction: column; }
+}
+
+/* ---------- beweging met mate ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .accent .drip { animation: none; }
+  /* band-, wand- en labelkleurwissel zonder overgang, net als de rest */
+  .btn, .chip, .swatch, .swatch-vlak, .swatch-tag, .facade-band, .wand,
+  .contact-card, .menu-bars span { transition: none; }
+  .menu[open] .menu-nav { animation: none; }
+}

@@ -1,0 +1,21 @@
+**1. Visuele hiÃ«rarchie**  
+Het eerst opvallend is de grote inktkleurige hero-kop â€œEen frisse laag verf voor je huisâ€, samen met de mosterdgele CTA â€œPlan een kijkjeâ€ in de header. De leesvolgorde is logisch: header â†’ hero â†’ diensten â†’ impressies â†’ werkwijze â†’ over â†’ contact. De CTAâ€™s zijn duidelijk onderscheiden (â€œVraag een offerteâ€ in mosterd, â€œZo werken wijâ€ als outline).  
+**Zwak punt:** De sectiekoppen â€œWat we voor je schilderenâ€ en â€œKleur aan de muurâ€ zijn beduidend kleiner en minder vet dan de hero-kop. Met name â€œWat we voor je schilderenâ€ oogt veel zwakker dan de daaropvolgende kop â€œKleur aan de muurâ€, waardoor de hiÃ«rarchie niet consequent is doorgevoerd.
+
+**2. Witruimte en ritme**  
+De afstanden tussen de secties zijn over het algemeen ruim; de hero heeft veel witruimte en de Diensten-kaarten hebben voldoende onderlinge ruimte.  
+**Krap/willekeurig:** De drie Diensten-kaarten hebben ongelijke hoogtes: de roze kaart (â€œOnderhoud & kleine klussenâ€) heeft een titel die over twee regels loopt, waardoor het gekleurde kopblok hoger is dan dat van de mosterd- en olijfkaarten. Dit doorbreekt het ritme. Ook de Werkwijze-sectie voelt vol: vijf stappen in Ã©Ã©n rij met erg kleine beschrijvingen oogt krap en de tekst staat dicht opeen.
+
+**3. Contrast en leesbaarheid**  
+Het algemene contrast is goed: donkere tekst op papier, witte tekst op donker olijf. Er zijn geen grote contrastproblemen.  
+**Zwak punt:** In de Werkwijze-sectie zijn de beschrijvingen klein en in een lichtgrijze/witte tint op de donkergroene achtergrond geplaatst, wat het lezen op een smal scherm bemoeilijkt. De tekst in de Diensten-kaarten is eveneens klein en dicht opeen, en in de â€œOver EEFâ€-sectie staat de tekst in een smalle kolom, waardoor het minder prettig leest.
+
+**4. Huisstijl**  
+De kleuren olijf, mosterd, roze en inkt worden herkenbaar en consequent gebruikt: in de header-button, de huis-illustratie, de gekleurde kaart-kopjes, de Werkwijze-achtergrond, de Contact-achtergrond en de voettekst. Er zijn geen AI-templated clichÃ©s zoals paarse gradients of een cream+serif+terracotta combinatie. De service-kaarten en genummerde stappen zijn weliswaar standaard patronen (â€œfeature cardsâ€, â€œnumbered stepsâ€), maar door de huisstijlkleuren voelen ze niet generiek. De illustraties in de hero en in â€œOver EEFâ€ zijn wel vrij eenvoudig en ogen daardoor iets minder verzorgd.
+
+**TOP:**  
+1. De ongelijke hoogtes van de Diensten-kaarten (de roze kaart is hoger doordat de titel op twee regels valt) doorbreekt het ritme en oogt rommelig.  
+2. De visuele hiÃ«rarchie is niet consequent: de kop â€œWat we voor je schilderenâ€ is veel kleiner en minder prominent dan de hero-kop en zelfs dan â€œKleur aan de muurâ€.  
+3. In de Werkwijze-sectie zijn de beschrijvingen bij de vijf stappen te klein en staan ze te dicht op elkaar, wat krap en lastig leesbaar is op een 720px-scherm.  
+4. De â€œOver EEFâ€-sectie is onevenwichtig: de kleine illustratie en de smalle tekstkolom zorgen dat deze sectie minder impact heeft dan de rest van de site.  
+5. De teksten in de Diensten-kaarten en in de â€œOver EEFâ€-sectie zijn klein en dicht opeen gezet, wat de leesbaarheid vermindert.

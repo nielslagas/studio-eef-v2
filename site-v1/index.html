@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Studio EEF — Schilderwerken binnen en buiten</title>
+<meta name="description" content="Studio EEF schildert binnen- en buitenschilderwerk en doet onderhoudsklussen. Zorgvuldig afgeplakt, netjes opgeleverd. Vraag een offerte.">
+<meta name="theme-color" content="#FAF8F4">
+<!-- TODO: placeholdergegevens in de schema.org-data vervangen zodra bekend:
+     telephone (+31612345678), email (hallo@studio-eef.nl) en url (www.studio-eef.nl) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "PaintingContractor",
+  "name": "Studio EEF",
+  "description": "Binnen- en buitenschilderwerk en onderhoudsklussen voor je woning.",
+  "url": "https://www.studio-eef.nl",
+  "telephone": "+31612345678",
+  "email": "hallo@studio-eef.nl",
+  "areaServed": "NL"
+}
+</script>
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..125,600;75..125,700&family=Atkinson+Hyperlegible:wght@400;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<a class="skip" href="#diensten">Direct naar inhoud</a>
+
+<header class="header">
+  <div class="container header-inner">
+    <a class="brand" href="#" aria-label="Studio EEF — home">
+      <img class="brand-mark" src="assets/logo.svg" alt="">
+      <span class="brand-name">Studio EEF</span>
+    </a>
+    <nav class="nav" aria-label="Hoofdmenu">
+      <a href="#diensten">Diensten</a>
+      <a href="#werk">Werk</a>
+      <a href="#werkwijze">Werkwijze</a>
+      <a href="#over">Over EEF</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <details class="menu">
+      <summary>Menu<span class="menu-bars" aria-hidden="true"><span></span><span></span></span></summary>
+      <nav class="menu-nav" aria-label="Mobiel menu">
+        <a href="#diensten">Diensten</a>
+        <a href="#werk">Werk</a>
+        <a href="#werkwijze">Werkwijze</a>
+        <a href="#over">Over EEF</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </details>
+    <!-- TODO: telefoonnummer invullen zodra bekend — ook in de JSON-LD bovenaan in de <head> -->
+    <a class="btn btn-ink" href="tel:0612345678" data-todo="telefoonnummer">Bel EEF</a>
+  </div>
+</header>
+
+<main>
+  <!-- HERO + interactieve gevel -->
+  <section class="hero">
+    <div class="container hero-grid">
+      <div class="hero-copy">
+        <p class="eyebrow">Schilderwerken &middot; binnen en buiten</p>
+        <h1 class="hero-title">Een frisse <span class="accent">laag<svg class="drip" viewBox="0 0 40 64" aria-hidden="true"><path d="M14 0 h12 v26 c0 2 6 8 6 16 a12 12 0 1 1 -24 0 c0 -8 6 -14 6 -16 Z"/></svg></span> verf voor je huis.</h1>
+        <p class="hero-sub">Studio EEF schildert muren, kozijnen, gevels en houtwerk, binnen en buiten. Zorgvuldig afgeplakt, elke dag netjes opgeruimd.</p>
+        <div class="hero-cta">
+          <a class="btn btn-gold" href="#contact">Vraag een offerte</a>
+          <a class="btn btn-ghost" href="#werkwijze">Zo werken wij</a>
+        </div>
+      </div>
+
+      <div class="hero-facade">
+        <!-- De kaart ís een verfstaal: kopband in de actieve kleur met
+             ringgat en geleide naam. data-contrast stuurt de tekstkleur
+             van de band (lichte stalen -> inkt, donkere -> papier). -->
+        <div class="facade-band" style="--band:#D6AF29">
+          <span class="facade-band-label">GEVELSTAAL</span>
+          <span class="facade-naam" aria-live="polite">Mosterd</span>
+        </div>
+        <div class="facade-body">
+          <div class="facade-wrap">
+            <svg class="facade" viewBox="0 0 320 300" role="img" aria-label="Gevel van een rijtjeshuis die meekleurt als je een verfstaal kiest">
+              <defs>
+                <!-- baksteenverdeling: voegen als rasterlijnen, steenformaat
+                     36x28 met verspringende kopse voegen (alpha genoeg om op
+                     kijkafstand te lezen, niet te schreeuwen) -->
+                <pattern id="voeg" width="36" height="28" patternUnits="userSpaceOnUse">
+                  <path d="M0 0.5h36M0 14.5h36" stroke="rgba(35,31,32,0.14)" stroke-width="1"/>
+                  <path d="M18.5 1v13M9.5 15v13M27.5 15v13" stroke="rgba(35,31,32,0.11)" stroke-width="1"/>
+                </pattern>
+              </defs>
+              <!-- lucht -->
+              <rect class="lucht" x="0" y="0" width="320" height="300"/>
+              <!-- zadeldak met pannencoursen -->
+              <polygon class="dak-pannen" points="160,30 298,92 22,92"/>
+              <path class="dak-coursen" d="M113.3 51 H206.7 M68.7 71 H251.3"/>
+              <!-- schoorsteen vóór het dakvlak getekend, met de onderrand
+                   ín de pannen (beide onderhoeken binnen het dakpolygon) -->
+              <g class="schoorsteen">
+                <rect x="218" y="40" width="20" height="30"/>
+                <rect x="213" y="32" width="30" height="8" rx="1.5"/>
+              </g>
+              <!-- gevel: eerst de wand + voegen, dan het werk erop -->
+              <path class="wand" d="M46 96 H274 V262 H46 Z"/>
+              <path class="voegwerk" d="M46 96 H274 V262 H46 Z"/>
+              <!-- gevelsteen boven de deur, op dezelfde as (x=209) -->
+              <g class="gevelsteen">
+                <rect x="189" y="170" width="40" height="15" rx="2"/>
+                <path class="gravering" d="M195 177.5h12M211 177.5h10"/>
+              </g>
+              <!-- dakgoot en regenpijp -->
+              <rect class="goot" x="16" y="91" width="288" height="9" rx="4"/>
+              <g class="pijp">
+                <rect x="264" y="104" width="6" height="152" rx="3"/>
+                <path d="M259 148h16M259 224h16"/>
+                <rect x="265" y="256" width="4" height="6" rx="1.5"/>
+              </g>
+              <!-- verdieping: twee raamroeden-vensters met dorpels; het
+                   rechter staat op de as van de deur eronder (x=209) -->
+              <rect class="kozijn" x="64" y="106" width="66" height="54" rx="1.5"/>
+              <rect class="ruit" x="70" y="112" width="54" height="42"/>
+              <path class="roede" d="M97 112v42M70 133h54"/>
+              <rect class="dorpel" x="59" y="160" width="76" height="6" rx="2"/>
+              <rect class="kozijn" x="176" y="106" width="66" height="54" rx="1.5"/>
+              <rect class="ruit" x="182" y="112" width="54" height="42"/>
+              <path class="roede" d="M209 112v42M182 133h54"/>
+              <rect class="dorpel" x="171" y="160" width="76" height="6" rx="2"/>
+              <!-- begane grond: venster links, deur met glas-inlaat rechts;
+                   raamkop en deurkozijn-top op één horizontaal (y=190) -->
+              <rect class="kozijn" x="58" y="190" width="80" height="54" rx="1.5"/>
+              <rect class="ruit" x="64" y="196" width="68" height="42"/>
+              <path class="roede" d="M98 196v42M64 217h68"/>
+              <rect class="dorpel" x="53" y="244" width="90" height="6" rx="2"/>
+              <rect class="kozijn" x="180" y="190" width="58" height="72" rx="1.5"/>
+              <rect class="deur" x="187" y="197" width="44" height="65"/>
+              <rect class="ruit" x="193" y="203" width="32" height="20"/>
+              <path class="roede" d="M209 203v20M193 213h32"/>
+              <circle class="knop" cx="224" cy="232" r="3"/>
+              <!-- stoep verankert de gevel onderaan -->
+              <g class="stoep">
+                <rect x="28" y="262" width="264" height="24" rx="3"/>
+                <path class="voeg-ticks" d="M70 262v24M112 262v24M154 262v24M196 262v24M238 262v24M280 262v24"/>
+              </g>
+            </svg>
+          </div>
+          <p class="facade-ingress">Tik op een staal en zie de gevel meekleuren.</p>
+          <div class="swatches" role="group" aria-label="Kies een kleur voor de gevel">
+            <button class="swatch" data-color="#F1EDE4" data-contrast="licht" style="--sw:#F1EDE4" aria-pressed="false" aria-label="Kalkwit"><span class="swatch-vlak"></span><span class="swatch-tag">Kalkwit</span></button>
+            <button class="swatch" data-color="#D6AF29" data-contrast="licht" style="--sw:#D6AF29" aria-pressed="false" aria-label="Mosterd"><span class="swatch-vlak"></span><span class="swatch-tag">Mosterd</span></button>
+            <button class="swatch" data-color="#424631" data-contrast="donker" style="--sw:#424631" aria-pressed="false" aria-label="Olijf"><span class="swatch-vlak"></span><span class="swatch-tag">Olijf</span></button>
+            <button class="swatch" data-color="#3E5C76" data-contrast="donker" style="--sw:#3E5C76" aria-pressed="false" aria-label="Houtblauw"><span class="swatch-vlak"></span><span class="swatch-tag">Houtblauw</span></button>
+            <button class="swatch" data-color="#F37C96" data-contrast="licht" style="--sw:#F37C96" aria-pressed="false" aria-label="Prima-roze"><span class="swatch-vlak"></span><span class="swatch-tag">Prima-roze</span></button>
+            <button class="swatch" data-color="#231F20" data-contrast="donker" style="--sw:#231F20" aria-pressed="false" aria-label="Antraciet"><span class="swatch-vlak"></span><span class="swatch-tag">Antraciet</span></button>
+          </div>
+          <p class="facade-note">Twijfel je over de kleur? Bij de kennismaking nemen we de verfstalen mee.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DIENSTEN als verfstalen -->
+  <section class="section" id="diensten">
+    <div class="container">
+      <p class="eyebrow">Diensten</p>
+      <h2 class="section-title">Wat we voor je schilderen</h2>
+      <div class="chips">
+        <article class="chip">
+          <div class="chip-band" style="--band:#D6AF29">
+            <span class="chip-code">EEF&#8209;01</span>
+          </div>
+          <div class="chip-body">
+            <h3>Binnenschilderwerk</h3>
+            <p>Muren, plafonds, kozijnen en deuren. Van schuren en gronden tot de laatste laag.</p>
+          </div>
+        </article>
+        <article class="chip">
+          <div class="chip-band" style="--band:#424631">
+            <span class="chip-code">EEF&#8209;02</span>
+          </div>
+          <div class="chip-body">
+            <h3>Buitenschilderwerk</h3>
+            <p>Gevels, kozijnen en houtwerk buiten. Weerbestendig en kleurecht &mdash; een laag die jaren meegaat.</p>
+          </div>
+        </article>
+        <article class="chip">
+          <div class="chip-band" style="--band:#F37C96">
+            <span class="chip-code">EEF&#8209;03</span>
+          </div>
+          <div class="chip-body">
+            <h3>Onderhoud &amp; kleine klussen</h3>
+            <p>Vensterbanken, deuren en retouches. Ook als het om één kozijn of één muur gaat.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- WERK: impressies -->
+  <section class="section" id="werk">
+    <div class="container">
+      <p class="eyebrow">Impressies</p>
+      <h2 class="section-title">Kleur aan de muur</h2>
+      <div class="werk-grid">
+        <figure class="werk-card">
+          <img src="assets/img/werk-woonkamer.jpg" alt="Woonkamer met vers geschilderde kalkwitte muren en zonnig licht" width="1216" height="832" loading="eager" decoding="async">
+          <figcaption>
+            <span class="werk-tag">Impressie</span>
+            Woonkamer &middot; muren en plafond in kalkwit
+          </figcaption>
+        </figure>
+        <figure class="werk-card">
+          <img src="assets/img/werk-gevel.jpg" alt="Rijtjeshuis met vers geschilderde olijfgroene gevel en witte kozijnen" width="1216" height="832" loading="eager" decoding="async">
+          <figcaption>
+            <span class="werk-tag">Impressie</span>
+            Gevel &amp; kozijnen &middot; olijf met wit
+          </figcaption>
+        </figure>
+        <figure class="werk-card">
+          <img src="assets/img/werk-detail.jpg" alt="Verfroller brengt een mosterdgele laag aan op een muur" width="1216" height="832" loading="eager" decoding="async">
+          <figcaption>
+            <span class="werk-tag">Impressie</span>
+            Detail &middot; tweede laag in mosterd
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- WERKWIJZE: een echte volgorde, dus nummers -->
+  <section class="section section-ink" id="werkwijze">
+    <div class="container">
+      <p class="eyebrow eyebrow-light">Werkwijze</p>
+      <h2 class="section-title section-title-light">Van eerste bezoek tot laatste laag</h2>
+      <ol class="steps">
+        <li>
+          <span class="step-no">1</span>
+          <h3>Kijken</h3>
+          <p>We komen langs, bekijken het werk en denken mee over kleur.</p>
+        </li>
+        <li>
+          <span class="step-no">2</span>
+          <h3>Offerte</h3>
+          <p>Binnen twee werkdagen ligt er een heldere offerte voor je klaar. Geen verrassingen achteraf.</p>
+        </li>
+        <li>
+          <span class="step-no">3</span>
+          <h3>Afplakken</h3>
+          <p>We prikken een datum en plakken alles af: vloeren, randen, beslag. We beginnen pas als je huis beschermd is.</p>
+        </li>
+        <li>
+          <span class="step-no">4</span>
+          <h3>Schilderen</h3>
+          <p>Elke laag krijgt de tijd om goed te drogen. Aan het einde van de dag ruimen we alles op.</p>
+        </li>
+        <li>
+          <span class="step-no">5</span>
+          <h3>Opleveren</h3>
+          <p>Samen lopen we het werk na. Ben je tevreden? Dan pas zijn we klaar.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- OVER -->
+  <section class="section" id="over">
+    <div class="container over-grid">
+      <div class="over-logo">
+        <img src="assets/logo.svg" alt="Studio EEF" width="284" height="284">
+        <div class="over-kleuren" aria-hidden="true">
+          <span style="--k:#231F20"></span>
+          <span style="--k:#424631"></span>
+          <span style="--k:#D6AF29"></span>
+          <span style="--k:#F37C96"></span>
+        </div>
+        <p class="over-kleuren-caption">onze vier kleuren</p>
+      </div>
+      <div>
+        <p class="eyebrow">Over EEF</p>
+        <h2 class="section-title">Een schilder die je huis behandelt alsof het zijn eigen huis is</h2>
+        <div class="over-text">
+          <!-- TODO: eigenaar, werkgebied en ervaring invullen -->
+          <p>Studio EEF is een klein schildersbedrijf. Van de eerste afspraak tot de laatste kwaststreek heb je altijd met dezelfde schilder te maken.</p>
+          <!-- TODO: werkgebied invullen zodra bekend -->
+          <p>We werken in en om <strong class="todo" title="Placeholder — nog in te vullen">[plaats + regio]</strong>. Ook klussen waar anderen het bijltje erbij neerleggen &mdash; één kozijn, een trappenhuis, een tuinhek dat al jaren wacht &mdash; pakken we gewoon aan.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="section section-contact" id="contact">
+    <div class="container">
+      <p class="eyebrow eyebrow-light">Contact</p>
+      <h2 class="section-title section-title-light">Vertel wat er geschilderd moet worden</h2>
+      <p class="contact-sub">Bel, mail of app &mdash; binnen één werkdag heb je antwoord.</p>
+      <div class="contact-actions">
+        <!-- TODO: echte gegevens invullen (href én zichtbare tekst) — gemarkeerd met class="todo" -->
+        <a class="contact-card" href="tel:0612345678" data-todo="telefoonnummer">
+          <span class="contact-label">Bel</span>
+          <span class="contact-value todo" title="Placeholder — nog in te vullen">06 12 34 56 78</span>
+        </a>
+        <a class="contact-card" href="mailto:hallo@studio-eef.nl" data-todo="e-mailadres">
+          <span class="contact-label">Mail</span>
+          <span class="contact-value todo" title="Placeholder — nog in te vullen">hallo@studio-eef.nl</span>
+        </a>
+        <a class="contact-card" href="https://wa.me/31612345678" target="_blank" rel="noopener" data-todo="whatsapp-nummer (staat in de link)">
+          <span class="contact-label">App</span>
+          <span class="contact-value todo" title="Placeholder — het nummer zit in de link">Stuur een appje</span>
+        </a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container footer-inner">
+    <div class="footer-brand">
+      <img class="footer-mark" src="assets/logo.svg" alt="">
+      <span>Studio EEF &mdash; schilderwerken</span>
+    </div>
+    <!-- TODO: KvK, BTW en adres invullen (gemarkeerd met class="todo") -->
+    <span><span class="todo" title="Placeholder — nog in te vullen">KvK 00000000</span> &middot; <span class="todo" title="Placeholder — nog in te vullen">BTW NL000000000B01</span> &middot; <span class="todo" title="Placeholder — nog in te vullen">[adres], [plaats]</span></span>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var wand = document.querySelector('.wand');
+  var band = document.querySelector('.facade-band');
+  var naam = document.querySelector('.facade-naam');
+  var swatches = Array.prototype.slice.call(document.querySelectorAll('.swatch'));
+  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  function kies(btn) {
+    swatches.forEach(function (s) { s.setAttribute('aria-pressed', String(s === btn)); });
+    wand.style.fill = btn.getAttribute('data-color');
+    if (band) {
+      band.style.setProperty('--band', btn.getAttribute('data-color'));
+      band.classList.toggle('facade-band--donker', btn.getAttribute('data-contrast') === 'donker');
+    }
+    if (naam) { naam.textContent = btn.getAttribute('aria-label'); }
+  }
+
+  swatches.forEach(function (btn) {
+    btn.addEventListener('click', function () { kies(btn); });
+  });
+
+  // startmosterd: de laag die er nu in zit
+  if (!reduced && wand) { wand.style.transition = 'fill .5s ease'; }
+  if (swatches[1]) { kies(swatches[1]); }
+})();
+</script>
+</body>
+</html>

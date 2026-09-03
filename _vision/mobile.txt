@@ -1,0 +1,22 @@
+**Mobiele layout**  
+De header is compact: links het logo met â€œStudio EEFâ€, rechts een duidelijke â€œMenuâ€-knop. De knop is goed aantikbaar, maar de header is niet sticky, dus tijdens het scrollen verdwijnt het menu. De hero stapelt netjes: eerst de small-caps eyebrow, dan de grote kop â€œEen frisse laag verf voor je huis.â€, daarna de introparagraaf en tot slot de twee knoppen. De primaire knop â€œVraag een offerteâ€ in mosterd en de outline-knop â€œZo werken wijâ€ hebben voldoende hoogte.  
+
+De **gevel-kleurenkiezer** is het sterkste interactieve element: het huis is groot genoeg op 390px, de actieve kleur â€œMosterdâ€ heeft een rand plus label en de instructie â€œTik op een verfstaal en kleur de gevelâ€ is duidelijk. Maar de zesde zwarte verfstaal valt op een tweede regel, met veel lege ruimte rechts. Daardoor oogt het swatch-grid ongelijk op smal scherm.  
+
+De **Diensten**-kaarten stapelen logisch: een gekleurd kopvlak met EEF-01, EEF-02 en EEF-03, gevolgd door witte inhoud. De **Impressies**-sectie is echter een groot probleem: alle drie de kaarten tonen een leeg wit beeldvlak met alleen een â€œIMPRESSIEâ€-label en een bijschrift. Het lijkt alsof de afbeeldingen niet laden. De **Werkwijze**-sectie is donker en rustig, met genummerde stappen; de **Contact**-sectie en footer zijn overzichtelijk.
+
+**Witruimte en ritme**  
+Op een smal scherm is er over het algemeen veel lucht tussen de secties. De overgang van de lichte hero naar de gekleurde dienstenkaarten en daarna naar de donkere Werkwijze-sectie geeft een goed ritme. De Imressies-kaarten doorbreken dat ritme echter: de drie lege witte vlakken voelen als grote gaten. Ook de niet-uitgelijnde zwarte verfstaal in de kleurenkiezer zorgt voor een asymmetrische witruimte die onbedoeld oogt.
+
+**Contrast en leesbaarheid**  
+De teksten op de papieren achtergrond zijn donker en goed leesbaar. De gele knop met zwarte tekst heeft sterk contrast en de outline-knop is duidelijk herkenbaar. In de donkere â€œWerkwijzeâ€-sectie is de bodytekst lichtgrijs op bijna zwart; dat is leesbaar, maar minder contrastrijk dan de rest van de site en op een klein scherm iets vermoeiend. De musterd labels en witte waardes in de Contact-sectie op olijf zijn goed leesbaar.
+
+**Huisstijl-consistentie en AI-look-check**  
+De huisstijl is consequent: mosterd, olijf, roze, inkt en papier komen overal terug. Er is geen â€œcream + serif + terracottaâ€-clichÃ©, geen paarse gradient en geen generieke icon-cards. De gekleurde kaartkoppen met EEF-codes zijn een eigen, consistente oplossing. Alleen de witte stip linksboven in de gekleurde dienstenkaarten voelt als een decoratief detail zonder duidelijke functie, een beetje als een typische AI-toevoeging. De â€œOver EEFâ€-sectie mist bovendien een menselijk gezicht of foto van de schilder.
+
+TOP:
+1. De â€œImpressiesâ€-sectie toont drie lege witte beeldvlakken met alleen een â€œIMPRESSIEâ€-label en bijschrift, waardoor de pagina onafgewerkt en broken oogt.
+2. De footer en â€œOver EEFâ€ bevatten placeholdergegevens ([adres], [plaats], [plaats + regio], KvK/BTW 00000000), wat op een echte site niet acceptabel is en wantrouwen wekt.
+3. De gevel-kleurenkiezer heeft een ongelijk swatch-grid: de zwarte verfstaal valt op een tweede regel met veel lege ruimte rechts, wat op 390px rommelig oogt.
+4. De header is niet sticky, dus het menu is op een lange one-pager alleen bovenin bereikbaar en verdwijnt tijdens het scrollen.
+5. In de donkere â€œWerkwijzeâ€-sectie is de lichtgrijze bodytekst op bijna zwart minder contrastrijk en daardoor zwaarder leesbaar op een klein scherm.

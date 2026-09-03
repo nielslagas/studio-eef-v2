@@ -1,0 +1,76 @@
+Hier mijn beoordeling per sectie, zoals gevraagd.
+
+**Hero**  
+- **HiÃ«rarchie:** Sterk. De schilderwerk-label, de grote kop, de subtekst en de twee CTA-knoppen volgen een logische leeslijn.  
+- **Witruimte:** Ruim en rustig. De houten plank krijgt genoeg ademruimte op het donkere canvas.  
+- **Contrast:** Donker inkt-canvas met mosterd, hout en zwarte tekst werkt goed. De mosterdstreek op de plank trekt direct de aandacht.  
+- **Huisstijl:** De â€˜Verse verfâ€™-gedachte is prachtig vertaald: houten plank, kwaststreek, tape en druppel maken het eigenzinnig.  
+- **Storende elementen:** Geen. De tape en druppel zijn bewuste details, geen ruis.
+
+**Marquee-band**  
+- **HiÃ«rarchie:** Geen echte hiÃ«rarchie, maar dat hoeft ook niet; het is een dynamische overgangsband.  
+- **Witruimte:** De band is bewust vol, wat past bij een marquee.  
+- **Contrast:** Mosterd met donkere inkt leest prima.  
+- **Huisstijl:** Mosterd als accentkleur en donkere tekst zijn helemaal EEF. De schuine vorm geeft energie.  
+- **Storende elementen:** Geen; het is een knip in de compositie die de pagina op gang brengt.
+
+**Trustbar**  
+- **HiÃ«rarchie:** Drie gelijkwaardige procesfeiten met kleine labels en duidelijke hoofdzinnen.  
+- **Witruimte:** Overzichtelijk en luchtig, met voldoende afstand tussen de drie kolommen.  
+- **Contrast:** Donkere tekst op papier is sterk. De mosterdaccenten blijven subtiel.  
+- **Huisstijl:** Papier + inkt + mosterd is de juiste basis.  
+- **Storende elementen:** Geen.
+
+**Diensten**  
+- **HiÃ«rarchie:** Sectiekop, gevolgd door drie verfstaal-kaarten met duidelijke titels en uitleg.  
+- **Witruimte:** De kaarten hebben een ruime padding en staan mooi uit elkaar.  
+- **Contrast:** Mosterd, olijf en roze als kleurbanden op wit geven een sterk beeld. De tekst is donker en goed leesbaar.  
+- **Huisstijl:** De verfstaal-kaarten met EEF-codes zijn een sterke, eigenzinnige vertaling van het schildersvak.  
+- **Storende elementen:** Geen.
+
+**Werk-impressies**  
+- **HiÃ«rarchie:** Duidelijke sectiekop met drie fotoâ€™s en capties.  
+- **Witruimte:** Ruime marges en gelijke afstanden tussen de beelden.  
+- **Contrast:** De fotoâ€™s zijn beeldend, met witte captionbalken en donkere tekst daarin.  
+- **Huisstijl:** De mosterdkleurige detailfoto links en de warme interieurfotoâ€™s passen bij de kleurenset.  
+- **Storende elementen:** Geen. De rechter foto is wel fel, maar dat is een bewust mosterdstatement.
+
+**Kleurengevel**  
+- **HiÃ«rarchie:** Kop, instructie, gevel en kleurstalen â€“ alles in de juiste volgorde.  
+- **Witruimte:** De gevel staat ruim in het wit, met voldoende lucht rond de stalen.  
+- **Contrast:** Mosterdgevel met donkere lijnen en heldere kleurstalen is sterk. De witte staal heeft een rand, dus blijft leesbaar.  
+- **Huisstijl:** Dit is het hart van het concept. De gevelwand start in mosterd, precies zoals bedoeld.  
+- **Storende elementen:** Geen.
+
+**Werkwijze**  
+- **HiÃ«rarchie:** Vijf genummerde stappen in een rechte lijn, met nummers in mosterd en titels en uitleg in wit.  
+- **Witruimte:** Ruim en rustig; de stappen ademen.  
+- **Contrast:** Donker inkt-canvas met witte tekst en mosterd cirkels geeft een sterk en strak beeld.  
+- **Huisstijl:** Mosterd op inkt is precies de juiste combinatie; de cirkels voelen als verfdruppels.  
+- **Storende elementen:** Geen.
+
+**Over**  
+- **HiÃ«rarchie:** Logo links, kop en tekst rechts; een sterke, gebalanceerde verdeling.  
+- **Witruimte:** Grote rust, genoeg wit rond het logo en de tekst.  
+- **Contrast:** Inkt op papier is optimaal leesbaar. De placeholders springen eruit door de mosterthalo en stippellijn, maar dat hoort er bewust bij.  
+- **Huisstijl:** Het logo met kwastveeg en de vier kleurenstippen vertelt het merkverhaal in Ã©Ã©n oogopslag.  
+- **Storende elementen:** Geen; de opvallende placeholders zijn een bewust ontwerpdetail.
+
+**Contact**  
+- **HiÃ«rarchie** Kop, subtekst en drie contactkaarten in een heldere volgorde.  
+- **Witruimte:** Ruime vlakken op olijf; de kaarten staan mooi uit elkaar.  
+- **Contrast:** Witte kop op olijf is sterk; mosterd op de kaarten geeft voldoende accent.  
+- **Huisstijl:** Olijf en mosterd samen voelen warm en professioneel.  
+- **Storende elementen:** Geen. De stippellijnen onder telefoon en e-mail zijn bewuste richtinggevers.
+
+**Footer**  
+- **HiÃ«rarchie:** Links de merknaam, rechts de bedrijfsgegevens; functioneel en overzichtelijk.  
+- **Witruimte:** Compact maar niet vol.  
+- **Contrast:** Donkere footer met witte tekst en mosterd placeholders werkt goed.  
+- **Huisstijl:** De mosterdlijn boven de footer sluit de pagina mooi af.  
+- **Storende elementen:** Geen; de placeholders zijn onderdeel van de vormgeving.
+
+**Als geheel**  
+Ja, de site komt flitsend en modern over. De donkere hero, de mosterd-marquee, de verfstaal-kaarten en de interactieve gevel geven energie en eigenheid. Toch blijft het rustig, omdat de typografie, grid en witruimte overal consistent zijn. De kleurenset wordt consequent en beheerst ingezet; niets schreeuwt om aandacht. Het geheel voelt als een fris, zelfverzekerd schildersmerk.
+
+**OORDEEL:** 8,5 â€“ Een krachtig, speels en toch beheerst geheel dat de huisstijl en het â€˜Verse verfâ€™-concept tot in de details draagt.

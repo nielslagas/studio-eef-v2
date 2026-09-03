@@ -1,0 +1,22 @@
+**1) Zijn de genoemde reparaties zichtbaar gelukt?**
+Ja, alle vijf de reparaties zijn zichtbaar doorgevoerd:
+- Het accentwoord **'laag'** in de H1 staat nu als donkere letters op een mosterdgele verfstreek. Het contrast is nu ruim voldoende.
+- De contact-labels **BEL / MAIL / APP** hebben nu een lichtere mosterdtint op de olijfgroene achtergrond, waardoor ze duidelijk leesbaar zijn.
+- De **vijf werkwijze-stappen** ogen nu ruim en luchtig; er staat voldoende ademruimte tussen de stappen en de tekstkolommen.
+- De **Over-sectie** is nu evenwichtig: links een logo-tegel met de vier-kleurenstrip eronder, rechts de tekst. Dit brengt de compositie in balans.
+- De **placeholder-gegevens** (KvK, BTW, [adres] [plaats], [plaats + regio]) zijn duidelijk gemarkeerd met een mosterhalo en stippellijn.
+
+**2) HiÃ«rarchie, witruimte, contrast en huisstijl**
+- **HiÃ«rarchie:** De opbouw is helder. Grote, krachtige H1, consistente sectiekoppen ("Wat we voor je schilderen", "Kleur aan de muur", "Van eerste bezoek tot laatste laag"), en een logische volgorde van hero naar diensten naar impressies naar werkwijze naar over en contact.
+- **Witruimte:** De pagina ademt. Kaarten hebben voldoende interne padding en de secties zijn ruim van elkaar gescheiden.
+- **Contrast:** Over het algemeen goed. Donker op papier, wit op inkt, en de mosterdtinten zijn nu correct ingezet. De H1-fix is geslaagd, net als de contact-labels.
+- **Huisstijl:** Het palet (olijf, mosterd, roze, inkt, papier) wordt consequent en verzorgd toegepast: in de dienstenkaarten, de huisvisualisatie, de logo-tegel en de footer. De stijl is herkenbaar en professioneel.
+
+**3) Blijvende zwaktes of nieuwe problemen**
+- Het **witte kleurstaal** in de hero-kaart is nauwelijks zichtbaar tegen de witte kaartachtergrond; een subtiel randje zou dit verhelpen.
+- De **bodytekst bij de werkwijze-stappen** is vrij klein en zou op desktop iets groter mogen voor optimale leesbaarheid.
+- De hulptekst **"Twijfel je over de kleur?..."** heeft een laag contrast (lichtgrijs op papierwit), wat ten koste gaat van de leesbaarheid.
+- In de **contact-sectie** is de "APP"-kaart minder concreet (alleen "WhatsApp") vergeleken met de telefoon- en e-mailkaart; een toelichting, zoals "Stuur een appje", zou de kaart completer maken.
+- De **EEF-01/02/03-labels** in de dienstenkaarten zijn wit op een lichte gekleurde kop, waardoor ze minder opvallen dan de rest van de kaart.
+
+**OORDEEL:** 8 â€“ De genoemde zwaktes zijn goed verholpen en de site oogt verzorgd en consistent; alleen wat kleine contrast- en leesbaarheidsdetails blijven over.

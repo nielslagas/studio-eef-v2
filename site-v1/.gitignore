@@ -1,0 +1,4 @@
+# Interne inspectie-artefacten (niet voor productie, zie README-ouders)
+_vision/
+_inspect-*.png
+_crop-*.png

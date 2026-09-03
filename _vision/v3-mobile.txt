@@ -1,0 +1,12 @@
+**1) Hero-kaart op mobiel**
+De hero-kaart oogt zeer netjes. De mosterdgele band ("GEVELSTAAL / Mosterd") en het huis zijn helder en goed gepositioneerd. Het stalen-grid (3x2) is strak uitgelijnd. Alle zes kleurnamen (**Kalkwit, Mosterd, Olijf, Houtblauw, Prima-Roze, Antraciet**) zijn volledig zichtbaar en niet afgekapt of overlappend. De interactie-indicator (tik op een staal) is duidelijk leesbaar.
+
+**2) Header met logo-tegel en menuknop**
+De header is perfect gebalanceerd. De logo-tegel met het "Studio EEF" ernaast en de menuknop rechts zorgen voor een symmetrische en rustige verdeling over de 390px breedte.
+
+**3) Rest van de pagina**
+De dienstenkaarten (met mosterd, olijf en roze kopjes), de impressies, de donkere werkwijze-sectie, de over-tekst en het contactgedeelte zien er allemaal verzorgd en netjes uit. De huisstijlkleuren worden consequent en doordacht toegepast. 
+
+Wel valt er één storend punt op: de tekst onder het gecentreerde logo in de footer bevat spelfouten/placeholder-tekst (lees: "ONZE VFER KI FURFN" in plaats van bijvoorbeeld "ONZE VERF KLEUREN"). Daarnaast staan er nog placeholders zoals `[plaats + regio]` en `KvK 00000000` in de contact- en footertekst, wat logisch is voor een template, maar nog niet productierijp.
+
+**OORDEEL:** 8.5 - Een visueel sterke, nette en goed opgebouwde mobiele weergave met een uitstekende hero-kaart en gebalanceerde header, maar de spelfout in de footer-tegel en de openstaande placeholders kosten punten voor de afwerking.

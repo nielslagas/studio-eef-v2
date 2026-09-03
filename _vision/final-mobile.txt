@@ -1,0 +1,16 @@
+**1) Genoemde reparaties zichtbaar gelukt?**
+Ja, alle vier de punten zijn opgelost:
+- De verfstalen staan nu netjes in een 3x2 grid, gecentreerd en zonder wees op de tweede regel.
+- 'Opleveren' is geen wees meer: het is een volle-breedte slot met nummer links, tekst rechts en een dunne lijn erboven.
+- De impressies laden direct; er zijn geen lege vlakken meer zichtbaar.
+- De placeholders (telefoon, e-mail, KvK, adres, [plaats + regio]) zijn allemaal voorzien van een mosterthalo met stippellijn.
+
+**2) Mobiele layout, leesbaarheid en huisstijl?**
+De mobiele layout is rustig en overzichtelijk. Kaarten stapelen netjes, er is voldoende witruimte en de knoppen zijn goed aanraakbaar. De huisstijl (olijf, mosterd, roze, inkt, papier) wordt consistent toegepast, zowel in de lichte als donkere secties. De typografie is duidelijk leesbaar op 390px: koppen zijn vet en groot, de bodytekst heeft voldoende contrast.
+
+**3) Blijvende zwaktes / nieuwe problemen?**
+- **Inconsistentie in werkwijze:** De stappen 1 t/m 4 hebben het nummer boven de tekst, terwijl stap 5 (Opleveren) een horizontale layout heeft met nummer links en tekst rechts. Dit is een bewuste oplossing voor het weesprobleem, maar het zorgt wel voor een kleine visuele breuk in de reeks. De dunne lijn erboven verzacht dit, maar het blijft een ander patroon.
+- **Highlight in headline:** De gele "verfveeg" over het woord 'laag' is karaktervol, maar oogt op mobiel iets te dominant en komt dicht op de letters te staan, wat de leesbaarheid van dat ene woord iets vermindert.
+- **Decoratieve stip op servicekaarten:** De witte stip in de linkerbovenhoek van de gekleurde headers (EEF-01/02/03) is een detail waarvan het doel niet direct duidelijk wordt. Het lijkt willekeurig.
+
+**OORDEEL:** 8.5 â€” De reparaties zijn geslaagd en de site is strak, herkenbaar en mobielvriendelijk; alleen de bewuste layoutwissel bij 'Opleveren' en de iets te drukke highlight in de headline zijn nog subtiele minpunten.

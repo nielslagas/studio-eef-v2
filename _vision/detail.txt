@@ -1,0 +1,36 @@
+**Beoordeling hero**
+
+De compositie is rustig en logisch: alles links uitgelijnd, met de interactieve kaart als blikvanger eronder. De hiÃ«rarchie is helder â€“ eyebrow, grote H1, subtekst, daarna de twee knoppen. De mosterdkleurige eyebrow boven de H1 is subtiel en goed leesbaar. De primaire knop "Vraag een offerte" onderscheidt zich duidelijk van de secundaire "Zo werken wij".
+
+De **interactieve gevel-kaart** oogt verzorgd: dunne lijnen, strak huis, nette witte kaart met afgeronde hoeken. Maar er is een groot probleem: de instructie *"Tik op een verfstaal en kleur de gevel"* verwijst naar verfstalen, terwijl er in de kaart **geen verfstalen zichtbaar zijn**. Het huis is al volledig mosterd ingekleurd, dus de interactie is op dit moment niet te begrijpen.
+
+De **druppel** onder het woord "laag" is een aardig concept, maar hij is te klein en staat te dicht op de letters. Hierdoor lijkt het meer op een foutje of een vlekje dan op een bewust grafisch detail. De uitlijning van de knoppen en tekst is verder prima.
+
+---
+
+**Beoordeling contactsectie**
+
+Let op: de tweede afbeelding toont **niet de contactsectie**, maar de *werkwijze*-sectie (genummerde stappen: Kijken, Offerte, Afplakken, Schilderen, Opleveren). De drie kaarten (Bel/Mail/App) en de mosterd labels op het olijfgroen zijn hierdoor **niet zichtbaar** en kan ik dus niet beoordelen.
+
+Wat ik wÃ©l zie in deze afbeelding: de kop "â€¦aatste laag" wordt bovenaan **afgesneden door de sticky header**. De witte letters worden overlapt door de navigatiebalk, waardoor de tekst onleesbaar wordt. Dit is een duidelijke layoutfout.
+
+De mosterdkleurige cirkels met cijfers op de donkere inkt-achtergrond hebben een goede leesbaarheid. Echter, de **lichtgrijze bodytekst** op de donkere achtergrond heeft vrij weinig contrast. De tweedelige kolomindeling is netjes, maar stap 5 "Opleveren" valt alleen op de linkerhelft, wat een onbalans in het grid veroorzaakt.
+
+---
+
+**Details die op een volle pagina-screenshot niet zichtbaar zouden zijn**
+
+- De **sticky header overlapt de content** (de kop van de werkwijze-sectie) â€“ dit zie je alleen als je daadwerkelijk scrolt.
+- De **mosterddruppel** onder "laag" is een detail dat pas bij inzoomen opvalt, maar dan ook direct als storend wordt ervaren.
+- De **grijze scrollbar** rechts naast de header is een desktop-detail dat je op een statische volle-pagina-screenshot niet zou zien.
+- Het ontbreken van de **verfstalen** in de hero-kaart valt op een volle pagina wel op, maar in close-up wordt de tegenstrijdigheid met de instructie extra duidelijk.
+
+---
+
+**TOP:**
+
+- De sticky header overlapt de sectiekop, waardoor tekst onleesbaar wordt; dit is het grootste probleem.
+- De gevel-kaart toont geen verfstalen, waardoor de interactieve instructie "Tik op een verfstaal" niet begrepen kan worden.
+- De tweede afbeelding toont niet de contactsectie, waardoor de gevraagde Bel/Mail/App-kaarten niet beoordeeld kunnen worden.
+- De lichtgrijze bodytekst op de donkere achtergrond heeft te weinig contrast, wat de leesbaarheid schaadt.
+- De mosterd druppel onder "laag" is te klein en oogt als een vlek in plaats van een bewust detail.

@@ -1,0 +1,18 @@
+# geheimen — nooit committen
+.replicate_token
+
+# inspectie-artefacten (tooling en .txt-rapporten wél committen)
+_vision/**/*.png
+_vision/**/*-req.json
+_vision/**/*-resp.json
+_vision/_inspect*/
+site/_inspect*
+site-v1/_inspect*
+
+# os / editor
+Thumbs.db
+.DS_Store
+
+# lokale backup van de oude v1-repo (GitHub-kopie staat in nielslagas/studio-eef)
+.git-v1-backup/
+
