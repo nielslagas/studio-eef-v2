@@ -126,6 +126,11 @@ een `Start-Sleep 3` ertussen lost dat op.
   `site/ONTWERP-V2.md` (incl. onderzoeksinput).
 - v1 (archief in `site-v1/`): laatste review deepseek-v4-pro **GOED** — 2025-10,
   nulmeting 8/10 desktop en 8,5/10 mobiel (rapporten in `_vision/*.txt`).
+- **GitHub:** nieuwe repo `nielslagas/studio-eef-v2` (main = heel dit project,
+  gh-pages = alleen de site zelf) — live voor Eef:
+  **<https://nielslagas.github.io/studio-eef-v2/>**. De oude v1-repo
+  `nielslagas/studio-eef` is onaangeroerd gelaten; de oude lokale .git staat
+  in `.git-v1-backup/` (ge-ignored).
 - Open voor de eigenaar: de TODO-placeholders uit regel 1 hierboven.
 - Optioneel batch C: e-opening in logo.svg voor echt 24px-gebruik, echte
   Archivo-glyph-paden in de wordmark, gevoelscheck mobiel op echt apparaat
