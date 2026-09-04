@@ -340,20 +340,6 @@ body {
   pointer-events: none;
 }
 
-/* afplaktape: sluit de compositie rechts — materiaal, geen verf */
-.tape {
-  position: absolute;
-  right: 3.5%;
-  bottom: 9%;
-  width: clamp(56px, 11vw, 110px);
-  height: 24px;
-  background: rgba(241, 237, 228, 0.85);
-  border-radius: 2px;
-  box-shadow: 0 2px 5px rgba(35, 31, 32, 0.28);
-  transform: rotate(-6deg);
-  /* gescheurde rechterrand, alsof hij met de hand is afgescheurd */
-  clip-path: polygon(0 0, 92% 0, 100% 28%, 96% 52%, 100% 76%, 94% 100%, 0 100%);
-}
 /* de kop zelf: strak op de plank, wiped in met de kwast mee */
 .hero-kunst {
   position: relative;
@@ -1015,7 +1001,6 @@ html.js-reveal .steps > :nth-child(5) { transition-delay: 240ms; }
 
 @media (max-width: 900px) {
   .hero { padding-block: 56px 84px; }
-  .tape { display: none; } /* op smal scherm vult de kop de plank — geen tape over tekst */
 
   .chips { grid-template-columns: 1fr 1fr; }
   .werk-grid { grid-template-columns: 1fr 1fr; }
