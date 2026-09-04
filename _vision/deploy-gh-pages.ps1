@@ -38,5 +38,5 @@ if ($changed) {
   git -C $tmp push origin gh-pages
   "gedeployd: " + ((Get-ChildItem $tmp -Recurse -File | Measure-Object).Count) + " bestanden"
 } else {
-  "niets gewijzigd — geen push nodig"
+  "niets gewijzigd - geen push nodig"
 }
