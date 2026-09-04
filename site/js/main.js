@@ -92,7 +92,7 @@
       var box = kunst.getBoundingClientRect();
       padPad.setAttribute('d', padString(box.width, box.height));
       var lengte = padPad.getTotalLength();
-      var tipX = kwast.offsetWidth * 0.47;  // haarpunt = offset-anchor
+      var tipX = kwast.offsetWidth * 0.10;  // haarpunt linksonder = offset-anchor
       var tipY = kwast.offsetHeight * 0.75;
       var ease = bezierOplosser(0.77, 0, 0.175, 1); // --ease-in-out
       var startOp = performance.now() + START;

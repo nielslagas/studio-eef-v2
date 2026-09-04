@@ -1,0 +1,95 @@
+## Visie-inspectie: Studio EEF â€” Logo-B + AI-hero-inbouw
+
+---
+
+### Header & Navigatie
+- **HiÃ«rarchie:** Logo links, navigatie rechts, mosterd CTA â€œBel EEFâ€. Heldere opbouw.
+- **Witruimte:** Nette balans; geen druk geplotter.
+- **Contrast:** Lichtgrijze nav-tekst op inkt, mosterdknop als duidelijk eindpunt. Sterk.
+- **Huisstijl:** Logo-icoon met EEF-banden en verticale STUDIO-letters is eigenzinnig en herkenbaar. In de 46px-header zijn de verticale letters nauwelijks leesbaar, maar dat is een bewuste stijlkeuze.
+- **Storend:** Geen.
+
+### Hero
+- **HiÃ«rarchie:** Eyebrow â€˜SCHILDERWERKEN Â· BINNEN EN BUITENâ€™, kop in drie regels, intro, twee CTAâ€™s. De mosterdverfstreek over het woord â€˜laagâ€™ trekt de aandacht precies daar waar het moet.
+- **Witruimte:** De eiken plank ademt; de streek loopt over de volle breedte (v2-concept â€” akkoord). De witte verfstaal rechts is een subtiel, prettig detail.
+- **Contrast:** Donkere inkt-tekst op eiken, mosterdstreek op hout, witte intro-tekst op donkere achtergrond. Sterk en duidelijk.
+- **Huisstijl:** De fotorealistische houtplank + mosterdverfstreek is het krachtigste beeldmerk van de site. De kwast is goed geÃ¯ntegreerd.
+- **Storend:** Ja â€” zie antwoord (a). De kwast oogt als een kunstenaarspenseel, niet als een gebruikte huisschilderskwast. Het is een flitsend beeld, maar het ambachtelijke gevoel ontbreekt enigszins.
+
+### Marquee
+- **HiÃ«rarchie:** EÃ©n doorlopende, schuine band met drie diensten. Direct duidelijk.
+- **Witruimte:** Continu ritme, geen onderbrekingen.
+- **Contrast:** Mosterd achtergrond met donkere inkt-tekst. Uitstekend.
+- **Huisstijl:** Mosterd als huisstijlkleur, schuingeplaatst. Typisch en karakteristiek.
+- **Storend:** Geen.
+
+### Trustbar
+- **HiÃ«rarchie:** Drie items met mosterd verticale lijnen en korte toelichtingen. Duidelijk gescheiden.
+- **Witruimte:** Ruim en luchtig.
+- **Contrast:** Donkere tekst op papier, mosterd accenten. Goed.
+- **Huisstijl:** Mosterd als signaalkleur, olijf/inkt als tekstkleuren. Consistent.
+- **Storend:** Geen.
+
+### Diensten
+- **HiÃ«rarchie:** Kop â€˜Wat we voor je schilderenâ€™ en drie verfstaalkaarten met EEF-codes. De gekleurde bovenzijdes sturen de blik.
+- **Witruimte:** Kaarten hebben prettige interne padding.
+- **Contrast:** Gekleurde toppen (mosterd/olijf/roze) op witte kaartbody met inkt-tekst. Sterk.
+- **Huisstijl:** Alle vier de huisstijlkleuren komen hier terug. De witte rondjes met â€˜EEF-01/02/03â€™ zijn slim bedacht.
+- **Storend:** Geen.
+
+### Impressies
+- **HiÃ«rarchie:** Kop â€˜Kleur aan de muurâ€™, drie beelden met caption. De â€˜IMPRESSIEâ€™-tag is consequent.
+- **Witruimte:** Ruimte tussen de beelden is goed.
+- **Contrast:** Licht papier, beelden met warme/koele tinten. De derde afbeelding (roller met mosterd) is het sterkst huisstijl-eigen.
+- **Huisstijl:** Mosterd en olijf in de beelden.
+- **Storend:** De woonkamerfoto is neutraler dan de andere twee, maar als werkimpressie acceptabel.
+
+### Kleuren
+- **HiÃ«rarchie:** Kop â€˜Zie je kleur op de gevelâ€™ en de interactieve gevel met kleurstaal. De geselecteerde kleur is duidelijk omkaderd.
+- **Witruimte:** Nette, rustige opbouw.
+- **Contrast:** Mosterd gevel op licht; donkere tekst. Sterk.
+- **Huisstijl:** De kleurenwaaier bevat exact de huisstijlkleuren. Interactief en verkoopbevorderend.
+- **Storend:** Geen.
+
+### Werkwijze
+- **HiÃ«rarchie:** Kop â€˜Van eerste bezoek tot laatste laagâ€™, vijf stappen horizontaal met genummerde mosterdcirkels.
+- **Witruimte:** Evenwichtig en overzichtelijk.
+- **Contrast:** Witte tekst op inkt/olijf; mosterd accenten. Zeer sterk.
+- **Huisstijl:** Donkere achtergrond passend bij het â€˜ambachtsâ€™-gevoel.
+- **Storend:** Geen.
+
+### Over EEF
+- **HiÃ«rarchie:** Groot logo links, tekst rechts. â€˜OVER EEFâ€™-label, kop, body. De placeholder [plaats + regio] draagt de mosterthalo + stippellijn (check â€” bewust zo).
+- **Witruimte:** Ruim en professioneel.
+- **Contrast:** Donkere tekst op licht; het logo is een sterk visueel anker.
+- **Huisstijl:** Het vergrote logo is een mooie herhaling. â€˜ONZE VIER KLEURENâ€™ met de vier stippen is een subtiel en sterk huisstijl-moment. De verticale STUDIO-letters lezen van onder naar boven (akkoord â€” Eefs eigen ontwerp).
+- **Storend:** Geen.
+
+### Contact
+- **HiÃ«rarchie:** â€˜CONTACTâ€™-label, kop, tekst, drie kaarten (BEL/MAIL/APP). De waarden hebben de mosterthalo + stippellijn (check â€” telefoon, e-mail en app-actie zijn correct voorzien).
+- **Witruimte:** Ruimte in de kaarten is prima.
+- **Contrast:** Witte tekst op olijf; mosterd rand + halo. Sterk en duidelijk.
+- **Huisstijl:** Olijf achtergrond, mosterd accenten. Klopt.
+- **Storend:** Geen.
+
+### Footer
+- **HiÃ«rarchie:** Logo links, KvK/BTW/adres rechts. Compact en functioneel.
+- **Witruimte:** Goed voor een footer.
+- **Contrast:** Witte tekst op inkt; mosterd lijn bovenaan. Sterk.
+- **Huisstijl:** Logo herhaald; placeholders (KvK/BTW/adres) met mosterthalo + stippellijn. Correct.
+- **Storend:** Geen.
+
+---
+
+### Antwoord (a)
+De fotokwast leest **niet** als een geloofwaardige ronde, gebruikte huisschilderskwast. De slanke steel, de puntige, schone haren en de strakke mosterdresten maken dat het vooral een **kunstenaarspenseel** oogt â€” en dan nog een nieuwe ook. Het is een flitsende metafoor, maar mist de ambachtelijke uitstraling van een Ã©chte huisschilderskwast. Voor het vakmanschap-gevoel was een kortere, dikkere steel met bredere, gebruikte borstelharen geloofwaardiger geweest.
+
+### Antwoord (b)
+Ja, het logo-vervangingswerk is **consistent**. Hetzelfde icoon (EEF-banden + verticale STUDIO-letters) komt terug in de header, groot in de Over-sectie en klein in de footer. Het favicon-idee (bands) is een logische doorvertaling. De uitvoering is strak, de kleuren kloppen en het geeft de site een duidelijke, eigen identiteit.
+
+### Antwoord (c)
+Ja, de site komt **flitsend en modern** over. Het fotorealistische hout en de mosterdverfstreek in de hero geven een eigentijdse, gewaagde uitstraling. De combinatie met strakke vector-elementen (kleurengevel, dienstenkaarten) en de dynamische marquee zorgt voor een professioneel en actueel geheel. Het is geen oubollige schilderssite, maar een fris, modern merk.
+
+---
+
+**OORDEEL:** 8,5 â€” Een flitsende, moderne en sterk gebrande site met een eigenzinnig logo en een gedurfde hero; enige minpunt is dat de kwast meer als kunstenaars- dan als huisschildersgereedschap leest, waardoor het vakmanschap iets minder geloofwaardig wordt.

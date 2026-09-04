@@ -7,7 +7,15 @@
     "titel": "Studio EEF — Schilderwerken binnen en buiten",
     "afbeeldingen": [
       {
-        "src": "favicon.svg",
+        "src": "logo.svg",
+        "ok": true
+      },
+      {
+        "src": "verfstreek-mosterd.png",
+        "ok": true
+      },
+      {
+        "src": "kwast-ronde.png",
         "ok": true
       },
       {

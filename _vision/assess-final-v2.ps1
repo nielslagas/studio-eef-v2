@@ -67,25 +67,25 @@ function Get-Slices([string]$path, [int]$sliceH, [int]$overlap) {
 $kleuren = "Huisstijl: olijf #424631, mosterd #D6AF29, roze #F37C96, inkt #231F20, papier #FAF8F4. Nederlandse één-pager van schilderbedrijf Studio EEF."
 
 $p1 = @"
-Je bent vision-inspector en geeft het EINDOORDEEL over een volledig herontworpen website (desktop, volledige pagina in plakken van boven naar beneden, met kleine overlap). $kleuren
+Je bent vision-inspector en geeft het EINDOORDEEL over de website na de logo-B + AI-hero-inbouw (desktop, volledige pagina in plakken van boven naar beneden, met kleine overlap). $kleuren
 
-Het nieuwe concept heet 'Verse verf': donker inkt-canvas, en in de hero een houten plank waarop een kwast de kop heeft beschilderd (screenshot toont de geschilderde eindstand, met mosterd verfstreek, tape-detail rechtsonder op de plank en een verfdruppel). Daaronder, in volgorde: schuine mosterd marquee-band, trustbar met drie procesfeiten, diensten als verfstaal-kaarten met kleurband (mosterd/olijf/roze) en EEF-codes, drie werk-impressies (foto's), interactieve kleurengevel (strakke platte-dak-outline, grote vlakken, verfstaal-knoppen), genummerde werkwijze (vijf stappen, mosterd cirkels) op inkt, over-sectie met het nieuwe logo (balkenmotief + kwastveeg), contact-sectie op olijf met Bel/Mail/App-kaarten, footer op inkt.
+Belangrijke wijzigingen sinds de vorige meting: (1) het logo is nu Eefs originele tegel (EEF in mosterd/olijf/roze verfstalen-banden, verticale STUDIO-letters, olijf lichter gemaakt #6A7150) — in header (46px), groot in de Over-sectie, en als favicon-bands; (2) de hero-plank is nu een fotorealistische eiken macrofoto met een mosterd verfstreek mét kwasttextuur en een fotorealistische RONDE huisschilderskwast met mosterdresten die de kop 'beschildert'; (3) verder ongewijzigd: schuine mosterd marquee, trustbar, diensten-verfstaalkaarten, werk-impressies, interactieve kleurengevel, werkwijze, contact op olijf, footer.
 
-Bewust zo ontworpen (geen fouten): mosterd nergens als kleine tekstkleur op licht; placeholders (telefoonnummer, e-mail, KvK/BTW/adres, [plaats + regio]) dragen een mosterthalo + stippellijn — die horen er zo bij; de gevelwand start in mosterd.
+Bewust zo (geen fouten): mosterd nergens als kleine tekstkleur op licht; placeholders (telefoon, e-mail, app, KvK/BTW/adres, [plaats + regio]) dragen een mosterthalo + stippellijn — de contact-waardes horen die halo te hebben (check!); de verticale STUDIO-letters lezen van onder naar boven (Eefs eigen ontwerp); de verfstreek loopt over de volle plankbreedte (v2-concept).
 
-Beoordeel IN HET NEDERLANDS per sectie bij naam: hiërarchie, witruimte, contrast, huisstijl-gebruik en storende elementen. Geef daarna aan of de site als geheel 'flitsend en modern' overkomt (de opdracht) zonder onrustig te worden. Eindig met "OORDEEL:" gevolgd door een rapportcijfer (1-10) en een zinsnijd samenvatting.
+Beoordeel IN HET NEDERLANDS per sectie bij naam: hiërarchie, witruimte, contrast, huisstijl-gebruik en storende elementen. Beantwoord daarnaast expliciet: (a) leest de fotokwast als een geloofwaardige RONDE, gebruikte huisschilderskwast (vakmanschap) of als kunstenaarspenseel/nieuw?; (b) oogt het logo-vervangingswerk consistent (header/Over/favicon-idee)?; (c) komt de site als geheel nog steeds flitsend en modern over, nu met fotorealistisch materiaal? Eindig met "OORDEEL:" gevolgd door een rapportcijfer (1-10) en een zinsnijd samenvatting.
 "@
-Invoke-VisionAgent 'final-v2-desktop' $p1 (Get-Slices (Join-Path $root '_inspect-desktop.png') 1250 90)
+Invoke-VisionAgent 'final-routea-desktop' $p1 (Get-Slices (Join-Path $root '_inspect-desktop.png') 1250 90)
 
 $p2 = @"
-Je bent vision-inspector en geeft het EINDOORDEEL over een volledig herontworpen website (mobiel, 390px, volledige pagina in plakken van boven naar beneden, met kleine overlap). $kleuren
+Je bent vision-inspector en geeft het EINDOORDEEL over de website na de logo-B + AI-hero-inbouw (mobiel, 390px, volledige pagina in plakken van boven naar beneden, met kleine overlap). $kleuren
 
-Het nieuwe concept heet 'Verse verf' (zie desktop-beschrijving): inkt-canvas, hero met houten plank en geschilderde kop (mosterd streek + tape-detail is op mobiel bewust verborgen), schuine mosterd marquee, trustbar (onder elkaar), diensten-kaarten, werk-impressies, interactieve kleurengevel, werkwijze in vijf stappen, over-sectie met het nieuwe logo, contact op olijf, footer. Een vaste mobiele CTA-balk (Bel/Offerte) staat onderaan het scherm maar is op een full-page screenshot mogelijk niet zichtbaar — beoordeel die niet.
+Wijzigingen sinds de vorige meting: originele logo-tegel van Eef (header 46px, groot in Over, favicon-bands) en een fotorealistische hero (eiken plank-foto, mosterd verfstreek met kwasttextuur, fotorealistische ronde huisschilderskwast met mosterdresten). De vaste mobiele CTA-balk is op een full-page screenshot mogelijk niet zichtbaar — beoordeel die niet.
 
-Bewust zo ontworpen (geen fouten): mosterd nergens als kleine tekstkleur op licht; placeholders (telefoon, e-mail, KvK/adres, [plaats + regio]) dragen een mosterthalo + stippellijn; verfstalen staan in een 3x2 grid met naamlabels.
+Bewust zo (geen fouten): mosterd nergens als kleine tekstkleur op licht; placeholders dragen mosterthalo + stippellijn (de contact-waardes horen die te hebben — check!); verfstalen staan 3x2 met naamlabels; STUDIO-letters lezen van onder naar boven (eigen ontwerp).
 
-Beoordeel IN HET NEDERLANDS per sectie bij naam: mobiele leesbaarheid, hiërarchie, witruimte, contrast, huisstijl-gebruik en storende elementen (afgeknapte teksten, te krappe marges). Eindig met "OORDEEL:" gevolgd door een rapportcijfer (1-10) en een zinsnijd samenvatting.
+Beoordeel IN HET NEDERLANDS per sectie bij naam: mobiele leesbaarheid, hiërarchie, witruimte, contrast, huisstijl-gebruik en storende elementen (afgeknapte teksten, te krappe marges, kwast die te groot/klein op mobiel valt). Eindig met "OORDEEL:" gevolgd door een rapportcijfer (1-10) en een zinsnijd samenvatting.
 "@
-Invoke-VisionAgent 'final-v2-mobile' $p2 (Get-Slices (Join-Path $root '_inspect-mobile.png') 1100 80)
+Invoke-VisionAgent 'final-routea-mobile' $p2 (Get-Slices (Join-Path $root '_inspect-mobile.png') 1100 80)
 
 "KLAAR"

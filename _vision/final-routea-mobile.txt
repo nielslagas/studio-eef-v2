@@ -1,0 +1,53 @@
+**Header & Hero (mobiel, 390px)**
+*   **Mobiele leesbaarheid:** Uitstekend. De header-logo-tegel (46px) is haarscherp en goed leesbaar naast de menuknop.
+*   **HiÃ«rarchie:** Sterke hiÃ«rarchie. De grote hero-tekst trekt direct de aandacht, gevolgd door de introductietekst en twee duidelijke CTA's.
+*   **Witruimte:** Ruim voldoende. De elementen staan niet te krap op elkaar.
+*   **Contrast:** Grotendeels prima. Donkere tekst op de houten plank en witte tekst op de donkere achtergrond zijn goed leesbaar. **Kritiekpunt:** Het woord "laag verf" is wit op de mosterdstreek, wat technisch gezien een laag contrast heeft (wit op mosterd). Door de grote omvang en de schilderachtige texturen is dit echter een bewuste, geslaagde stijlkeuze en geen fout.
+*   **Huisstijl-gebruik:** Uitstekend. Inkt, mosterd en papier komen perfect naar voren.
+*   **Storende elementen:** De fotorealistische kwast oogt indrukwekkend en valt precies goed qua formaat op 390px; hij overstemt de tekst niet. De bewegende ticker is aan de rand afgekapt, wat normaal is voor dit soort effecten.
+
+**USP's & Diensten**
+*   **Mobiele leesbaarheid:** Zeer goed. De kaarten met mosterd-, olijf- en roze koppen zijn duidelijk en de tekst is goed leesbaar.
+*   **HiÃ«rarchie:** Heldere opbouw via sectielabel (DIENSTEN), tussenkop (Wat we voor je schilderen) en drie visuele kaarten.
+*   **Witruimte:** De kaarten hebben prettige marges en interne padding.
+*   **Contrast:** Uitstekend. Donkere tekst op lichte kaarten, met witte "EEF-01" pillen op de gekleurde koppen.
+*   **Huisstijl-gebruik:** De kleurenpalet wordt perfect toegepast. De witte stip in de hoek is een subtiel en stijlvol detail.
+*   **Storende elementen:** Geen. Niets is afgeknapt of te krap.
+
+**Impressies**
+*   **Mobiele leesbaarheid:** Uitstekend. "IMPRESSIE"-pillen en de bijbehorende beschrijvingen zijn helder en rustig.
+*   **HiÃ«rarchie:** Logische opvolging van beelden met tekstblokken.
+*   **Witruimte:** De beelden staan met voldoende ademruimte onder elkaar.
+*   **Contrast:** Goed. De tekst op de witte kaarten is donker en hoog contrast.
+*   **Huisstijl-gebruik:** De foto's passen inhoudelijk perfect bij de kleuren en het merk.
+*   **Storende elementen:** De verfroller op de gele muur is goed bijgesneden en oogt mooi op mobiel.
+
+**Kleuren**
+*   **Mobiele leesbaarheid:** Uitstekend. De subtitel en het interactieve gevelstaal zijn duidelijk geformuleerd.
+*   **HiÃ«rarchie:** Perfect. Van uitleg naar de interactieve kaart, naar de 3x2 verfstalen.
+*   **Witruimte:** Ruim en overzichtelijk.
+*   **Contrast:** **Volledig voldaan aan de eisen.** Mosterd is nergens als kleine tekstkleur op licht gebruikt (het label "Mosterd" onder het staal is donker en goed leesbaar). De stalen zijn netjes in 3x2 met naamlabels.
+*   **Huisstijl-gebruik:** De gevelillustratie en de kleurstalen sluiten perfect aan bij het palet.
+*   **Storende elementen:** Geen.
+
+**Werkwijze**
+*   **Mobiele leesbaarheid:** Uitstekend op de donkergekleurde achtergrond. Witte en mosterdgele tekst springen eruit.
+*   **HiÃ«rarchie:** Duidelijk via genummerde mosterd-cirkels met bijbehorende titels.
+*   **Witruimte:** Goede afstand tussen de stappen.
+*   **Contrast:** Sterk contrast. Witte tekst op inkt, en mosterd op inkt zijn beide zeer goed leesbaar.
+*   **Huisstijl-gebruik:** Voelt warm en professioneel dankzij de gekozen kleuren.
+*   **Storende elementen:** De stap "Opleveren" (nummer 5) is netjes over de plakken heen doorgetrokken zonder problemen.
+
+**Over EEF & Contact**
+*   **Mobiele leesbaarheid:** Uitstekend. De grote logo-tegel is prachtig weergegeven. De "STUDIO"-letters lezen correct van onder naar boven. De contactblokken zijn helder.
+*   **HiÃ«rarchie:** Sterke visuele ankerpunten (groot logo, daarna Over-tekst, gevolgd door donker contactblok).
+*   **Witruimte:** Uitstekend. De footer en het contactblok ademen.
+*   **Contrast:** Uitstekend. Witte tekst op olijfgroen is prettig leesbaar. De mosterdgele kleine labels (BEL, MAIL, APP) hebben voldoende contrast op de donkere achtergrond.
+*   **Huisstijl-gebruik:** **Uitstekend.** De placeholders (telefoonnummer, e-mail, "Stuur een appje", KvK, adres) dragen exact de gevraagde mosterthalo met stippellijn. Dit is een geslaagd en stijlvol ontwerpdetail.
+*   **Storende elementen:** Geen. Er zijn geen afgeknapte teksten of te krappe marges. De vaste mobiele CTA-balk is buiten beschouwing gelaten, zoals gevraagd.
+
+---
+
+**OORDEEL:** 9
+
+Een sterk vormgegeven, huisstijlvaste een-pager die de nieuwe AI-hero en het originele logo naadloos integreert, met slechts een theoretisch contrastpuntje op het witte tekstgedeelte in de hero, dat echter volledig gedekt wordt door de bewuste artistieke keuze.
