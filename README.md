@@ -122,8 +122,8 @@ kritieke onderdelen. Logo: olijf #6A7150 op inkt ≈ 3,18:1, puur decoratief.
   eerst ook in de footer en is daar vervangen omdat hij niet leest als
   hetzelfde logo (eigenaar, sept. 2026).
   "Studio Eef" staat in Archivo ernaast. Over-sectie: de grote plek
-  (±440px) toont dezelfde tegel; de "onze vier kleuren"-strook eronder
-  blijft staan.
+  (±440px) toont dezelfde tegel. De "onze vier kleuren"-strook onder
+  het logo is in sept. 2026 op verzoek van de eigenaar verwijderd.
 - `assets/favicon.svg`: vereenvoudigde bands-variant van de B-tegel
   (v1-bouw als referentie): alleen de kleurbanden op posities uit de
   tegel — mosterd/roze per rij, olijf-accenten (#6A7150) en rechts de
