@@ -770,153 +770,6 @@ html.js-reveal .steps > :nth-child(5) { transition-delay: 240ms; }
   white-space: nowrap;
 }
 
-/* ---------- kleuren: interactieve gevel ---------- */
-
-.kleuren-sub {
-  font-size: 1.1rem;
-  margin: -26px 0 30px;
-  color: var(--zacht);
-}
-
-.facade-card {
-  background: var(--papier);
-  border: 1px solid var(--lijn);
-  border-radius: 20px;
-  overflow: hidden;
-  box-shadow: 0 22px 44px -32px rgba(35, 31, 32, 0.45);
-}
-
-.facade-band {
-  --band: var(--mosterd);
-  background: var(--band);
-  min-height: 84px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 3px;
-  padding: 14px 22px 14px 42px;
-  position: relative;
-  color: var(--inkt);
-  transition: background-color 450ms var(--ease-out), color 450ms var(--ease-out);
-}
-.facade-band::before {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 15px;
-  transform: translateY(-50%);
-  width: 14px;
-  height: 14px;
-  border-radius: 50%;
-  background: var(--papier);
-  border: 1.5px solid rgba(35, 31, 32, 0.35);
-  box-shadow: inset 0 2px 2px rgba(35, 31, 32, 0.3);
-}
-.facade-band--donker { color: var(--papier); }
-
-.facade-band-label {
-  font-family: var(--font-mono);
-  font-size: 0.68rem;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  opacity: 0.82;
-}
-
-.facade-naam {
-  font-family: var(--font-display);
-  font-stretch: 112%;
-  font-weight: 700;
-  font-size: clamp(1.25rem, 2vw, 1.5rem);
-  line-height: 1.08;
-  letter-spacing: -0.01em;
-}
-
-.facade-body { padding: 16px 18px 20px; }
-.facade-wrap { display: flex; justify-content: center; }
-
-.facade { width: 100%; max-width: 560px; height: auto; display: block; }
-
-/* strakke gevel-outline: lijnwerk inkt op papier; wand, kozijnen en
-   deur schilderen alle mee met --staal (kozijn/deur donkerder via
-   tint-overlay), fill-transition ±450ms als state indication */
-.g-dak { fill: var(--inkt); }
-.g-dakschaduw { fill: rgba(35, 31, 32, 0.16); }
-
-.wand,
-.kozijn-vlak,
-.deur-vlak {
-  fill: var(--staal, var(--mosterd));
-  stroke: var(--inkt);
-  stroke-width: 3;
-  transition: fill 450ms var(--ease-out);
-}
-
-.kozijn-tint { fill: rgba(35, 31, 32, 0.22); pointer-events: none; }
-.deur-tint { fill: rgba(35, 31, 32, 0.34); pointer-events: none; }
-
-.ruit { fill: var(--kalkwit); stroke: rgba(35, 31, 32, 0.4); stroke-width: 2; }
-.ruit-stijl { fill: none; stroke: rgba(35, 31, 32, 0.4); stroke-width: 2; }
-.dorpel { fill: var(--papier); stroke: var(--inkt); stroke-width: 2; }
-
-.bovenlicht { fill: var(--kalkwit); stroke: var(--inkt); stroke-width: 3; }
-.deur-paneel { fill: none; stroke: var(--kalkwit); stroke-width: 3; }
-.knop { fill: var(--kalkwit); }
-
-.stoep { fill: var(--papier); stroke: var(--inkt); stroke-width: 3; }
-.stoep-voeg { fill: none; stroke: rgba(35, 31, 32, 0.25); stroke-width: 2; }
-
-.swatches {
-  display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  gap: 10px;
-  margin-top: 12px;
-}
-
-.swatch {
-  --sw: var(--mosterd);
-  appearance: none;
-  background: none;
-  border: none;
-  padding: 0;
-  margin: 0;
-  cursor: pointer;
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
-  gap: 6px;
-  min-width: 0;
-}
-
-.swatch-vlak {
-  display: block;
-  width: 100%;
-  height: 36px;
-  border-radius: 10px;
-  background: var(--sw);
-  border: 2px solid rgba(35, 31, 32, 0.25);
-  transition: transform 140ms var(--ease-out), border-color 140ms var(--ease-out), box-shadow 140ms var(--ease-out);
-}
-.swatch[aria-pressed="true"] .swatch-vlak {
-  border-color: var(--inkt);
-  box-shadow: 0 0 0 3px var(--papier), 0 0 0 5px var(--inkt);
-}
-
-.swatch-tag {
-  font-family: var(--font-mono);
-  font-size: 0.66rem;
-  line-height: 1.25;
-  color: var(--zacht);
-  text-align: center;
-  transition: color 140ms var(--ease-out);
-}
-.swatch[aria-pressed="true"] .swatch-tag { color: var(--inkt); font-weight: 500; }
-
-.facade-note {
-  font-size: 0.9rem;
-  color: var(--zacht);
-  margin: 14px 0 0;
-}
-
 /* ---------- werkwijze (inkt, genummerd) ---------- */
 
 .steps {
@@ -1146,7 +999,6 @@ html.js-reveal .steps > :nth-child(5) { transition-delay: 240ms; }
     box-shadow: 0 22px 44px -30px rgba(35, 31, 32, 0.4);
   }
 
-  .swatch:hover .swatch-vlak { transform: translateY(-2px); }
 
   .contact-card:hover {
     background: rgba(250, 248, 244, 0.16);
@@ -1210,13 +1062,6 @@ html.js-reveal .steps > :nth-child(5) { transition-delay: 240ms; }
 
   .steps { grid-template-columns: 1fr; }
 
-  /* zes stalen: 3×2 met leesbare namen (v1-patroon) */
-  .swatches { grid-template-columns: repeat(3, 1fr); gap: 14px 12px; }
-  .swatch-vlak { height: 40px; }
-
-  .facade-band { min-height: 68px; padding: 12px 16px 12px 38px; }
-  .facade-naam { font-size: 1.15rem; }
-
   .footer-inner { flex-direction: column; }
 
   /* trustbar onder elkaar: drie korte beweringen, geen kolommengeknijp */
@@ -1252,12 +1097,6 @@ html.js-reveal .steps > :nth-child(5) { transition-delay: 240ms; }
   .btn,
   .chip,
   .werk-card,
-  .swatch-vlak,
-  .swatch-tag,
-  .facade-band,
-  .wand,
-  .kozijn-vlak,
-  .deur-vlak,
   .contact-card,
   .menu-bars span { transition: none; }
 

@@ -8,13 +8,14 @@ Ontwerpbrief: `ONTWERP-V2.md`. Versie 1 (archief): `../site-v1/`.
 
 ```
 index.html          één-pager: header, hero+kwast, marquee, trustbar,
-                    diensten, werk, kleuren (interactieve gevel),
-                    werkwijze, over, contact, footer, mobiele CTA-balk
+                    diensten, werk, werkwijze, over, contact, footer,
+                    mobiele CTA-balk
+                    (nav: Diensten · Werk · Werkwijze · Over EEF · Contact)
 css/style.css       tokens, basis, header, hero-signature, trustbar,
                     secties, scroll-reveals, mobiele CTA
 js/main.js          kwast-signature (offset-path + rAF-fallback),
-                    header-scrollstate, gevel-verfstalen (--staal),
-                    scroll-reveals (IO one-shot), mobiele CTA-IO
+                    header-scrollstate, scroll-reveals (IO one-shot),
+                    mobiele CTA-IO
 assets/logo.svg     B-tegel: Eefs eigen logotegel (uit logo-keuze/ gekopieerd)
 assets/favicon.svg  bands-variant van de B-tegel (16px-leesbaar)
 assets/img/         hero-materiaal (AI: hero-hout.jpg, verfstreek-mosterd.png,
@@ -89,14 +90,13 @@ kritieke onderdelen. Logo: olijf #6A7150 op inkt ≈ 3,18:1, puur decoratief.
 - Mobiele CTA-balk (≤640px): "Bel" (tel:-TODO-link) + "Offerte"
   (#contact); verdwijnt via IO zodra #contact in beeld is, safe-area
   bewust; reduced motion: zelfde gedrag zonder transitie.
-- Kleuren-gevel: strakke outline (grote vlakken); één `--staal` op de
-  kaart herschildert wand, kozijnen en deur (±450ms fill); kozijn/deur
-  donkerder via tint-overlay; kleurnaam via `aria-live` (v1-patroon).
 - Micro: buttons `scale(0.97)` op `:active` (160ms), nav-onderstreep
   als `scaleX`-kwastveeg (200ms), kaart-lift ≤ 4px. Hover-motion
   alléén binnen `@media (hover: hover) and (pointer: fine)`.
-- Geanimeerd wordt uitsluitend `transform` / `opacity` / `clip-path`
-  (plus kleur/fill voor statustoestanden zoals de gevel, 450ms).
+- Geanimeerd wordt uitsluitend `transform` / `opacity` / `clip-path`.
+
+> De interactieve Kleuren-gevel (v2) is in sept. 2026 in opdracht van de
+> eigenaar volledig van de site verwijderd (sectie, navlinks, JS en CSS).
 
 ## Logo (B-keuze, eigen tegel van Eef)
 
