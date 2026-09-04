@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Studio Eef">
+  <!--
+    Studio EEF — favicon v3: kleurbanden van Eefs eigen B-tegel
+    (logo-keuze/logo-opgeschoond.svg), verkleind naar 16px-leesbaarheid.
+    De verticale "STUDIO"-letters en de taps-toelopende randjes vallen
+    weg (ruis op klein formaat); de band-posities komen 1-op-1 uit de
+    tegel: mosterd/roze stalen per rij, olijf #6A7150 als accent, en
+    rechts de lange olijfstam die in de tegel de F vormt.
+    Inkt-tegel achter (zoals de tegel zelf), v1-bands-bouw als referentie.
+  -->
+  <rect width="64" height="64" rx="13" fill="#231F20"/>
+  <!-- kolom 1 -->
+  <rect x="9.3" y="10.8" width="13.5" height="5" rx="2" fill="#D6AF29"/>
+  <rect x="9.3" y="18.1" width="11.3" height="5" rx="2" fill="#6A7150"/>
+  <rect x="9.3" y="25.3" width="13.5" height="5" rx="2" fill="#F37C96"/>
+  <!-- kolom 2 -->
+  <rect x="25.7" y="10.8" width="13.5" height="5" rx="2" fill="#D6AF29"/>
+  <rect x="25.7" y="18.1" width="11.3" height="5" rx="2" fill="#6A7150"/>
+  <rect x="25.7" y="25.3" width="13.5" height="5" rx="2" fill="#F37C96"/>
+  <!-- kolom 3: mosterd + de lange olijfstam -->
+  <rect x="41.8" y="10.8" width="13.5" height="5" rx="2" fill="#D6AF29"/>
+  <rect x="41.8" y="18.1" width="13.5" height="17.4" rx="2" fill="#6A7150"/>
+</svg>
