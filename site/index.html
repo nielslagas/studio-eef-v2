@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="nl">
 <head>
 <meta charset="UTF-8">
@@ -50,7 +50,6 @@
     <nav class="nav" aria-label="Hoofdmenu">
       <a href="#diensten">Diensten</a>
       <a href="#werk">Werk</a>
-      <a href="#kleuren">Kleuren</a>
       <a href="#werkwijze">Werkwijze</a>
       <a href="#over">Over EEF</a>
       <a href="#contact">Contact</a>
@@ -60,7 +59,6 @@
       <nav class="menu-nav" aria-label="Mobiel menu">
         <a href="#diensten">Diensten</a>
         <a href="#werk">Werk</a>
-        <a href="#kleuren">Kleuren</a>
         <a href="#werkwijze">Werkwijze</a>
         <a href="#over">Over EEF</a>
         <a href="#contact">Contact</a>
@@ -211,66 +209,6 @@
             Detail &middot; tweede laag in mosterd
           </figcaption>
         </figure>
-      </div>
-    </div>
-  </section>
-
-  <!-- KLEUREN: interactieve gevel -->
-  <section class="section" id="kleuren">
-    <div class="container">
-      <p class="eyebrow">Kleuren</p>
-      <h2 class="section-title">Zie je kleur op de gevel</h2>
-      <p class="kleuren-sub">Tik op een staal en zie de gevel meekleuren.</p>
-
-      <div class="facade-card" data-reveal>
-        <!-- De kaart ís een verfstaal: kopband in de actieve kleur met
-             ringgat en geleide naam. data-contrast stuurt de tekstkleur
-             van de band (lichte stalen -> inkt, donkere -> papier). -->
-        <div class="facade-band" style="--band:#D6AF29">
-          <span class="facade-band-label">GEVELSTAAL</span>
-          <span class="facade-naam" aria-live="polite">Mosterd</span>
-        </div>
-        <div class="facade-body">
-          <div class="facade-wrap">
-            <svg class="facade" viewBox="0 0 640 480" role="img" aria-label="Strakke gevel die meekleurt met de gekozen verfstaal">
-              <!-- plat dak met overstek -->
-              <rect class="g-dak" x="44" y="44" width="552" height="28" rx="8"/>
-              <!-- wand: het grootste vlak, herschildert mee via --staal -->
-              <rect class="wand" x="70" y="72" width="500" height="336"/>
-              <rect class="g-dakschaduw" x="70" y="72" width="500" height="12"/>
-              <!-- raam links: kozijn schildert mee (donkerder tint via overlay) -->
-              <rect class="kozijn-vlak" x="110" y="120" width="140" height="216" rx="4"/>
-              <rect class="kozijn-tint" x="110" y="120" width="140" height="216" rx="4"/>
-              <rect class="ruit" x="126" y="136" width="108" height="184"/>
-              <path class="ruit-stijl" d="M180 136 V320"/>
-              <rect class="dorpel" x="100" y="336" width="160" height="10" rx="3"/>
-              <!-- raam rechts -->
-              <rect class="kozijn-vlak" x="290" y="120" width="140" height="216" rx="4"/>
-              <rect class="kozijn-tint" x="290" y="120" width="140" height="216" rx="4"/>
-              <rect class="ruit" x="306" y="136" width="108" height="184"/>
-              <path class="ruit-stijl" d="M360 136 V320"/>
-              <rect class="dorpel" x="280" y="336" width="160" height="10" rx="3"/>
-              <!-- deurpartij: bovenlicht + deur met paneel en knop -->
-              <rect class="bovenlicht" x="470" y="104" width="100" height="26" rx="3"/>
-              <rect class="deur-vlak" x="470" y="146" width="100" height="262" rx="4"/>
-              <rect class="deur-tint" x="470" y="146" width="100" height="262" rx="4"/>
-              <rect class="deur-paneel" x="482" y="158" width="76" height="238" rx="3"/>
-              <circle class="knop" cx="553" cy="282" r="6"/>
-              <!-- stoep verankert de gevel onderaan -->
-              <rect class="stoep" x="44" y="408" width="552" height="28" rx="4"/>
-              <path class="stoep-voeg" d="M210 408 v28 M430 408 v28"/>
-            </svg>
-          </div>
-          <div class="swatches" role="group" aria-label="Kies een kleur voor de gevel">
-            <button class="swatch" data-color="#F1EDE4" data-contrast="licht" style="--sw:#F1EDE4" aria-pressed="false" aria-label="Kalkwit"><span class="swatch-vlak"></span><span class="swatch-tag">Kalkwit</span></button>
-            <button class="swatch" data-color="#D6AF29" data-contrast="licht" style="--sw:#D6AF29" aria-pressed="false" aria-label="Mosterd"><span class="swatch-vlak"></span><span class="swatch-tag">Mosterd</span></button>
-            <button class="swatch" data-color="#424631" data-contrast="donker" style="--sw:#424631" aria-pressed="false" aria-label="Olijf"><span class="swatch-vlak"></span><span class="swatch-tag">Olijf</span></button>
-            <button class="swatch" data-color="#3E5C76" data-contrast="donker" style="--sw:#3E5C76" aria-pressed="false" aria-label="Houtblauw"><span class="swatch-vlak"></span><span class="swatch-tag">Houtblauw</span></button>
-            <button class="swatch" data-color="#F37C96" data-contrast="licht" style="--sw:#F37C96" aria-pressed="false" aria-label="Prima-roze"><span class="swatch-vlak"></span><span class="swatch-tag">Prima-roze</span></button>
-            <button class="swatch" data-color="#231F20" data-contrast="donker" style="--sw:#231F20" aria-pressed="false" aria-label="Antraciet"><span class="swatch-vlak"></span><span class="swatch-tag">Antraciet</span></button>
-          </div>
-          <p class="facade-note">Twijfel je over de kleur? Bij de kennismaking nemen we de verfstalen mee.</p>
-        </div>
       </div>
     </div>
   </section>

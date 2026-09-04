@@ -105,16 +105,11 @@ async function main() {
     expression: `(() => {
       const imgs = [...document.images].map(i => ({ src: i.src.split('/').pop(), ok: i.complete && i.naturalWidth > 0 }));
       const links = [...document.querySelectorAll('a[href]')].length;
-      const swatches = document.querySelectorAll('.swatch').length;
-      const active = document.querySelector('.swatch[aria-pressed="true"]');
-      const wand = document.querySelector('.wand');
       return {
         titel: document.title,
         afbeeldingen: imgs,
         afbeeldingenKaput: imgs.filter(i => !i.ok),
-        links, swatches,
-        actieveSwatch: active ? active.textContent.trim() : null,
-        wandKleur: wand ? wand.style.fill || wand.getAttribute('fill') || 'default' : null,
+        links,
         bodyKinderen: document.body.children.length
       };
     })()`,

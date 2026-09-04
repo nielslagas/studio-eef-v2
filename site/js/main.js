@@ -8,7 +8,6 @@
       - mode "js": fallback met getPointAtLength + rAF, zelfde
         easing-curve in JS, kwast én wipe uit één progress-waarde.
       - geen data-hero (reduced motion / geen JS): eindstand, niets doen.
-   3. Kleuren: verfstalen herschilderen de gevel (aria-live naam).
    ============================================================ */
 (function () {
   'use strict';
@@ -137,39 +136,7 @@
     }, { passive: true });
   }
 
-  /* ---------- 3. kleuren: gevel herschilderen ---------- */
-
-  function gevelStalen() {
-    var kaart = document.querySelector('.facade-card');
-    var wand = document.querySelector('.wand'); // inline fill: leesbaar voor de testtooling
-    var band = document.querySelector('.facade-band');
-    var naam = document.querySelector('.facade-naam');
-    var stalen = Array.prototype.slice.call(document.querySelectorAll('.swatch'));
-    if (!stalen.length || !kaart) return;
-
-    function kies(btn) {
-      stalen.forEach(function (s) {
-        s.setAttribute('aria-pressed', String(s === btn));
-      });
-      // één --staal stuurt wand, kozijnen én deur (CSS regelt de tinten)
-      kaart.style.setProperty('--staal', btn.getAttribute('data-color'));
-      if (wand) { wand.style.fill = btn.getAttribute('data-color'); }
-      if (band) {
-        band.style.setProperty('--band', btn.getAttribute('data-color'));
-        band.classList.toggle('facade-band--donker', btn.getAttribute('data-contrast') === 'donker');
-      }
-      if (naam) { naam.textContent = btn.getAttribute('aria-label'); }
-    }
-
-    stalen.forEach(function (btn) {
-      btn.addEventListener('click', function () { kies(btn); });
-    });
-
-    // startmosterd: de laag die er nu in zit
-    if (stalen[1]) { kies(stalen[1]); }
-  }
-
-  /* ---------- 4. scroll-reveals: één keer, dan unobserve ----------
+  /* ---------- 3. scroll-reveals: één keer, dan unobserve ----------
      Initial hidden staat alléén onder html.js-reveal (gezet in de
      <head>, weggehaald bij falen) → zonder JS is alles zichtbaar. */
 
@@ -206,7 +173,7 @@
     }, { passive: true });
   }
 
-  /* ---------- 5. mobiele CTA-balk ----------
+  /* ---------- 4. mobiele CTA-balk ----------
      Verdwijnt zodra #contact in beeld komt; reduced motion toont
      de balk simpel (CSS zet de transitie uit). */
 
@@ -232,10 +199,6 @@
     if (titel) { titel.style.clipPath = 'inset(0 0 0 0)'; }
     if (kwast) { kwast.style.opacity = '0'; }
   }
-
-  try {
-    gevelStalen();
-  } catch (e) { /* stalen blijven gewoon klikbaar-kleurloos: gevel toont mosterd */ }
 
   try {
     scrollReveals();
