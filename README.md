@@ -1,4 +1,4 @@
-﻿# Studio EEF — site v2 "Verse verf"
+# Studio EEF — site v2 "Verse verf"
 
 Statische één-pager (Nederlands, geen build-stap, geen libraries).
 Open `index.html` in een browser; verder is er niets nodig.
@@ -15,9 +15,11 @@ css/style.css       tokens, basis, header, hero-signature, trustbar,
 js/main.js          kwast-signature (offset-path + rAF-fallback),
                     header-scrollstate, gevel-verfstalen (--staal),
                     scroll-reveals (IO one-shot), mobiele CTA-IO
-assets/logo.svg     nieuwe wordmark: balkenmotief + kwastveeg + druppel
-assets/favicon.svg  kwastveeg-E op inkt-tegel
-assets/img/         AI-impressies (werk-*.jpg) — echte foto's volgen
+assets/logo.svg     B-tegel: Eefs eigen logotegel (uit logo-keuze/ gekopieerd)
+assets/favicon.svg  bands-variant van de B-tegel (16px-leesbaar)
+assets/img/         hero-materiaal (AI: hero-hout.jpg, verfstreek-mosterd.png,
+                    kwast-ronde.png) + werk-*.jpg AI-impressies — echte
+                    projectfoto's volgen (werk-*.jpg niet vervangen)
 ```
 
 ## Huisstijl (tokens in `:root`)
@@ -35,8 +37,10 @@ assets/img/         AI-impressies (werk-*.jpg) — echte foto's volgen
 | `--hout` | `#B08A5E` | materiaal: hero-plank (inkt erop: 5,2:1, AA groot) |
 
 Contrastuitgangspunten: inkt op mosterd 7,8:1; papier op inkt 15,4:1;
-inkt op hout 5,2:1 (donkerste rand 4,4:1; alleen grote displaytekst); nooit goud/mosterd als
-kleine tekstkleur op licht, nooit olijf-op-inkt voor kritieke onderdelen.
+hero-kop (inkt) staat op het foto-hout onder de inkt-gradient-overlay —
+de overlay garandeert het contrast (donkerste banden boven/onder); nooit
+goud/mosterd als kleine tekstkleur op licht, nooit olijf-op-inkt voor
+kritieke onderdelen. Logo: olijf #6A7150 op inkt ≈ 3,18:1, puur decoratief.
 
 ## Typografie
 
@@ -50,14 +54,27 @@ kleine tekstkleur op licht, nooit olijf-op-inkt voor kritieke onderdelen.
 
 - Easing-tokens: `--ease-out: cubic-bezier(0.23, 1, 0.32, 1)` en
   `--ease-in-out: cubic-bezier(0.77, 0, 0.175, 1)`.
-- Hero-signature: kwast over de houten plank, ±2,2s, één keer bij load.
-  Mosterd streek + kop worden onthuld door één clip-wipe, synchroon met
-  de kwast; daarna eenmalig natte-glans-sheen en druppel. Rechts op de
-  plank een statisch afplaktape-detail ("zorgvuldig afgeplakt", vanaf
-  ≤900px verborgen). CSS `offset-path` met JS-fallback
-  (`getPointAtLength` + rAF, zelfde curve). Zonder JS of bij
-  `prefers-reduced-motion`: direct de geschilderde eindstand
-  (initial-hidden states alléén actief onder `data-hero`).
+- Hero-signature (materiaal nu fotorealistisch, motion-concept ongewijzigd):
+  kwast over de houten plank, ±2,2s, één keer bij load. Het plank-oppervlak
+  is `img/hero-hout.jpg` (AI-macro, 1664×600, cover) met een donkere
+  inkt-gradient-overlay voor tekstcontrast en
+  `filter: saturate(.9) brightness(.95)`. De mosterd streek is
+  `img/verfstreek-mosterd.png` (transparante rembg-cut-out, over de volle
+  breedte, `object-fit: cover; object-position: 50% 52%`) boven op een
+  mosterd-basislak die de droge uitlopende rand aanvult; de streek loopt
+  — zoals in het v2-concept — over de volle plankbreedte achter de
+  middelste titelregel, met rechts de organische dry-brush-uitloop mét
+  druiper en links het strakke begin aan de plankrand); de kwast is de
+  fotorealistische ronde kwast met mosterdresten
+  (`img/kwast-ronde.png`, cut-out; bron 1664×928, getoond op
+  `clamp(88px, 11vw, 140px)` breed — width/height-attributen 140×78,
+  vrijwel dezelfde ratio — met de haarpunt linksonder als offset-anchor
+  die het pad volgt). Kop + streek worden onthuld door één clip-wipe, synchroon
+  met de kwast; daarna eenmalig natte-glans-sheen en druppel. De statische
+  afplaktape blijft het foto-hout sluiten (leest ook op echt hout); de
+  getekende druppel blijft hangen als accent. CSS `offset-path` met
+  JS-fallback (`getPointAtLength` + rAF, zelfde curve). Zonder JS of
+  bij `prefers-reduced-motion`: direct de geschilderde eindstand.
 - Marquee: mosterd band, schuin −1,5°, `linear`, pauzeert op hover,
   statisch bij reduced motion.
 - Trustbar direct onder de marquee: drie procesfeiten uit de eigen
@@ -81,16 +98,24 @@ kleine tekstkleur op licht, nooit olijf-op-inkt voor kritieke onderdelen.
 - Geanimeerd wordt uitsluitend `transform` / `opacity` / `clip-path`
   (plus kleur/fill voor statustoestanden zoals de gevel, 450ms).
 
-## Logo v2
+## Logo (B-keuze, eigen tegel van Eef)
 
-- `assets/logo.svg`: het balkenmotief (mosterd/olijf/roze verfstalen die
-  EEF vormen) behouden, met één vloeiende mosterd kwastveeg door het
-  teken en één roze druppel; F-stam nu kalkwit i.p.v. olijf (contrast).
-  Wordmark "Studio Eef" breed/zwaar als zelfstandige vectoren — het
-  bestand mag dus nergens een font verwachten (werkt ook als `<img>`).
-  In de site zelf staat de naam in echt Archivo (header/footer-tekst).
-- `assets/favicon.svg`: kwastveeg-E op inkt-tegel (geen olijf, geen
-  filters — te klein voor bristle-ruis).
+- `assets/logo.svg`: Eefs eigen tegel (keuze B uit `logo-keuze/`), 1-op-1
+  gekopieerd uit `logo-keuze/logo-opgeschoond.svg`: inkt-tegel met
+  mosterd/roze/olijf verfstalen en de verticale "STUDIO"-letters in wit.
+  Enige ingreep in het origineel was de olijf-contrastfix **#6A7150**
+  (olijf-op-inkt ≈ 3,18:1 — puur decoratief, geen tekst/informatie in
+  die kleur, dus geen contrast-eis). De kwastveeg-wordmark van v2 is
+  hiermee uit de site verdwenen (de kwast leeft voort in de hero).
+- Header: de tegel op 46px met een dunne papieren rand
+  (`box-shadow`-ring, zelfde patroon als de footer-tegel) + "Studio Eef"
+  in Archivo ernaast. Over-sectie: de grote plek (±440px) toont dezelfde
+  tegel; de "onze vier kleuren"-strook eronder blijft staan.
+- `assets/favicon.svg`: vereenvoudigde bands-variant van de B-tegel
+  (v1-bouw als referentie): alleen de kleurbanden op posities uit de
+  tegel — mosterd/roze per rij, olijf-accenten (#6A7150) en rechts de
+  lange olijfstam. De STUDIO-letters en taps-toelopende randjes vallen
+  weg: onleesbaar/ruis op 16px.
 
 ## TODO's voor de eigenaar
 
@@ -98,3 +123,9 @@ Zoek op `class="todo"`, `data-todo` of `TODO` in `index.html`:
 telefoonnummer (header + contact + JSON-LD), e-mail, WhatsApp-link,
 KvK/BTW/adres in de footer, `[plaats + regio]` bij Over, en de
 placeholdergegevens in de JSON-LD in de `<head>`.
+
+TODO-telconventie: **elementen** met `class="todo"` of `data-todo`
+tellen — 7 class-elementen ([plaats+regio], tel, mail, app, KvK, BTW,
+adres) + 5 data-todo-elementen. Commentaar-regels met de letterlijke
+tekst `class="todo"` matchen mee in naive greps en horen níet tot de
+elementtelling.

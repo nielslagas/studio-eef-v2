@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="nl">
 <head>
 <meta charset="UTF-8">
@@ -44,7 +44,7 @@
 <header class="header">
   <div class="container header-inner">
     <a class="brand" href="#" aria-label="Studio Eef — home">
-      <img class="brand-mark" src="assets/favicon.svg" alt="" width="44" height="44">
+      <img class="brand-mark" src="assets/logo.svg" alt="" width="46" height="46">
       <span class="brand-name">Studio Eef</span>
     </a>
     <nav class="nav" aria-label="Hoofdmenu">
@@ -89,19 +89,16 @@
         <h1 class="hero-title">
           <span class="titel-regel">Een frisse</span>
           <span class="titel-regel titel-plank">
-            <span class="verfstreek" aria-hidden="true"><span class="glans"></span><svg class="druppel" viewBox="0 0 40 64" aria-hidden="true"><path d="M14 0 h12 v26 c0 2 6 8 6 16 a12 12 0 1 1 -24 0 c0 -8 6 -14 6 -16 Z"/></svg></span>
+            <span class="verfstreek" aria-hidden="true"><img class="verfstreek-img" src="assets/img/verfstreek-mosterd.png" alt="" width="1664" height="928" decoding="async"><span class="glans"></span><svg class="druppel" viewBox="0 0 40 64" aria-hidden="true"><path d="M14 0 h12 v26 c0 2 6 8 6 16 a12 12 0 1 1 -24 0 c0 -8 6 -14 6 -16 Z"/></svg></span>
             <span class="plank-tekst">laag verf</span>
           </span>
           <span class="titel-regel">voor je huis.</span>
         </h1>
 
-        <!-- de getekende kwast: steel + ferrule + mosterd haar -->
-        <svg class="kwast" viewBox="0 0 120 200" aria-hidden="true" focusable="false">
-          <path class="kwast-steel" d="M 78 16 C 86 30, 90 44, 86 58"/>
-          <path class="kwast-ferrule" d="M 83 54 C 87 62, 89 70, 88 78"/>
-          <path class="kwast-haar" d="M 86 76 C 92 92, 88 106, 78 122 C 70 135, 62 144, 56 150 C 66 148, 78 140, 86 128 C 94 116, 96 96, 90 78 Z"/>
-          <path class="kwast-haren" d="M 84 88 C 86 100, 84 112, 78 124 M 76 96 C 77 106, 75 116, 70 126 M 66 106 C 66 114, 63 122, 59 129"/>
-        </svg>
+        <!-- de kwast: fotorealistische ronde kwast met mosterdresten
+             (transparante cut-out, rembg). De haarpunt linksonder volgt
+             het pad via offset-anchor. -->
+        <img class="kwast" src="assets/img/kwast-ronde.png" alt="" width="140" height="78" decoding="async">
       </div>
 
       <p class="hero-sub">Studio EEF schildert muren, kozijnen, gevels en houtwerk, binnen en buiten. Zorgvuldig afgeplakt, elke dag netjes opgeruimd.</p>
@@ -317,7 +314,7 @@
   <section class="section" id="over">
     <div class="container over-grid">
       <div class="over-logo" data-reveal>
-        <img src="assets/logo.svg" alt="Studio Eef — logo met kwastveeg" width="440" height="120">
+        <img src="assets/logo.svg" alt="Logotegel van Studio Eef: verfstalen in mosterd, roze en olijf op een inkt-tegel" width="440" height="440">
         <div class="over-kleuren" aria-hidden="true">
           <span style="--k:#231F20"></span>
           <span style="--k:#424631"></span>
@@ -349,15 +346,15 @@
         <!-- TODO: echte gegevens invullen (href én zichtbare tekst) — gemarkeerd met class="todo" -->
         <a class="contact-card" data-reveal href="tel:0612345678" data-todo="telefoonnummer">
           <span class="contact-label">Bel</span>
-          <span class="contact-value todo" title="Placeholder — nog in te vullen">06 12 34 56 78</span>
+          <span class="contact-value"><span class="todo" title="Placeholder — nog in te vullen">06 12 34 56 78</span></span>
         </a>
         <a class="contact-card" data-reveal href="mailto:hallo@studio-eef.nl" data-todo="e-mailadres">
           <span class="contact-label">Mail</span>
-          <span class="contact-value todo" title="Placeholder — nog in te vullen">hallo@studio-eef.nl</span>
+          <span class="contact-value"><span class="todo" title="Placeholder — nog in te vullen">hallo@studio-eef.nl</span></span>
         </a>
         <a class="contact-card" data-reveal href="https://wa.me/31612345678" target="_blank" rel="noopener" data-todo="whatsapp-nummer (staat in de link)">
           <span class="contact-label">App</span>
-          <span class="contact-value todo" title="Placeholder — het nummer zit in de link">Stuur een appje</span>
+          <span class="contact-value"><span class="todo" title="Placeholder — het nummer zit in de link">Stuur een appje</span></span>
         </a>
       </div>
     </div>
