@@ -132,6 +132,20 @@ een `Start-Sleep 3` ertussen lost dat op.
 
 ## status
 
+- **Route A + logo B (live, sept. 2026):** Eefs originele logo-tegel keerde
+  terug (olijf-contrastfix #6A7150, 3,18:1 decoratief) in header/Over/favicon
+  (bands-variant). Hero kreeg fotorealistisch materiaal via de
+  beeldgenerator-pijplijn: eiken plank-foto (hout-macro-final), mosterd
+  verfstreek-cut-out (naar #D6AF29 getint), ronde huisschilderskwast-cut-out
+  (qwen-3, na vergelijking gehandhaafd boven qwen-4 i.v.m. pseudo-tekst op
+  de klem). Kwaliteitsronde: review deepseek-v4-pro
+  **GOED-MET-OPMERKINGEN** (quick wins toegepast, incl. herstel TODO-halo's
+  op contactwaardes — oorzaak: `class="contact-value todo"` matchte niet op
+  naive greps; nu v1-patroon); tester 5/6 PASS (telconventie gepind: **7×
+  class="todo" + 5× data-todo = 12 elementen**; commentaar-regels met de
+  letterlijke tekst `class="todo"` tellen niet); vision-eindoordeel
+  **8,5/10 desktop, 9/10 mobiel** (rapporten `_vision/final-routea-*.txt`).
+  Beeldgenerator-totaalkosten heel traject: ±$0,30.
 - **v2 "Verse verf" (actief, in `site/`)** — opgeleverd 2025-09: flitsend redesign
   met kwast-over-hout-hero (signature-animatie), nieuw logo (balkenmotief +
   kwastveeg), trustbar, interactieve kleurengevel, scroll-reveals, mobiele
