@@ -3,14 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Logo-keuze — Studio Eef</title>
+<title>Logo-keuze, ronde 2 — Studio Eef</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700&family=Atkinson+Hyperlegible:wght@400;700&display=swap" rel="stylesheet">
 <style>
   :root {
     --olijfp: #424631;      /* olijf, puur (huisstijl) */
-    --olijf-l: #6A7150;     /* olijf, lichter (enkel in variant B) */
+    --olijf-l: #6A7150;     /* olijf, lichter (in B en afgeleiden) */
     --mosterd: #D6AF29;
     --roze: #F37C96;
     --inkt: #231F20;
@@ -26,50 +26,53 @@
     line-height: 1.6;
   }
   h1, h2, h3, .merk-naam { font-family: "Archivo", sans-serif; }
-  .wrap { max-width: 980px; margin: 0 auto; padding: 0 20px 72px; }
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 0 20px 72px; }
 
   /* intro */
-  .intro { padding: 56px 0 40px; max-width: 620px; }
-  .intro h1 { font-size: 30px; font-weight: 700; margin: 0 0 12px; letter-spacing: -0.01em; }
+  .intro { padding: 52px 0 36px; max-width: 640px; }
+  .intro .ronde { font-family: "Archivo", sans-serif; font-size: 13px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--olijf-l); margin: 0 0 8px; }
+  .intro h1 { font-size: 29px; font-weight: 700; margin: 0 0 12px; letter-spacing: -0.01em; }
   .intro p { margin: 0; color: #4a4540; }
   .intro .streeplijn { width: 64px; height: 4px; background: var(--mosterd); margin: 20px 0 0; border: none; }
 
   /* variant-panelen */
-  .panelen { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
-  @media (max-width: 760px) { .panelen { grid-template-columns: 1fr; } }
+  .panelen { display: grid; grid-template-columns: 1fr 1fr; gap: 26px; }
+  @media (max-width: 780px) { .panelen { grid-template-columns: 1fr; } }
   .paneel {
     background: #fff;
     border: 1px solid #e6e1d8;
     border-radius: 10px;
-    padding: 24px 24px 28px;
+    padding: 22px 22px 26px;
   }
-  .paneel > header { display: flex; align-items: baseline; gap: 10px; margin-bottom: 20px; }
+  .paneel.referentie { border: 2px solid var(--olijf-l); }
+  .paneel > header { display: flex; align-items: baseline; gap: 10px; margin-bottom: 18px; }
   .variant-letter {
     font-family: "Archivo", sans-serif;
-    font-weight: 700; font-size: 15px;
+    font-weight: 700; font-size: 14px;
     color: var(--papier);
     background: var(--inkt);
-    width: 30px; height: 30px; border-radius: 6px;
+    min-width: 30px; height: 30px; border-radius: 6px;
     display: inline-flex; align-items: center; justify-content: center;
-    flex: none;
+    flex: none; padding: 0 7px;
   }
-  .paneel h2 { font-size: 21px; font-weight: 600; margin: 0; }
+  .paneel h2 { font-size: 20px; font-weight: 600; margin: 0; }
+  .paneel .referentie-label { font-size: 12.5px; color: var(--olijf-l); font-weight: 700; margin-left: auto; }
 
   .groot-vak {
     background: var(--papier);
     border: 1px solid #e6e1d8;
     border-radius: 8px;
-    display: flex; justify-content: center; padding: 20px;
+    display: flex; justify-content: center; padding: 16px;
   }
-  .groot-vak img { width: 240px; height: 240px; display: block; }
+  .groot-vak img { width: 220px; height: 220px; display: block; }
 
-  .label { font-size: 12.5px; font-weight: 700; letter-spacing: 0.09em; text-transform: uppercase; color: #8a8378; margin: 26px 0 8px; font-family: "Archivo", sans-serif; }
+  .label { font-size: 12.5px; font-weight: 700; letter-spacing: 0.09em; text-transform: uppercase; color: #8a8378; margin: 22px 0 8px; font-family: "Archivo", sans-serif; }
 
   /* nagemaakte inkt-headerbalk */
   .headerbalk {
     background: var(--inkt);
     border-radius: 8px;
-    padding: 14px 18px;
+    padding: 12px 16px;
     display: flex; align-items: center; gap: 14px;
   }
   .headerbalk img { width: 46px; height: 46px; display: block; flex: none; }
@@ -78,7 +81,7 @@
   /* favicon-maten */
   .favicons { display: flex; gap: 22px; align-items: flex-end; flex-wrap: wrap; }
   .fav-groep { display: flex; gap: 14px; align-items: flex-end; }
-  .fav-maat { text-align: center; }
+  .fav-maat { text-align: center; margin: 0; }
   .fav-maat .vlak {
     display: flex; align-items: center; justify-content: center;
     border-radius: 4px; margin: 0 auto 6px;
@@ -91,109 +94,68 @@
   .fav-maat .groot16 { width: 16px; height: 16px; padding: 0; }
   .fav-maat.met-padding { padding: 7px; }
 
-  .toelichting { font-size: 15.5px; color: #4a4540; margin: 18px 0 0; }
+  .toelichting { font-size: 15.5px; color: #4a4540; margin: 16px 0 0; }
   .toelichting strong { color: var(--inkt); }
   .contrast-getal {
     font-size: 13.5px; color: #6b655c; margin-top: 6px;
     border-top: 1px dashed #d8d2c6; padding-top: 10px;
   }
 
-  /* keuzehulp onderaan */
-  .keuzehulp {
-    margin-top: 56px;
-    padding-top: 36px;
-    border-top: 2px solid var(--inkt);
-  }
-  .keuzehulp h2 { font-size: 24px; font-weight: 600; margin: 0 0 6px; }
-  .keuzehulp > p { color: #4a4540; margin: 0 0 26px; max-width: 560px; }
-  .kolommen { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
-  @media (max-width: 760px) { .kolommen { grid-template-columns: 1fr; } }
+  /* keuzehulp */
+  .keuzehulp { margin-top: 48px; padding-top: 32px; border-top: 2px solid var(--inkt); }
+  .keuzehulp h2 { font-size: 23px; font-weight: 600; margin: 0 0 6px; }
+  .keuzehulp > p { color: #4a4540; margin: 0 0 24px; max-width: 560px; }
+  .kolommen { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; }
   .kolom {
     background: #fff;
     border: 1px solid #e6e1d8;
     border-radius: 10px;
-    padding: 20px 22px;
+    padding: 18px 20px;
   }
-  .kolom h3 { margin: 0 0 10px; font-size: 17px; font-weight: 700; display: flex; align-items: center; gap: 8px; }
-  .kolom h3 .variant-letter { width: 26px; height: 26px; font-size: 13px; }
-  .kolom ul { margin: 0; padding: 0; list-style: none; font-size: 15.5px; }
-  .kolom li { padding: 5px 0 5px 24px; position: relative; color: #3d3833; }
+  .kolom h3 { margin: 0 0 8px; font-size: 16px; font-weight: 700; display: flex; align-items: center; gap: 8px; }
+  .kolom h3 .variant-letter { min-width: 26px; height: 26px; font-size: 12.5px; }
+  .kolom ul { margin: 0; padding: 0; list-style: none; font-size: 15px; }
+  .kolom li { padding: 4px 0 4px 22px; position: relative; color: #3d3833; }
   .kolom li::before { position: absolute; left: 0; font-weight: 700; }
   .kolom li.voor::before { content: "+"; color: var(--olijf-l); }
   .kolom li.nadeer::before { content: "–"; color: #b0642a; }
-  .kolom .kopje-lijst { font-size: 12.5px; font-weight: 700; letter-spacing: 0.09em; text-transform: uppercase; color: #8a8378; margin: 14px 0 2px; font-family: "Archivo", sans-serif; }
-  .kolom .kopje-lijst:first-of-type { margin-top: 10px; }
-  .slotregel { margin-top: 28px; color: #6b655c; font-size: 14.5px; text-align: center; }
+  .kolom .kopje-lijst { font-size: 12.5px; font-weight: 700; letter-spacing: 0.09em; text-transform: uppercase; color: #8a8378; margin: 12px 0 2px; font-family: "Archivo", sans-serif; }
+  .slotregel { margin-top: 26px; color: #6b655c; font-size: 14.5px; text-align: center; }
+
+  /* eerdere ronde */
+  .eerdere-ronde { margin-top: 56px; }
+  .eerdere-ronde summary {
+    font-family: "Archivo", sans-serif;
+    font-size: 15.5px; font-weight: 600; color: #6b655c;
+    cursor: pointer; padding: 12px 0;
+  }
+  .eerdere-ronde[open] summary { color: var(--inkt); }
 </style>
 </head>
 <body>
 <div class="wrap">
 
   <section class="intro">
-    <h1>Twee logo's, één keuze</h1>
-    <p>Hieronder staan twee varianten van jouw logo naast elkaar, op dezelfde
-    manieren getoond: groot, in een donkere balk, en heel klein zoals een
-    tabblad-icoontje. Kijk rustig — er staat hieronder geen goed of fout.</p>
+    <p class="ronde">Ronde 2</p>
+    <h1>Eef koos B — welke pimpmogelijkheid vind jij mooi?</h1>
+    <p>Je keuze uit ronde 1 staat links als referentie. Daarnaast drie kleine
+    pimpmogelijkheden: telkens hetzelfde teken, met één extra detail. Kijk
+    rustig — ook hier is geen goed of fout.</p>
     <hr class="streeplijn">
   </section>
 
   <div class="panelen">
 
-    <!-- VARIANT A -->
-    <section class="paneel" aria-labelledby="titel-a">
-      <header>
-        <span class="variant-letter" aria-hidden="true">A</span>
-        <h2 id="titel-a">Het origineel</h2>
-      </header>
-
-      <p class="label">Groot</p>
-      <div class="groot-vak"><img src="logo-orig.svg" alt="Logo Studio Eef, origineel: inkt-tegel met balken in olijf, mosterd en roze en witte letters"></div>
-
-      <p class="label">In de donkere balk</p>
-      <div class="headerbalk">
-        <img src="logo-orig.svg" alt="">
-        <span class="merk-naam">Studio Eef</span>
-      </div>
-
-      <p class="label">Als tabblad-icoontje</p>
-      <div class="favicons">
-        <div class="fav-groep">
-          <figure class="fav-maat">
-            <div class="vlak papier groot32"><img src="logo-orig.svg" width="32" height="32" alt=""></div>
-            <figcaption>32px</figcaption>
-          </figure>
-          <figure class="fav-maat">
-            <div class="vlak papier groot16"><img src="logo-orig.svg" width="16" height="16" alt=""></div>
-            <figcaption>16px</figcaption>
-          </figure>
-        </div>
-        <div class="fav-groep">
-          <figure class="fav-maat">
-            <div class="vlak inkt met-padding"><img src="logo-orig.svg" width="32" height="32" alt=""></div>
-            <figcaption>32px</figcaption>
-          </figure>
-          <figure class="fav-maat">
-            <div class="vlak inkt" style="padding:9px;"><img src="logo-orig.svg" width="16" height="16" alt=""></div>
-            <figcaption>16px</figcaption>
-          </figure>
-        </div>
-      </div>
-
-      <p class="toelichting"><strong>Wat is er anders?</strong> Niets — dit is
-      het logo precies zoals het nu op de site staat.</p>
-      <p class="contrast-getal">Olijf #424631 op inkt #231F20: contrast 1,7:1
-      (decoratief, geen eis).</p>
-    </section>
-
-    <!-- VARIANT B -->
-    <section class="paneel" aria-labelledby="titel-b">
+    <!-- B (referentie) -->
+    <section class="paneel referentie" aria-labelledby="titel-b">
       <header>
         <span class="variant-letter" aria-hidden="true">B</span>
-        <h2 id="titel-b">Licht opgeschoond</h2>
+        <h2 id="titel-b">Jouw keuze (referentie)</h2>
+        <span class="referentie-label">ronde 1</span>
       </header>
 
       <p class="label">Groot</p>
-      <div class="groot-vak"><img src="logo-opgeschoond.svg" alt="Logo Studio Eef, opgeschoond: identiek aan het origineel, alleen de olijfkleurige balken zijn iets lichter"></div>
+      <div class="groot-vak"><img src="logo-opgeschoond.svg" alt="Gekozen logo B: inkt-tegel met balken in lichte olijf, mosterd en roze en witte letters"></div>
 
       <p class="label">In de donkere balk</p>
       <div class="headerbalk">
@@ -204,75 +166,217 @@
       <p class="label">Als tabblad-icoontje</p>
       <div class="favicons">
         <div class="fav-groep">
-          <figure class="fav-maat">
-            <div class="vlak papier groot32"><img src="logo-opgeschoond.svg" width="32" height="32" alt=""></div>
-            <figcaption>32px</figcaption>
-          </figure>
-          <figure class="fav-maat">
-            <div class="vlak papier groot16"><img src="logo-opgeschoond.svg" width="16" height="16" alt=""></div>
-            <figcaption>16px</figcaption>
-          </figure>
+          <figure class="fav-maat"><div class="vlak papier groot32"><img src="logo-opgeschoond.svg" width="32" height="32" alt=""></div><figcaption>32px</figcaption></figure>
+          <figure class="fav-maat"><div class="vlak papier groot16"><img src="logo-opgeschoond.svg" width="16" height="16" alt=""></div><figcaption>16px</figcaption></figure>
         </div>
         <div class="fav-groep">
-          <figure class="fav-maat">
-            <div class="vlak inkt met-padding"><img src="logo-opgeschoond.svg" width="32" height="32" alt=""></div>
-            <figcaption>32px</figcaption>
-          </figure>
-          <figure class="fav-maat">
-            <div class="vlak inkt" style="padding:9px;"><img src="logo-opgeschoond.svg" width="16" height="16" alt=""></div>
-            <figcaption>16px</figcaption>
-          </figure>
+          <figure class="fav-maat"><div class="vlak inkt met-padding"><img src="logo-opgeschoond.svg" width="32" height="32" alt=""></div><figcaption>32px</figcaption></figure>
+          <figure class="fav-maat"><div class="vlak inkt" style="padding:9px;"><img src="logo-opgeschoond.svg" width="16" height="16" alt=""></div><figcaption>16px</figcaption></figure>
         </div>
       </div>
 
-      <p class="toelichting"><strong>Wat is er anders?</strong> Alleen de
-      olijfkleurige balken zijn iets lichter gemaakt (van #424631 naar #6A7150),
-      zodat ze op de donkere tegel beter te zien zijn — verder is alles
-      pixel-voor-pixel hetzelfde.</p>
-      <p class="contrast-getal">Olijf #6A7150 op inkt #231F20: contrast 3,2:1
-      (decoratief, streefdoel ≥3:1 gehaald).</p>
+      <p class="toelichting"><strong>Wat is er anders?</strong> Niets — dit is
+      de variant die je in ronde 1 koos, met de iets lichtere olijf.</p>
+      <p class="contrast-getal">Olijf #6A7150 op inkt #231F20: contrast 3,2:1.</p>
+    </section>
+
+    <!-- B2 druppel -->
+    <section class="paneel" aria-labelledby="titel-b2">
+      <header>
+        <span class="variant-letter" aria-hidden="true">B2</span>
+        <h2 id="titel-b2">Verfdruppel</h2>
+      </header>
+
+      <p class="label">Groot</p>
+      <div class="groot-vak"><img src="logo-b2-druppel.svg" alt="Logo B met een kleine mosterdgele verfdruppel onder de mosterdband van de F"></div>
+
+      <p class="label">In de donkere balk</p>
+      <div class="headerbalk">
+        <img src="logo-b2-druppel.svg" alt="">
+        <span class="merk-naam">Studio Eef</span>
+      </div>
+
+      <p class="label">Als tabblad-icoontje</p>
+      <div class="favicons">
+        <div class="fav-groep">
+          <figure class="fav-maat"><div class="vlak papier groot32"><img src="logo-b2-druppel.svg" width="32" height="32" alt=""></div><figcaption>32px</figcaption></figure>
+          <figure class="fav-maat"><div class="vlak papier groot16"><img src="logo-b2-druppel.svg" width="16" height="16" alt=""></div><figcaption>16px</figcaption></figure>
+        </div>
+        <div class="fav-groep">
+          <figure class="fav-maat"><div class="vlak inkt met-padding"><img src="logo-b2-druppel.svg" width="32" height="32" alt=""></div><figcaption>32px</figcaption></figure>
+          <figure class="fav-maat"><div class="vlak inkt" style="padding:9px;"><img src="logo-b2-druppel.svg" width="16" height="16" alt=""></div><figcaption>16px</figcaption></figure>
+        </div>
+      </div>
+
+      <p class="toelichting"><strong>Wat is er anders?</strong> Onder de
+      mosterdband van de F hangt één kleine verfdruppel — een knipoog naar de
+      druppel in de hero van de site.</p>
+      <p class="contrast-getal">Druppel in mosterd #D6AF29, dezelfde kleur als
+      de band; 4,9% van de tegelhoogte.</p>
+    </section>
+
+    <!-- B3 kwastrand -->
+    <section class="paneel" aria-labelledby="titel-b3">
+      <header>
+        <span class="variant-letter" aria-hidden="true">B3</span>
+        <h2 id="titel-b3">Geschilderde rand</h2>
+      </header>
+
+      <p class="label">Groot</p>
+      <div class="groot-vak"><img src="logo-b3-kwastrand.svg" alt="Logo B waarbij de rechterkant van alle kleurbanden een licht rafelige, net-geschilderde rand heeft"></div>
+
+      <p class="label">In de donkere balk</p>
+      <div class="headerbalk">
+        <img src="logo-b3-kwastrand.svg" alt="">
+        <span class="merk-naam">Studio Eef</span>
+      </div>
+
+      <p class="label">Als tabblad-icoontje</p>
+      <div class="favicons">
+        <div class="fav-groep">
+          <figure class="fav-maat"><div class="vlak papier groot32"><img src="logo-b3-kwastrand.svg" width="32" height="32" alt=""></div><figcaption>32px</figcaption></figure>
+          <figure class="fav-maat"><div class="vlak papier groot16"><img src="logo-b3-kwastrand.svg" width="16" height="16" alt=""></div><figcaption>16px</figcaption></figure>
+        </div>
+        <div class="fav-groep">
+          <figure class="fav-maat"><div class="vlak inkt met-padding"><img src="logo-b3-kwastrand.svg" width="32" height="32" alt=""></div><figcaption>32px</figcaption></figure>
+          <figure class="fav-maat"><div class="vlak inkt" style="padding:9px;"><img src="logo-b3-kwastrand.svg" width="16" height="16" alt=""></div><figcaption>16px</figcaption></figure>
+        </div>
+      </div>
+
+      <p class="toelichting"><strong>Wat is er anders?</strong> De rechterkant
+      van alle kleurbanden heeft kleine asymmetrische randjes, alsof de verf
+      er net mee op zit.</p>
+      <p class="contrast-getal">Randjes in dezelfde vulkleur per band, 2–4px
+      diep; geen filters, blijft leesbaar op 16px.</p>
+    </section>
+
+    <!-- B4 studio mosterd -->
+    <section class="paneel" aria-labelledby="titel-b4">
+      <header>
+        <span class="variant-letter" aria-hidden="true">B4</span>
+        <h2 id="titel-b4">STUDIO in mosterd</h2>
+      </header>
+
+      <p class="label">Groot</p>
+      <div class="groot-vak"><img src="logo-b4-studio-mosterd.svg" alt="Logo B waarbij de verticale STUDIO-letters mosterdgeel zijn in plaats van wit"></div>
+
+      <p class="label">In de donkere balk</p>
+      <div class="headerbalk">
+        <img src="logo-b4-studio-mosterd.svg" alt="">
+        <span class="merk-naam">Studio Eef</span>
+      </div>
+
+      <p class="label">Als tabblad-icoontje</p>
+      <div class="favicons">
+        <div class="fav-groep">
+          <figure class="fav-maat"><div class="vlak papier groot32"><img src="logo-b4-studio-mosterd.svg" width="32" height="32" alt=""></div><figcaption>32px</figcaption></figure>
+          <figure class="fav-maat"><div class="vlak papier groot16"><img src="logo-b4-studio-mosterd.svg" width="16" height="16" alt=""></div><figcaption>16px</figcaption></figure>
+        </div>
+        <div class="fav-groep">
+          <figure class="fav-maat"><div class="vlak inkt met-padding"><img src="logo-b4-studio-mosterd.svg" width="32" height="32" alt=""></div><figcaption>32px</figcaption></figure>
+          <figure class="fav-maat"><div class="vlak inkt" style="padding:9px;"><img src="logo-b4-studio-mosterd.svg" width="16" height="16" alt=""></div><figcaption>16px</figcaption></figure>
+        </div>
+      </div>
+
+      <p class="toelichting"><strong>Wat is er anders?</strong> De verticale
+      STUDIO-letters zijn mosterdgeel in plaats van wit, met iets meer ruimte
+      tussen de letters.</p>
+      <p class="contrast-getal">Mosterd #D6AF29 op inkt #231F20: contrast
+      7,8:1 (tekst, ruim boven de eis van 4,5:1). Wit was 15,4:1.</p>
     </section>
 
   </div>
 
   <!-- KEUZEHULP -->
   <section class="keuzehulp" aria-labelledby="titel-keuze">
-    <h2 id="titel-keuze">Welke vind jij mooier — A of B?</h2>
-    <p>Geen druk: beide zijn hetzelfde teken. Dit is wat een objectieve blik
-    ziet, jouw smaak beslist.</p>
+    <h2 id="titel-keuze">Welke vind jij mooier — B, B2, B3 of B4?</h2>
+    <p>Drie kleine toevoegingen op jouw eigen teken. Dit is wat een objectieve
+    blik ziet — jouw smaak beslist.</p>
 
     <div class="kolommen">
       <div class="kolom">
-        <h3><span class="variant-letter" aria-hidden="true">A</span> Het origineel</h3>
+        <h3><span class="variant-letter" aria-hidden="true">B2</span> Verfdruppel</h3>
         <p class="kopje-lijst">Voors</p>
         <ul>
-          <li class="voor">Authentiek — precies zoals het ontworpen is.</li>
-          <li class="voor">De donkere, rustige olijf houdt het geheel ingetogen.</li>
+          <li class="voor">Kleine knipoog naar de site, voelt als één verhaal.</li>
+          <li class="voor">Blijft subtiel: hijgt niet, roept niet.</li>
         </ul>
         <p class="kopje-lijst">Naders</p>
         <ul>
-          <li class="nadeer">De olijfkleurige balken vallen bijna weg op de donkere tegel.</li>
-          <li class="nadeer">Ook op kleine maten (favicon) leest het motief minder.</li>
+          <li class="nadeer">Kiest een favoriet onderdeel (mosterd) boven de rest.</li>
+          <li class="nadeer">Op 16px is de druppel nog maar nauwelijks zichtbaar.</li>
         </ul>
       </div>
       <div class="kolom">
-        <h3><span class="variant-letter" aria-hidden="true">B</span> Licht opgeschoond</h3>
+        <h3><span class="variant-letter" aria-hidden="true">B3</span> Geschilderde rand</h3>
         <p class="kopje-lijst">Voors</p>
         <ul>
-          <li class="voor">Zelfde teken — het olijf leest beter op donker.</li>
-          <li class="voor">Het balkenmotief blijft zichtbaar, ook heel klein.</li>
+          <li class="voor">Benadrukt dat het verfbalken zijn — past bij het vak.</li>
+          <li class="voor">Zachte onregelmatigheid maakt het teken levendiger.</li>
         </ul>
         <p class="kopje-lijst">Naders</p>
         <ul>
-          <li class="nadeer">De olijf is net iets minder diep van toon dan voorheen.</li>
-          <li class="nadeer">Het kleurpalet wijkt één tikje af van de officiële huistint.</li>
+          <li class="nadeer">Maakt het geheel iets losser, minder strak.</li>
+          <li class="nadeer">Op 16px vallen de randjes grotendeels weg.</li>
+        </ul>
+      </div>
+      <div class="kolom">
+        <h3><span class="variant-letter" aria-hidden="true">B4</span> STUDIO in mosterd</h3>
+        <p class="kopje-lijst">Voors</p>
+        <ul>
+          <li class="voor">Meer kleur in het teken; mosterd leest prima op donker.</li>
+          <li class="voor">STUDIO en de balken worden één familie.</li>
+        </ul>
+        <p class="kopje-lijst">Naders</p>
+        <ul>
+          <li class="nadeer">De rustige witte basis verdwijnt deels.</li>
+          <li class="nadeer">Minder contrast dan wit (7,8:1 om 15,4:1) — nog steeds ruim voldoende.</li>
         </ul>
       </div>
     </div>
 
-    <p class="slotregel">Open beide naast elkaar, knijp je ogen half dicht, en
-    kies waar jouw maag ja op zegt.</p>
+    <p class="slotregel">Ook "gewoon B laten" is een prima antwoord.</p>
   </section>
+
+  <!-- EERDERE RONDE -->
+  <details class="eerdere-ronde">
+    <summary>Eerdere ronde: A (origineel) versus B (licht opgeschoond) — Eef koos B</summary>
+    <div class="panelen" style="margin-top:20px;">
+      <section class="paneel" aria-labelledby="titel-a">
+        <header>
+          <span class="variant-letter" aria-hidden="true">A</span>
+          <h2 id="titel-a">Het origineel</h2>
+        </header>
+        <p class="label">Groot</p>
+        <div class="groot-vak"><img src="logo-orig.svg" alt="Originele logo: inkt-tegel met balken in donkere olijf, mosterd en roze en witte letters"></div>
+        <p class="label">In de donkere balk</p>
+        <div class="headerbalk">
+          <img src="logo-orig.svg" alt="">
+          <span class="merk-naam">Studio Eef</span>
+        </div>
+        <p class="toelichting"><strong>Wat is er anders?</strong> Niets — het
+        logo precies zoals het ontworpen is.</p>
+        <p class="contrast-getal">Olijf #424631 op inkt #231F20: contrast 1,7:1
+        (decoratief).</p>
+      </section>
+      <section class="paneel referentie" aria-labelledby="titel-b-alt">
+        <header>
+          <span class="variant-letter" aria-hidden="true">B</span>
+          <h2 id="titel-b-alt">Licht opgeschoond — gekozen</h2>
+        </header>
+        <p class="label">Groot</p>
+        <div class="groot-vak"><img src="logo-opgeschoond.svg" alt="Logo met lichtere olijf"></div>
+        <p class="label">In de donkere balk</p>
+        <div class="headerbalk">
+          <img src="logo-opgeschoond.svg" alt="">
+          <span class="merk-naam">Studio Eef</span>
+        </div>
+        <p class="toelichting"><strong>Wat is er anders?</strong> Alleen de
+        olijfkleurige balken zijn iets lichter (#424631 → #6A7150).</p>
+        <p class="contrast-getal">Olijf #6A7150 op inkt #231F20: contrast 3,2:1.</p>
+      </section>
+    </div>
+  </details>
 
 </div>
 </body>
