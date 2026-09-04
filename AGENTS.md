@@ -23,6 +23,7 @@ Open `site/index.html` in een browser; er is verder niets nodig.
 | Vision-check (routine screenshots) | glm-5.3-flash | provider `zai` (flat-rate, text+image) |
 | Vision-eindoordeel (nulmeting) | deepseek-v4-flash-vision-exp | provider `deepseek` |
 | **Researcher (achtergrond/web)** | **glm-5.3-flash** | provider `zai` (flat-rate, 1M context) |
+| Beeldgenerator (AI-beelden) | glm-5.3 | subagent (sessie-default) met replicate-skills |
 
 De providers `zai` (GLM Coding Plan, flat-rate) en `deepseek` staan in
 `~/.dsh/settings.yaml` (deepseek-key: `DEEPSEEK_API_KEY` uit
@@ -88,9 +89,28 @@ overlap (assess-final.ps1 heeft daar een Get-Slices-helper).
 antwoord met bronnen, parallel starten aan het begin van de ronde (kan de
 web_search-tool gebruiken; deepseek-v4-flash als fallback).
 
+**Beeldgenerator (AI-beelden via Replicate):** gewone subagent die allereerst
+de skills `run-models` + `prompt-images` laadt (`prompt-videos` voor video).
+Vaste spelregels:
+- Token uit `.replicate_token` in de projectroot — nóóit printen of
+  committen (staat in `.gitignore`).
+- Vóór elke serie: budget checken; zonder expliciete opdracht max ~€0,50 per
+  keer, boven €2,-- eerst overleggen met de eigenaar.
+- Raw generaties naar `img-gen/` (projectroot, naam als
+  ` <onderwerp>-<model>-<n>.png/jpg/webp`); alléén gecureerde assets
+  verhuizen naar `site/assets/`, mét alt-tekst en README-sync (regel 4).
+- Harde vuistregels: nóóit tekst/letters door het model laten genereren
+  (tekst = echte HTML/SVG eroverheen); huisstijlkleuren expliciet in de
+  prompt benoemen; `werk-*.jpg` nooit vervangen (regel 2); AI-beelden die
+  als "werk" getoond worden zijn impressies → als zodanig labelen.
+- Replicate-output-URL's verlopen na 1 uur → direct downloaden naar `img-gen/`.
+- PoC en werkwijze staan in de gitgeschiedenis (eerste run: hout-macro,
+  flux-schnell, sept. 2026).
+
 **Skills:** `frontend-design` (UI-werk, bovenstaande), geen overige nodig;
 `cordis-plugin-development` / `editing-cordis-compositions` alleen bij
-harness-uitbreidingen.
+harness-uitbreidingen; replicate-skills (`run-models`, `prompt-images`,
+`prompt-videos`, `find-models`) alleen voor de beeldgenerator-rol.
 
 ## testprotocol vóór oplevering (scripts in `_vision/`)
 
