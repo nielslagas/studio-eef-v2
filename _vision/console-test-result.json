@@ -20,26 +20,39 @@
       },
       {
         "src": "werk-woonkamer.jpg",
-        "ok": true
+        "ok": false
       },
       {
         "src": "werk-gevel.jpg",
-        "ok": true
+        "ok": false
       },
       {
         "src": "werk-detail.jpg",
-        "ok": true
+        "ok": false
       },
       {
         "src": "logo.svg",
         "ok": true
       },
       {
-        "src": "favicon.svg",
+        "src": "logo.svg",
         "ok": true
       }
     ],
-    "afbeeldingenKaput": [],
+    "afbeeldingenKaput": [
+      {
+        "src": "werk-woonkamer.jpg",
+        "ok": false
+      },
+      {
+        "src": "werk-gevel.jpg",
+        "ok": false
+      },
+      {
+        "src": "werk-detail.jpg",
+        "ok": false
+      }
+    ],
     "links": 20,
     "bodyKinderen": 6
   }

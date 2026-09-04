@@ -18,9 +18,11 @@ js/main.js          kwast-signature (offset-path + rAF-fallback),
                     mobiele CTA-IO
 assets/logo.svg     B-tegel: Eefs eigen logotegel (uit logo-keuze/ gekopieerd)
 assets/favicon.svg  bands-variant van de B-tegel (16px-leesbaar)
-assets/img/         hero-materiaal (AI: hero-hout.jpg, verfstreek-mosterd.png,
-                    kwast-ronde.png) + werk-*.jpg AI-impressies — echte
-                    projectfoto's volgen (werk-*.jpg niet vervangen)
+assets/img/         hero-materiaal (AI: hero-hout.jpg, verfstreek-mosterd.png
+                    1200×669, kwast-ronde.png 420×234 — gedownscaled naar
+                    weergavegrootte, sept. 2026) + werk-*.jpg AI-impressies
+                    (loading="lazy") — echte projectfoto's volgen (werk-*.jpg
+                    niet vervangen)
 ```
 
 ## Huisstijl (tokens in `:root`)
@@ -33,7 +35,9 @@ assets/img/         hero-materiaal (AI: hero-hout.jpg, verfstreek-mosterd.png,
 | `--inkt` | `#231F20` | groot canvas: hero, header, werkwijze, footer |
 | `--papier` | `#FAF8F4` | lichte secties, tekst op donker |
 | `--gold-soft` | `#E8C558` | mosterd-tekst op donker (9,7:1 op inkt) |
-| `--kalkwit` | `#F1EDE4` | materiaal: ruiten, kwast-steel |
+| `--kalkwit` | `#F1EDE4` | licht canvas: hele pagina (sinds sept. 2026 geen wit als vlakkleur — wens van Eef) |
+| `--linnen` | `#F6F1E5` | kaartvlakken (diensten, werk) op kalkwit |
+| `--kalk-diep` | `#E9E0CB` | werk-band: warme onderscheidende ondergrond |
 | `--houtblauw` | `#3E5C76` | materiaal: dakpannen, kwast-ferrule |
 | `--hout` | `#B08A5E` | materiaal: hero-plank (inkt erop: 5,2:1, AA groot) |
 
@@ -87,6 +91,10 @@ kritieke onderdelen. Logo: olijf #6A7150 op inkt ≈ 3,18:1, puur decoratief.
   inset(0)` (460ms ease-out) met stagger-delays van 60/120/180/240ms per groep.
   Initial hidden alléén onder `html.js-reveal` → zonder JS zichtbaar;
   geen oneindige dashoffset-loops (Safari-valkuil).
+- Breakpoints (sept. 2026, desktop is leidend): navigatie-omschakeling
+  (nav → mobiel menu) pas bij **720px** (was 900px), zodat een gewoon
+  niet-gemaximaliseerd venster de volledige desktop-nav houdt. Grid-
+  omslagen (2 kolommen enz.) blijven op 900px; mobiele CTA-balk op 640px.
 - Mobiele CTA-balk (≤640px): "Bel" (tel:-TODO-link) + "Offerte"
   (#contact); verdwijnt via IO zodra #contact in beeld is, safe-area
   bewust; reduced motion: zelfde gedrag zonder transitie.
@@ -107,10 +115,14 @@ kritieke onderdelen. Logo: olijf #6A7150 op inkt ≈ 3,18:1, puur decoratief.
   (olijf-op-inkt ≈ 3,18:1 — puur decoratief, geen tekst/informatie in
   die kleur, dus geen contrast-eis). De kwastveeg-wordmark van v2 is
   hiermee uit de site verdwenen (de kwast leeft voort in de hero).
-- Header: de tegel op 46px met een dunne papieren rand
-  (`box-shadow`-ring, zelfde patroon als de footer-tegel) + "Studio Eef"
-  in Archivo ernaast. Over-sectie: de grote plek (±440px) toont dezelfde
-  tegel; de "onze vier kleuren"-strook eronder blijft staan.
+- Header én footer: dezelfde tegel (`assets/logo.svg`) — header op 46px,
+  footer op 38px, beide met een dunne papieren rand (`box-shadow`-ring).
+  De bands-variant (`favicon.svg`) is nu alléén nog favicon; hij stond
+  eerst ook in de footer en is daar vervangen omdat hij niet leest als
+  hetzelfde logo (eigenaar, sept. 2026).
+  "Studio Eef" staat in Archivo ernaast. Over-sectie: de grote plek
+  (±440px) toont dezelfde tegel; de "onze vier kleuren"-strook eronder
+  blijft staan.
 - `assets/favicon.svg`: vereenvoudigde bands-variant van de B-tegel
   (v1-bouw als referentie): alleen de kleurbanden op posities uit de
   tegel — mosterd/roze per rij, olijf-accenten (#6A7150) en rechts de

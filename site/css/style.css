@@ -15,7 +15,9 @@
 
   /* materiaaltinten (nooit als accentkleur) */
   --gold-soft: #E8C558;   /* mosterd voor kleine tekst op donker: 9,7:1 op inkt */
-  --kalkwit: #F1EDE4;
+  --kalkwit: #F1EDE4;     /* lichte canvas: hele pagina (geen wit meer) */
+  --linnen: #F6F1E5;      /* kaartvlakken op kalkwit */
+  --kalk-diep: #E9E0CB;   /* werk-band: warme ondergrond met eigen kleur */
   --houtblauw: #3E5C76;
   --hout: #B08A5E;        /* hero-plank; inkt erop: 5,2:1 (AA groot) */
   --hout-donker: #8F6D46;
@@ -54,7 +56,7 @@ section[id], footer[id] { scroll-margin-top: calc(var(--header-h) + 12px); }
 
 body {
   margin: 0;
-  background: var(--papier);
+  background: var(--kalkwit); /* warm kalk: wit als vlakkleur is van de baan */
   color: var(--inkt);
   font-family: var(--font-body);
   font-size: 1.0625rem;
@@ -572,7 +574,7 @@ html[data-hero] .hero-kunst.speelt .druppel {
 /* ---------- trustbar: drie procesfeiten (statisch, geen cijfers-verzinwerk) ---------- */
 
 .trustbar {
-  background: var(--papier);
+  background: var(--kalkwit);
   padding-block: 42px 0;
 }
 
@@ -645,7 +647,7 @@ html.js-reveal .steps > :nth-child(5) { transition-delay: 240ms; }
 .section-inkt { background: var(--inkt); color: var(--papier); }
 .section-olijf { background: var(--olijf); color: var(--papier); }
 .section-kalk {
-  background: var(--kalkwit);
+  background: var(--kalk-diep); /* warme werk-band, onderscheidt zich van kalk */
   border-top: 6px solid var(--mosterd); /* vette mosterd-divisie */
 }
 
@@ -670,7 +672,7 @@ html.js-reveal .steps > :nth-child(5) { transition-delay: 240ms; }
 }
 
 .chip {
-  background: var(--papier);
+  background: var(--linnen);
   border: 1px solid var(--lijn);
   border-radius: var(--radius);
   overflow: hidden;
@@ -733,7 +735,7 @@ html.js-reveal .steps > :nth-child(5) { transition-delay: 240ms; }
 
 .werk-card {
   margin: 0;
-  background: var(--papier);
+  background: var(--linnen);
   border: 1px solid var(--lijn);
   border-radius: var(--radius);
   overflow: hidden;
@@ -1012,11 +1014,6 @@ html.js-reveal .steps > :nth-child(5) { transition-delay: 240ms; }
 /* ---------- responsive ---------- */
 
 @media (max-width: 900px) {
-  :root { --header-h: 68px; }
-
-  .nav { display: none; }
-  .menu { display: block; }
-
   .hero { padding-block: 56px 84px; }
   .tape { display: none; } /* op smal scherm vult de kop de plank — geen tape over tekst */
 
@@ -1045,6 +1042,17 @@ html.js-reveal .steps > :nth-child(5) { transition-delay: 240ms; }
   .over-kleuren { justify-content: center; }
 
   .contact-actions { grid-template-columns: 1fr; }
+}
+
+/* ---------- navigatie-omschakeling pas bij 720px ----------
+   Desktop is leidend: een gewoon (niet-gemaximaliseerd) venster
+   houdt de volledige nav; het mobiele menu komt echt pas bij smal. */
+
+@media (max-width: 720px) {
+  :root { --header-h: 68px; }
+
+  .nav { display: none; }
+  .menu { display: block; }
 }
 
 @media (max-width: 640px) {
