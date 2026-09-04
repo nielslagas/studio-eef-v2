@@ -75,9 +75,10 @@ kritieke onderdelen. Logo: olijf #6A7150 op inkt ≈ 3,18:1, puur decoratief.
   `clamp(88px, 11vw, 140px)` breed — width/height-attributen 140×78,
   vrijwel dezelfde ratio — met de haarpunt linksonder als offset-anchor
   die het pad volgt). Kop + streek worden onthuld door één clip-wipe, synchroon
-  met de kwast; daarna eenmalig natte-glans-sheen en druppel. De statische
-  afplaktape blijft het foto-hout sluiten (leest ook op echt hout); de
-  getekende druppel blijft hangen als accent. CSS `offset-path` met
+  met de kwast; daarna eenmalig natte-glans-sheen en druppel. De
+  getekende druppel blijft hangen als accent. De afplaktape rechts op
+  de plank is in sept. 2026 op verzoek van de eigenaar volledig
+  verwijderd (HTML + CSS). CSS `offset-path` met
   JS-fallback (`getPointAtLength` + rAF, zelfde curve). Zonder JS of
   bij `prefers-reduced-motion`: direct de geschilderde eindstand.
 - Marquee: mosterd band, schuin −1,5°, `linear`, pauzeert op hover,
