@@ -1,0 +1,549 @@
+/* ==========================================================================
+   Studio EEF — v3 "Afplakrand"
+   Rustig, strak, professioneel. Eén idee: egale kleurvlakken die elkaar in
+   exacte rechte lijnen raken — de rand zoals hij na het lostrekken van de
+   afplaktape achterblijft. Geen rondingen, geen schaduwen, geen decoratie.
+   Nul JavaScript.
+   ========================================================================== */
+
+/* ---------- tokens (huisstijl, regel 3 van AGENTS.md) ---------- */
+:root {
+  --olijf: #424631;
+  --mosterd: #D6AF29;
+  --roze: #F37C96;
+  --inkt: #231F20;
+  --papier: #FAF8F4;
+
+  /* afgeleiden — alleen voor oppervlakken, nooit als nieuwe merkkleur */
+  --kalk: #F1EDE4;              /* versch geschilderd vlak */
+  --mosterd-diep: #C39D1F;      /* natte rand onderaan de mosterdlaag */
+
+  --inkt-14: rgba(35, 31, 32, 0.14);
+  --inkt-zwak: rgba(35, 31, 32, 0.68);   /* 5,3:1 op papier, 5,3:1 op kalk (AA) */
+  --papier-22: rgba(250, 248, 244, 0.22);
+  --papier-68: rgba(250, 248, 244, 0.68); /* 5,3:1 op olijf, 7,5:1 op inkt (AA) */
+  --papier-78: rgba(250, 248, 244, 0.78); /* 9,8:1 op inkt */
+
+  --font-display: "Archivo", system-ui, -apple-system, sans-serif;
+  --font-tekst: "Atkinson Hyperlegible", system-ui, -apple-system, sans-serif;
+
+  --wrap: 1140px;
+  --gutter: clamp(20px, 4vw, 40px);
+  --sectie: clamp(72px, 9vw, 132px);
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* ---------- basis ---------- */
+*, *::before, *::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--papier);
+  color: var(--inkt);
+  font-family: var(--font-tekst);
+  font-size: 1.0625rem;
+  line-height: 1.6;
+}
+
+img, svg { display: block; max-width: 100%; }
+
+ul, ol { list-style: none; margin: 0; padding: 0; }
+
+p { margin: 0 0 1em; }
+p:last-child { margin-bottom: 0; }
+
+a { color: inherit; }
+
+:focus-visible { outline: 2px solid currentColor; outline-offset: 3px; }
+
+.wrap {
+  width: min(var(--wrap), 100% - var(--gutter) * 2);
+  margin-inline: auto;
+}
+
+.skip {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  padding: 12px 18px;
+  background: var(--inkt);
+  color: var(--papier);
+  z-index: 100;
+}
+.skip:focus { left: 0; }
+
+/* ---------- typografie ---------- */
+h1, h2, h3 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-stretch: 112%;
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+  margin: 0 0 0.6em;
+  text-wrap: balance;
+}
+
+h1 { font-size: clamp(2.4rem, 5.4vw, 4.3rem); line-height: 1.02; }
+h2 { font-size: clamp(1.8rem, 3.2vw, 2.6rem); }
+h3 { font-size: 1.2rem; line-height: 1.25; letter-spacing: -0.01em; margin-bottom: 0.35em; }
+
+.label {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--inkt-zwak);
+  margin: 0;
+}
+.label-licht { color: var(--papier-68); }
+
+.sectie-noot {
+  color: var(--inkt-zwak);
+  font-size: 0.98rem;
+  max-width: 48ch;
+  margin: 0 0 clamp(22px, 3vw, 36px);
+}
+.noot-licht { color: var(--papier-78); }
+
+/* ---------- knoppen: rechthoekig, geen schaduw ---------- */
+.knop {
+  display: inline-block;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.95rem;
+  letter-spacing: 0.01em;
+  text-decoration: none;
+  padding: 14px 22px;
+  border: 1px solid transparent;
+  transition: background-color 160ms var(--ease), color 160ms var(--ease), border-color 160ms var(--ease);
+}
+.knop:active { transform: translateY(1px); }
+
+.knop-mosterd { background: var(--mosterd); color: var(--inkt); }
+.knop-mosterd:hover { background: var(--inkt); color: var(--papier); border-color: var(--inkt); }
+
+.knop-rand { border-color: var(--inkt); color: var(--inkt); }
+.knop-rand:hover { background: var(--inkt); color: var(--papier); }
+
+/* ---------- header ---------- */
+.kop {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: var(--papier);
+  border-bottom: 1px solid var(--inkt-14);
+}
+.kop-inner {
+  display: flex;
+  align-items: center;
+  gap: clamp(16px, 3vw, 40px);
+  padding-block: 14px;
+}
+
+.merk {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  margin-right: auto;
+}
+.merk-tegel { width: 34px; flex: none; }
+.merk-naam {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-stretch: 112%;
+  font-size: 1.05rem;
+  letter-spacing: -0.01em;
+}
+
+.nav { display: flex; gap: clamp(18px, 2.4vw, 32px); }
+.nav a {
+  font-family: var(--font-display);
+  font-size: 0.94rem;
+  font-weight: 600;
+  text-decoration: none;
+  padding-block: 4px;
+  border-bottom: 2px solid transparent;
+  transition: border-color 160ms var(--ease);
+}
+.nav a:hover { border-bottom-color: var(--mosterd); }
+
+.menu { display: none; }
+.menu summary {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.94rem;
+  cursor: pointer;
+  list-style: none;
+  border: 1px solid var(--inkt);
+  padding: 11px 16px;
+}
+.menu summary::-webkit-details-marker { display: none; }
+.menu-balken { display: inline-block; width: 14px; margin-left: 10px; vertical-align: middle; }
+.menu-balken span { display: block; height: 2px; background: var(--inkt); }
+.menu-balken span + span { margin-top: 4px; }
+.menu-nav {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 100%;
+  background: var(--papier);
+  border-bottom: 1px solid var(--inkt-14);
+  padding: 8px var(--gutter) 18px;
+  display: flex;
+  flex-direction: column;
+}
+.menu-nav a {
+  font-family: var(--font-display);
+  font-weight: 600;
+  text-decoration: none;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--inkt-14);
+}
+
+/* ---------- hero ----------
+   Inktvlak met de kop links en een vierkant "venster" op het echte werk
+   rechts. De clip is een macro-opname van een kwast op een kozijn; op
+   volledige breedte wordt dat een onherkenbare vlek, op dit formaat leest
+   hij precies zoals bedoeld. */
+.hero {
+  background: var(--inkt);
+  color: var(--papier);
+  padding-block: clamp(52px, 7vw, 92px) clamp(44px, 6vw, 76px);
+}
+
+.hero-inner {
+  display: grid;
+  gap: clamp(30px, 4vw, 60px);
+  align-items: center;
+}
+
+.hero-copy { min-width: 0; }
+
+.hero-beeld {
+  position: relative;
+  aspect-ratio: 1;
+  max-width: 460px;
+  overflow: hidden;
+  background: var(--inkt);
+}
+
+.hero-media {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 55%;
+}
+
+/* op het inktvlak: lichte tekst, lichte hagen, lichte ghost-knop */
+.hero .label { color: var(--papier-68); }
+.hero .hero-lead { color: var(--papier-78); }
+.hero .feiten div { border-top-color: var(--papier-22); }
+.hero .feiten dt { color: var(--papier-68); }
+.hero .feiten dd { color: var(--papier); }
+.hero .knop-rand { border-color: var(--papier); color: var(--papier); }
+.hero .knop-rand:hover { background: var(--papier); color: var(--inkt); }
+.hero .knop-mosterd:hover { background: var(--mosterd-diep); color: var(--inkt); border-color: var(--mosterd-diep); }
+
+.hero-titel { max-width: 24ch; margin-bottom: 0.5em; }
+
+/* de mosterdlaag: geen highlight áchter twee woorden maar een geschilderde
+   strook over de volle regelhoogte, die breder doorloopt dan de woorden zelf.
+   Dat leest als een aangebrachte laag verf in plaats van als een marker.
+   De tekst erop is inkt (7,8:1) — ook nu de kop zelf papier is. */
+.laag {
+  display: block;
+  width: fit-content;
+  min-width: 62%;
+  padding: 0.06em 0.3em 0.2em 0.06em;
+  margin-left: -0.06em;
+  color: var(--inkt);
+  /* het donkere randje onderaan geeft de laag dikte (natte rand) */
+  background: linear-gradient(180deg, var(--mosterd) 0 93%, var(--mosterd-diep) 93% 100%);
+  clip-path: inset(0 100% 0 0);
+  animation: laag-trek 820ms var(--ease) 260ms forwards;
+}
+@keyframes laag-trek { to { clip-path: inset(0 0 0 0); } }
+
+.hero-lead {
+  font-size: clamp(1.05rem, 1.4vw, 1.2rem);
+  max-width: 46ch;
+  margin-bottom: clamp(24px, 3vw, 34px);
+}
+
+.hero-acties { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: clamp(40px, 5vw, 64px); }
+
+.feiten {
+  display: grid;
+  gap: clamp(16px, 2.5vw, 32px);
+  margin: 0;
+}
+.feiten div { border-top: 1px solid var(--inkt-14); padding-top: 14px; }
+.feiten dt {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--inkt-zwak);
+  margin-bottom: 6px;
+}
+.feiten dd {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.05rem;
+  letter-spacing: -0.01em;
+}
+
+/* het balkenmotief van het merk, op paginaschaal */
+.verfband {
+  display: flex;
+  height: clamp(30px, 3.6vw, 54px);
+  margin: 0;
+}
+.verfband span { display: block; height: 100%; }
+.band-mosterd { flex: 56; background: var(--mosterd); }
+.band-olijf { flex: 24; background: var(--olijf); }
+.band-roze { flex: 3; background: var(--roze); }
+.band-inkt { flex: 15; background: var(--inkt); }
+
+/* ---------- secties ---------- */
+.sectie { padding-block: var(--sectie); }
+.sectie-kalk { background: var(--kalk); }
+.sectie-inkt { background: var(--inkt); color: var(--papier); }
+.sectie-olijf {
+  position: relative;
+  background: var(--olijf);
+  color: var(--papier);
+}
+.sectie-olijf::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 5px;
+  background: var(--mosterd);
+}
+
+[id] { scroll-margin-top: 84px; }
+
+/* label links, inhoud rechts — het etiket van de verfpot */
+.split {
+  display: grid;
+  gap: clamp(20px, 3vw, 40px);
+}
+.split > .label { padding-top: 0.55em; }
+
+/* ---------- diensten: rijen, geen kaarten ---------- */
+.diensten li {
+  border-top: 1px solid var(--inkt-14);
+  padding-block: clamp(18px, 2.4vw, 28px);
+}
+.diensten li:last-child { border-bottom: 1px solid var(--inkt-14); }
+.diensten h3 { margin-bottom: 0.3em; }
+.diensten p { color: var(--inkt-zwak); max-width: 52ch; }
+
+/* "Onderhoud & kleine klussen" krijgt één echte foto: bewijs bij de dienst
+   waar mensen het minst van weten wat ze inhoudt */
+.dienst-foto {
+  width: 100%;
+  max-width: 200px;
+  height: auto;
+  display: block;
+  margin-top: 16px;
+}
+@media (min-width: 900px) {
+  .dienst-foto { margin-top: 0; }
+}
+
+/* ---------- werk: de enige foto's ---------- */
+.werk-grid {
+  margin-top: clamp(28px, 4vw, 48px);
+  display: grid;
+  gap: 1px;
+  background: var(--inkt-14);
+}
+.werk-grid figure { margin: 0; background: var(--kalk); }
+.werk-grid img {
+  width: 100%;
+  height: clamp(220px, 26vw, 360px);
+  object-fit: cover;
+}
+.werk-grid figcaption {
+  font-size: 0.94rem;
+  color: var(--inkt-zwak);
+  padding: 14px clamp(14px, 2vw, 24px) 18px;
+}
+
+/* ---------- werkwijze: een echte volgorde, dus nummers ---------- */
+.stappen { display: grid; gap: clamp(22px, 3vw, 32px); }
+.stappen li { border-top: 1px solid var(--papier-22); padding-top: 16px; }
+.stappen li::before {
+  content: counter(stap);
+  counter-increment: stap;
+  display: block;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.95rem;
+  font-variant-numeric: tabular-nums;
+  color: var(--mosterd);
+  margin-bottom: 10px;
+}
+.stappen { counter-reset: stap; }
+.stappen p { color: var(--papier-78); font-size: 1rem; }
+
+/* ---------- over ---------- */
+.over { display: grid; gap: clamp(24px, 4vw, 44px); }
+/* echte foto van Eef naast haar bus — het logo staat op de bus, dus de
+   merkidentiteit blijft in beeld zonder dat er iets aan het logo verandert.
+   Volle breedte van de tekstkolom: het originele kader (4:3) werkt beter dan
+   een vierkante uitsnede. */
+.over-foto {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.over p { max-width: 62ch; margin-bottom: 1em; }
+.over p + p { margin-top: 0; }
+
+/* ---------- contact ---------- */
+.contact-grid { display: grid; gap: clamp(18px, 2.5vw, 28px); }
+/* Op mobiel is dit de belangrijkste actie van de pagina, dus een zichtbaar
+   omkaderd blok met pijl: het moet als knop lezen, niet als losse tekst. */
+.contact {
+  display: block;
+  position: relative;
+  text-decoration: none;
+  border: 1px solid var(--papier-22);
+  padding: 14px 46px 14px 16px;
+}
+.contact::after {
+  content: "\2192";
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-family: var(--font-display);
+  color: var(--papier-68);
+}
+.contact-label {
+  display: block;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--papier-68);
+  margin-bottom: 6px;
+}
+.contact-waarde {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.3rem;
+  letter-spacing: -0.01em;
+}
+.contact:hover .contact-waarde { color: var(--mosterd); }
+
+/* ---------- TODO-markering: stippellijn, geen halo (rustiger dan v1/v2) ---------- */
+.todo {
+  border-bottom: 1px dotted currentColor;
+  cursor: help;
+}
+
+/* ---------- voet ---------- */
+.voet { background: var(--inkt); color: var(--papier-68); font-size: 0.9rem; }
+.voet-inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px 28px;
+  padding-block: 26px;
+}
+.voet-merk { display: flex; align-items: center; gap: 10px; color: var(--papier); }
+.voet-legal { display: flex; flex-wrap: wrap; gap: 6px 10px; }
+
+/* ---------- mobiele actiebalk ---------- */
+.mobiel-balk {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 60;
+  display: flex;
+  gap: 10px;
+  padding: 10px var(--gutter) calc(10px + env(safe-area-inset-bottom));
+  background: var(--papier);
+  border-top: 1px solid var(--inkt-14);
+}
+.mobiel-balk .knop { flex: 1; text-align: center; }
+/* ruimte onder de pagina zodat de vaste actiebalk nooit de voettekst dekt
+   (balk is ~73px hoog; 104px geeft echte marge) */
+body { padding-bottom: 104px; }
+
+/* ==========================================================================
+   Responsief
+   ========================================================================== */
+
+@media (min-width: 620px) {
+  .feiten { grid-template-columns: repeat(3, 1fr); }
+  .werk-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (min-width: 700px) {
+  .mobiel-balk { display: none; }
+  body { padding-bottom: 0; }
+}
+
+@media (min-width: 760px) {
+  .contact-grid { grid-template-columns: repeat(3, 1fr); }
+  /* vanaf hier is het een rustige rij met een haar boven de tekst */
+  .contact { border: 0; border-top: 1px solid var(--papier-22); padding: 16px 0 0; }
+  .contact::after { display: none; }
+}
+
+@media (min-width: 900px) {
+  .split { grid-template-columns: minmax(140px, 180px) minmax(0, 1fr); }
+  .split > .label { margin-bottom: 0; }
+  .hero-inner { grid-template-columns: minmax(0, 1fr) clamp(300px, 30vw, 420px); }
+  .diensten li {
+    display: grid;
+    grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+    gap: clamp(20px, 4vw, 56px);
+    align-items: baseline;
+  }
+  .diensten p { margin: 0; }
+  .diensten .dienst-met-foto {
+    grid-template-columns: minmax(0, 4fr) minmax(0, 5fr) minmax(0, 240px);
+    align-items: center;
+  }
+  .dienst-foto { max-width: none; }
+  .stappen { grid-template-columns: repeat(5, minmax(0, 1fr)); gap: clamp(18px, 2.2vw, 30px); }
+}
+
+/* Boven 980px verbergt de basisregel `.menu { display: none; }` het menu al;
+   hier is dus geen extra media query nodig. */
+@media (max-width: 980px) {
+  .nav { display: none; }
+  /* .menu blijft statisch: anders wordt hij de containing block van
+     .menu-nav en klapt het menu zo breed als het knopje in plaats van
+     zo breed als de kop. */
+  .menu { display: block; }
+  .kop-inner { position: relative; }
+}
+
+@media (max-width: 619px) {
+  .kop-bel { display: none; }
+  .hero-beeld { max-width: 320px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .laag { animation: none; clip-path: inset(0 0 0 0); }
+  .knop { transition: none; }
+  .knop:active { transform: none; }
+}

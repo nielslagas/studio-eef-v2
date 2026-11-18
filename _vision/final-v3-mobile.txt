@@ -1,0 +1,32 @@
+Alleen de mobiele weergave (390px) beoordeeld; de vaste actiebalk laat ik buiten beschouwing.
+
+**Hero**  
+De hero voelt rustig: inktvlak, heldere kop en twee duidelijke CTA’s. De mosterdlaag achter “laag verf” is één strak blok en breekt netjes af. Het vierkante werkvenster onder de trustregels is herkenbaar en echt; het donkerrode kozijn wijkt af van de huisstijl, maar stoort niet omdat het in een afgebakend venster blijft. De verhouding is tekst-first, beeld ondersteunend, al is het venster aan de grote kant: de hero wordt er lang van.
+
+**Kleurenband**  
+Strakke, dunne band in mosterd/olijf/roze. Geen storende decoratie; de smalle roze strook valt op, maar past binnen de huisstijl.
+
+**Diensten**  
+Rustige sectie met duidelijke H2, drie diensten en hairlines. Ruime marges, goede leesbaarheid, geen afkappingen. De afbreking na “Wat we” is kort, maar stoort niet echt.
+
+**Werk**  
+Consistente beelden en duidelijke captions. De noot maakt voldoende duidelijk dat het om AI-impressies gaat en niet om uitgevoerd werk. Drie beelden maken de sectie lang, maar dat past bij een portfolio.
+
+**Werkwijze**  
+Sterk onderdeel: genummerde volgorde, duidelijke koppen, mosterdcijfers en hairlines. Goed leesbaar op donker; geen onrust.
+
+**Over**  
+Goede kop en body; de placeholder is duidelijk. De grote vanfoto is het minst strakke element: warme kleuren en een losse stock/AI-achtige sfeer trekken veel aandacht en doorbreken de typografische rust.
+
+**Contact**  
+Duidelijke H2 en drie grote tikbare blokken voor Bel/Mail/App. Contrast op olijf is goed; de stippellijn-placeholders zijn bewust. De pijlen zijn klein, maar het hele blok is aanraakbaar.
+
+**Voettekst**  
+Klein maar leesbaar. KvK/BTW/adres met stippellijnen is bewust; de middots en stippellijnen maken de regel iets druk, maar blijven binnen de marge.
+
+(a) Ja, overwegend rustig en professioneel. De strakke typografie, vaste marges en het ontbreken van rondingen/schaduwen werken goed; alleen de hero is wat lang en de vanfoto in Over is een fotografische uitzondering.  
+(b) De mosterdlaag breekt netjes af: één strak blok achter “laag verf”, geen split of rommelige rand; voldoende padding.  
+(c) Het vierkante werkvenster komt op mobiel goed uit qua formaat en plek onder de tekst; het is herkenbaar en niet afgekapt. Wel maakt het de hero aan de lange kant; iets compacter zou rustiger zijn.  
+(d) Zwakste punt op mobiel: **over** — de grote vanfoto voelt als een losse, niet-gelabelde stock/AI-impressie en doorbreekt de strakke typografie.
+
+OORDEEL: 8,5 — Sterke, rustige v3 met heldere typografie; alleen de lange hero en de vanfoto in Over houden het net van een hoger cijfer.

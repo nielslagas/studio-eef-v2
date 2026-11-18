@@ -1,0 +1,14 @@
+1. VIJF BEVINDINGEN  
+1. css/style.css — `.voet .merk-tegel img` — `border-radius: 5px; box-shadow: 0 0 0 1.5px ...` introduceert alsnog een ronding en een schaduw in het footer-logo. Dat is expliciet tegen de v3-afspraak “geen rondingen, geen schaduwen” en oogt als een restje uit v2.  
+2. index.html — `header .kop-bel` en `.mobiel-balk .knop` — de `tel:`-placeholder zit alleen in `href` met `data-todo`, maar de zichtbare linktekst “Bel EEF”/“Bel” heeft geen `.todo`-klasse en geen title. Daardoor is deze placeholder niet met stippellijn gemarkeerd zoals afgesproken.  
+3. index.html — `<details class="menu">` — zonder JavaScript sluit het `<details>`-menu niet na het volgen van een ankerlink. Op mobiel blijft het menu dus open over de content staan; dit is onhandig en niet netjes op te lossen zonder JS.  
+4. index.html — `#werk figure img` alt-teksten — de alt-teksten beschrijven AI-impressies als echt werk (“Woonkamer met vers geschilderde kalkwitte muren...”). Daardoor kan een screenreader-gebruiker ze voor uitgevoerd werk aanzien, terwijl de eigenaar juist niet wil dat AI-beeld als werk doorgaat.  
+5. css/style.css — `@media (min-width: 981px) { .menu { display: none; } }` — overbodige/dead rule: `.menu { display: none; }` staat al in de basisregels, dus deze media query voegt niets toe.
+
+2. QUICK WINS  
+- Verwijder `border-radius: 5px; box-shadow: ...` uit `.voet .merk-tegel img`, of vervang door een strakke rand zonder schaduw.  
+- Geef ook de header- en mobiel-belknoppen een `title="Placeholder — nog in te vullen"` en eventueel een stippellijn-label of `.todo`-class.  
+- Maak de werk-alt-teksten expliciet als impressie: begin bijvoorbeeld met “Impressie: woonkamer met...”.  
+- Verwijder de overbodige `@media (min-width: 981px) { .menu { display: none; } }`-regel.
+
+3. OORDEEL: GOED-MET-OPMERKINGEN — De pagina is grotendeels rustig, strak en in lijn met de v3-opzet, maar de v2-schaduw, placeholder-markering, menu-sluiting en AI-alt-teksten verdienen nog een correctieronde.

@@ -1,0 +1,52 @@
+**Eindoordeel v3 desktop** (op basis van de vijf plakken, van boven naar beneden)
+
+**Hero**  
+De nieuwe opbouw werkt: inktvlak, links de typografie, rechts het vierkante werkvenster. De hiërarchie is sterk — eyebrow, grote H1, korte intro, twee duidelijke CTA’s en daaronder drie rustige trustregels. Er is veel wit/inkt-ruimte en geen badges, pillen of schaduwen; dat voelt volwassen. Het vierkante venster is herkenbaar als macro-opname en geeft echt materiaalgevoel. Het donkerrode kozijn is geen huisstijlkleur, maar leest als verf/werk en sluit via de roestbruine bus in “Over EEF” nog enigszins aan. Het stoort niet, maar het is wel het meest verzadigde vlak in de hero; houd het als content, niet als UI-kleur. De verhouding tekst/beeld klopt: de tekstkolom blijft dominant, het beeld is een ondergeschikt detail. De mosterdstrook achter “laag verf” valt op, maar door de rechthoekige vorm, volle regelhoogte en doorgaande breedte leest hij meer als highlighter dan als aangebrachte verf. Het contrast van inkt op mosterd is ruim voldoende (circa 7,8:1).
+
+**Kleurenband onder de hero**  
+De band is een duidelijke huisstijlcue, maar ook het meest decoratieve element van de pagina. De verhoudingen — veel mosterd, een breder olijfolieblok en een smalle roze strook — voelen wat willekeurig en trekken aandacht zonder functie. Voor “bewust rustig” zou ik hem dunner, subtieler of ritmischer maken. Nu is het net een template-divider; de roze strook is bovendien zo smal dat hij eerder als restje dan als bewuste kleurtoon leest.
+
+**Diensten**  
+Sterk. De vaste labelkolom links, de grote kop rechts en de eenvoudige lijst met dunne lijnen werken goed. Veel witruimte, geen kaarten, geen overbodige iconen. De titels en omschrijvingen zijn goed leesbaar; het contrast is prima. Deze sectie voelt het meest “af” en professioneel.
+
+**Werk**  
+Rustige grid, consistente captions en geen rondingen. Toch is dit visueel de minst overtuigende sectie. De AI-impressies zijn eerlijk als impressies aangeduid, maar de drie beelden zijn onderling te verschillend: een woonkamer, een gevel en een roller-detail. Ze lezen als stock/AI en de gevel introduceert rood/groen dat buiten de strikte huisstijl valt. De noot is te klein om de eerste indruk volledig te corrigeren. Als porteel van “echt werk” moet hier uiteindelijk echt werk staan; tot die tijd zou één sterke, echte detailfoto rustiger en geloofwaardiger zijn dan drie uiteenlopende AI-beelden.
+
+**Werkwijze**  
+Goed. De genummerde stappen zijn functioneel en daarom terecht genummerd. Vijf kolommen zijn op desktop nog leesbaar, met korte titels en beknopte tekst. Het donkere vlak geeft contrast en rust. De kleine labels zijn iets ingetogen, maar nog voldoende leesbaar. Geen storende decoratie.
+
+**Over EEF**  
+De kop “alsof het haar eigen huis is” is menselijk en past bij een eenmansbedrijf. De echte foto van Eef naast de bus is in principe een verbetering ten opzichte van een abstracte logo-tegel: het maakt het bedrijf persoonlijk en geloofwaardig. Maar de foto is nu nog wat snapshot-achtig: veel gras/lucht, Eef is klein, de bus domineert en het logo op de bus is klein en anders toegepast dan de inkt-tegel in de kop. Daardoor leidt de foto enigszins af van de strakke typografie. Een strakkere crop, rustiger kader en beter leesbaar buslogo zouden dit verhelpen. De losse 118px-logo-tegel zie ik in deze versie niet meer terug; de grote merkdrager is nu de busfoto, wat merkconsistentie kost.
+
+**Contact**  
+Sterk en rustig. Olijfvlak, heldere kop, korte uitleg en drie duidelijke kanalen: bellen, mailen, appen. Wit op olijf heeft goed contrast. De placeholder-arcering is consequent genoeg; niets stoort. Let wel op dat “Stuur een appje” ook echt als link/affordance werkt en niet alleen als kop blijft staan.
+
+**Voettekst**  
+Goed. Zeer eenvoudig, voldoende contrast en logische bedrijfsgegevens. De placeholders zijn duidelijk herkenbaar. Geen overbodige socials of decoratie.
+
+---
+
+**Expliciete vragen**
+
+**(a) Rustig en professioneel of generieke AI/template-look?**  
+Overwegend rustig en professioneel. De pagina vermijdt precies de zaken die eerder stoorden: geen rondingen, geen schaduwen, geen badges, geen marquee, geen volgeplakte hero. De typografie en het lijnenspel dragen de layout. Toch zijn er nog templatesignalen: de vaste labelkolom plus grote koppen plus afwisselende papier/kalkwit/inkt-vlakken is een gangbaar editorial template; de kleurenband en vooral de AI-beelden in “Werk” verraden nog een placeholderfase. Het is dus niet “generieke AI”, maar ook nog niet volledig eigen en overtuigend vakwerk.
+
+**(b) Leest de mosterdstrook als laag verf of als marker-highlight? En is het contrast goed?**  
+Eerder als marker-highlight dan als aangebrachte laag verf. De strook is perfect rechthoekig, vult de volle regelhoogte en loopt breder door dan de woorden; er zit geen kwast- of verfstructuur in. Als grafische swatch is hij consistent, maar als “laag verf” nog niet overtuigend. Het contrast van de inkt-tekst op mosterd is wel ruim voldoende.
+
+**(c-1) Past het rode kozijn in de hero-video bij de huisstijl, of stoort het? En klopt de verhouding tekst/beeld?**  
+Het donkerrode kozijn is niet in de opgegeven huisstijl, maar het voelt als echt materiaal en niet als een willekeurige UI-kleur. Het stoort niet, mede omdat de rest van de hero streng in inkt/mosterd blijft. Wel trekt het rood veel aandacht; het moet content blijven. De verhouding klopt: de tekstkolom is dominant, het vierkante beeld is een rustig detailvenster. Het beeld staat iets los in het vlak, maar dat stoort hier niet.
+
+**(d-1) Is de foto van Eef in “Over EEF” een verbetering ten opzichte van een logo-tegel, of leidt hij af?**  
+Een verbetering in menselijkheid en geloofwaardigheid, maar de huidige uitvoering leidt nog enigszins af. De context is rommelig, Eef is klein en de bus/het logo concurreren met haar. Een strakkere crop en betere kleur/contrastbehandeling zouden hetzelfde idee professioneler maken.
+
+**(c-2) Is het merkteken op 34px in de kop en 118px in “Over EEF” bruikbaar en consistent?**  
+Op 34px werkt de inkt-tegel als compact merkteken, maar de olijfkleurige balk verdwijnt bijna tegen de inkt achtergrond; alleen mosterd en roze blijven goed zichtbaar. Daardoor is het merkteken op klein formaat niet volledig consistent leesbaar. Op 118px zou de tegel wel leesbaar zijn, maar in deze versie staat die grote tegel niet meer in “Over EEF”; daar is alleen het logo op de bus, op een andere achtergrond en schaal. Dat maakt de toepassing minder consistent. Advies: een kleine variant met meer contrast of een duidelijke papier-/inkt-scheiding, en de grote tegel alleen tonen als hij echt als merkdrager bedoeld is.
+
+**(d-2) Wat is het zwakste punt van de hele pagina?**  
+“Werk”. Het is de enige sectie waar de belofte van echt schilderwerk visueel niet wordt waargemaakt: de AI-impressies zijn netjes, maar lezen als stock/AI en zijn onderling te verschillend. De disclaimer is eerlijk, maar een bezoeker zoekt hier bewijs. Tot echte foto’s beschikbaar zijn, zou één sterke echte detailfoto of een rustiger placeholder beter werken dan drie uiteenlopende impressies.
+
+**(e) Leest de mosterdstrook nog als dé signature, nu de hero een vierkant werkvenster heeft?**  
+Minder dan voorheen. De strook blijft een herkenbaar accent, maar nu concurreren het vierkante werkvenster, de kleurenband, de mosterd CTA en de roller in “Werk” om de mosterdrol. De strook achter “laag verf” is nog steeds een eyecatcher, maar leest door zijn vorm eerder als highlight dan als dé verfsignature. Om hem als signature te houden, zou ik de vorm/breedte verfijnen en de mosterdherhaling iets terugdringen.
+
+**OORDEEL: 7,5** — Een duidelijk rustiger, professioneler en beter doordachte v3 met sterke typografie en witruimte, maar de mosterd-highlight, de kleurenband, de AI-werkbeelden en de kleine merkdrager houden het net onder overtuigend eigen vakwerk.

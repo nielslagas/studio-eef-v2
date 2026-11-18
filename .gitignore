@@ -8,6 +8,22 @@ _vision/**/*-resp.json
 _vision/_inspect*/
 site/_inspect*
 site-v1/_inspect*
+site-v3/_inspect*
+
+# oude versies staan lokaal in _archief/ (v1 en v2); de geschiedenis zit in git
+_archief/
+
+# ruwe generaties en tussenbestanden blijven lokaal — alleen gecureerde assets
+# gaan naar site-v3/assets/. De originelen van de eigenaar wél bewaren:
+img-gen/*
+!img-gen/eef-bus-bron.jpg
+!img-gen/kleine-klus-bron.jpg
+!img-gen/werk-kwast-bron.mp4
+!img-gen/fries-huis-bron.jpg
+
+# lokale dev-tooling (ffmpeg-static voor het comprimeren van de hero-video;
+# opnieuw te installeren met: npm install ffmpeg-static --prefix _tools)
+_tools/
 
 # os / editor
 Thumbs.db
@@ -15,4 +31,3 @@ Thumbs.db
 
 # lokale backup van de oude v1-repo (GitHub-kopie staat in nielslagas/studio-eef)
 .git-v1-backup/
-

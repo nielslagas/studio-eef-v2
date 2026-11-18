@@ -1,5 +1,8 @@
 // Volledige-pagina screenshot via CDP (werkbaar boven de viewport-hoogte uit).
-// Gebruik: node screenshot-full.js [url] [breedte] [uitvoerpad]
+// Gebruik: node screenshot-full.js [url] [breedte] [uitvoerpad] [js-vóór-capture]
+// De optionele vierde parameter is JavaScript dat vlak vóór de capture wordt
+// uitgevoerd — bijvoorbeeld om tekst te verbergen en zo de pure achtergrond te
+// meten (contrast-check).
 const { spawn } = require('child_process');
 const fs = require('fs');
 const os = require('os');
@@ -18,6 +21,7 @@ if (!BROWSER) throw new Error('geen Chrome of Edge gevonden');
 const url = process.argv[2];
 const W = parseInt(process.argv[3] || '1280', 10);
 const out = process.argv[4];
+const voorCapture = process.argv[5] || null;
 // Willekeurige poort: een vast poortje raakt geblokkeerd door een zombi-proces
 // en dan faalt het script met "geen CDP-endpoint".
 const PORT = 10240 + Math.floor(Math.random() * 50000);
@@ -76,6 +80,10 @@ async function main() {
     width: W, height: Math.ceil(content.height), deviceScaleFactor: 1, mobile: W < 700,
   });
   await sleep(800);
+  if (voorCapture) {
+    await send('Runtime.evaluate', { expression: voorCapture, awaitPromise: true });
+    await sleep(400);
+  }
   const shot = await send('Page.captureScreenshot', { format: 'png', captureBeyondViewport: true });
   fs.writeFileSync(out, Buffer.from(shot.data, 'base64'));
   console.log(`${out}: ${Math.ceil(content.width)}x${Math.ceil(content.height)} pagina, opgeslagen`);

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<title>Videoframes</title>
+<style>
+  body { margin: 0; background: #111; font: 14px system-ui, sans-serif; color: #eee; }
+  .rij { display: flex; flex-wrap: wrap; gap: 8px; padding: 8px; }
+  figure { margin: 0; }
+  video { width: 460px; display: block; background: #000; }
+  figcaption { padding: 4px 0; color: #aaa; }
+</style>
+</head>
+<body>
+<div class="rij" id="rij"></div>
+<script>
+  // Toont van een videobestand drie frames naast elkaar (voor inspectie zonder ffmpeg).
+  // Gebruik: _frames.html?src=../img-gen/clip.mp4&t=0.2,2.5,4.8
+  const p = new URLSearchParams(location.search);
+  const src = p.get('src');
+  const tijden = (p.get('t') || '0.2,2.5,4.8').split(',').map(Number);
+  const rij = document.getElementById('rij');
+  tijden.forEach((t) => {
+    const fig = document.createElement('figure');
+    const v = document.createElement('video');
+    v.src = src; v.muted = true; v.playsInline = true; v.preload = 'auto';
+    v.addEventListener('loadedmetadata', () => { v.currentTime = t; });
+    const cap = document.createElement('figcaption');
+    cap.textContent = 't = ' + t + 's';
+    fig.append(v, cap);
+    rij.append(fig);
+  });
+</script>
+</body>
+</html>
