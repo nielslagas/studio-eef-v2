@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Studio EEF — Schilderwerken binnen en buiten</title>
 <meta name="description" content="Studio EEF schildert binnen- en buitenschilderwerk en doet onderhoudsklussen. Zorgvuldig afgeplakt, netjes opgeleverd. Vraag een offerte.">
-<meta name="theme-color" content="#231F20">
+<meta name="theme-color" content="#FAF8F4">
 <!-- TODO: placeholdergegevens in de schema.org-data vervangen zodra bekend:
      telephone (+31612345678), email (hallo@studio-eef.nl) en url (www.studio-eef.nl) -->
 <script type="application/ld+json">
@@ -23,30 +23,25 @@
 <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..125,600;75..125,700&family=Atkinson+Hyperlegible:wght@400;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..125,600;75..125,700&family=Atkinson+Hyperlegible:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
-<script>
-/* Bepaalt vóór de eerste paint hoe de hero-signature gaat afspelen:
-   geen data-hero = reduced-motion of geen JS → direct de geschilderde eindstand. */
-(function () {
-  try {
-    document.documentElement.classList.add('js-reveal');
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) { return; }
-    var offsetPath = window.CSS && CSS.supports && CSS.supports('offset-path', 'path("M0 0 L10 10")');
-    document.documentElement.setAttribute('data-hero', offsetPath ? 'css' : 'js');
-  } catch (e) { /* stil blijven: eindstand tonen */ }
-})();
-</script>
 </head>
-<body>
-<a class="skip" href="#diensten">Direct naar inhoud</a>
+<body id="top">
 
-<header class="header">
-  <div class="container header-inner">
-    <a class="brand" href="#" aria-label="Studio Eef — home">
-      <img class="brand-mark" src="assets/logo.svg" alt="" width="46" height="46">
-      <span class="brand-name">Studio Eef</span>
+<a class="skip" href="#diensten">Direct naar de inhoud</a>
+
+<!-- ============================================================
+     HEADER — papier, één haarscherpe lijn, geen schaduw
+     ============================================================ -->
+<header class="kop">
+  <div class="wrap kop-inner">
+    <a class="merk" href="#top" aria-label="Studio EEF — naar boven">
+      <span class="merk-tegel" aria-hidden="true">
+        <img src="assets/logo.svg" alt="" width="34" height="34">
+      </span>
+      <span class="merk-naam">Studio EEF</span>
     </a>
+
     <nav class="nav" aria-label="Hoofdmenu">
       <a href="#diensten">Diensten</a>
       <a href="#werk">Werk</a>
@@ -54,9 +49,13 @@
       <a href="#over">Over EEF</a>
       <a href="#contact">Contact</a>
     </nav>
+
+    <!-- TODO: telefoonnummer invullen zodra bekend — ook in de JSON-LD in de <head> -->
+    <a class="knop knop-mosterd kop-bel" href="tel:0612345678" data-todo="telefoonnummer" title="Placeholder — het telefoonnummer in deze link moet nog ingevuld worden">Bel EEF</a>
+
     <details class="menu">
-      <summary>Menu<span class="menu-bars" aria-hidden="true"><span></span><span></span></span></summary>
-      <nav class="menu-nav" aria-label="Mobiel menu">
+      <summary>Menu<span class="menu-balken" aria-hidden="true"><span></span><span></span></span></summary>
+      <nav class="menu-nav" aria-label="Menu">
         <a href="#diensten">Diensten</a>
         <a href="#werk">Werk</a>
         <a href="#werkwijze">Werkwijze</a>
@@ -64,250 +63,234 @@
         <a href="#contact">Contact</a>
       </nav>
     </details>
-    <!-- TODO: telefoonnummer invullen zodra bekend — ook in de JSON-LD bovenaan in de <head> -->
-    <a class="btn btn-mosterd" href="tel:0612345678" data-todo="telefoonnummer">Bel EEF</a>
   </div>
 </header>
 
 <main>
-  <!-- HERO: inkt canvas, houten plank, kwast-signature -->
+
+  <!-- ============================================================
+       HERO — inktvlak met de kop links en een vierkant venster op het
+       echte werk rechts: de clip van de kwast op het kozijn. De clip is
+       een macro-opname en leest alleen op dit formaat; als volle
+       achtergrond wordt het een onherkenbare donkere vlek. Hij loopt in
+       een lus (de streek herhaalt zich), staat stil bij
+       prefers-reduced-motion en zonder JavaScript blijft de poster staan.
+       ============================================================ -->
   <section class="hero">
-    <div class="container">
-      <p class="eyebrow eyebrow-licht">Schilderwerken &middot; binnen en buiten</p>
+    <div class="wrap hero-inner">
+      <div class="hero-copy">
+        <p class="label">Schilderwerk &middot; binnen en buiten</p>
+        <h1 class="hero-titel">Een frisse <span class="laag">laag verf</span> voor je huis.</h1>
+        <p class="hero-lead">Studio EEF schildert muren, kozijnen, gevels en houtwerk, binnen en buiten. Zorgvuldig afgeplakt, elke dag netjes opgeruimd.</p>
+        <p class="hero-acties">
+          <a class="knop knop-mosterd" href="#contact">Vraag een offerte</a>
+          <a class="knop knop-rand" href="#werkwijze">Zo werken wij</a>
+        </p>
 
-      <div class="hero-kunst">
-        <!-- het hout: staat er al vóór de kwast komt (substraat, geen animatie) -->
-        <div class="plank" aria-hidden="true"></div>
-
-        <!-- meetpad voor de kwastslag (JS vult de d; zonder JS ongebruikt) -->
-        <svg class="veeg-pad" aria-hidden="true" focusable="false"><path id="veeg-pad-pad" d=""/></svg>
-
-        <h1 class="hero-title">
-          <span class="titel-regel">Een frisse</span>
-          <span class="titel-regel titel-plank">
-            <span class="verfstreek" aria-hidden="true"><img class="verfstreek-img" src="assets/img/verfstreek-mosterd.png" alt="" width="1200" height="669" decoding="async"><span class="glans"></span><svg class="druppel" viewBox="0 0 40 64" aria-hidden="true"><path d="M14 0 h12 v26 c0 2 6 8 6 16 a12 12 0 1 1 -24 0 c0 -8 6 -14 6 -16 Z"/></svg></span>
-            <span class="plank-tekst">laag verf</span>
-          </span>
-          <span class="titel-regel">voor je huis.</span>
-        </h1>
-
-        <!-- de kwast: fotorealistische ronde kwast met mosterdresten
-             (transparante cut-out, rembg). De haarpunt linksonder volgt
-             het pad via offset-anchor. -->
-        <img class="kwast" src="assets/img/kwast-ronde.png" alt="" width="420" height="234" decoding="async">
+        <dl class="feiten">
+          <div>
+            <dt>Offerte</dt>
+            <dd>Binnen twee werkdagen</dd>
+          </div>
+          <div>
+            <dt>Werkplek</dt>
+            <dd>Elke dag netjes opgeruimd</dd>
+          </div>
+          <div>
+            <dt>Aanspreekpunt</dt>
+            <dd>Altijd dezelfde schilder</dd>
+          </div>
+        </dl>
       </div>
 
-      <p class="hero-sub">Studio EEF schildert muren, kozijnen, gevels en houtwerk, binnen en buiten. Zorgvuldig afgeplakt, elke dag netjes opgeruimd.</p>
-      <div class="hero-cta">
-        <a class="btn btn-mosterd" href="#contact">Vraag een offerte</a>
-        <a class="btn btn-ghost" href="#werkwijze">Zo werken wij</a>
+      <div class="hero-beeld">
+        <video class="hero-media" poster="assets/video/hero-poster.jpg" muted playsinline loop preload="none" aria-hidden="true" data-src="assets/video/hero.mp4" data-src-klein="assets/video/hero-mobiel.mp4"></video>
       </div>
     </div>
   </section>
 
-  <!-- MARQUEE-BAND: schuin, mosterd, dienstenwoorden (decoratief) -->
-  <div class="marquee" aria-hidden="true">
-    <div class="marquee-track">
-      <span>Binnenschilderwerk</span><span class="marquee-punt">&middot;</span>
-      <span>Buitenschilderwerk</span><span class="marquee-punt">&middot;</span>
-      <span>Onderhoud &amp; kleine klussen</span><span class="marquee-punt">&middot;</span>
-      <span>Binnenschilderwerk</span><span class="marquee-punt">&middot;</span>
-      <span>Buitenschilderwerk</span><span class="marquee-punt">&middot;</span>
-      <span>Onderhoud &amp; kleine klussen</span><span class="marquee-punt">&middot;</span>
-    </div>
-    <div class="marquee-track">
-      <span>Binnenschilderwerk</span><span class="marquee-punt">&middot;</span>
-      <span>Buitenschilderwerk</span><span class="marquee-punt">&middot;</span>
-      <span>Onderhoud &amp; kleine klussen</span><span class="marquee-punt">&middot;</span>
-      <span>Binnenschilderwerk</span><span class="marquee-punt">&middot;</span>
-      <span>Buitenschilderwerk</span><span class="marquee-punt">&middot;</span>
-      <span>Onderhoud &amp; kleine klussen</span><span class="marquee-punt">&middot;</span>
-    </div>
+  <!-- het balkenmotief van het merk, op paginaschaal: één egale strook -->
+  <div class="verfband" aria-hidden="true">
+    <span class="band-mosterd"></span><span class="band-olijf"></span><span class="band-roze"></span><span class="band-inkt"></span>
   </div>
 
-  <!-- TRUSTBAR: drie procesfeiten uit de eigen copy (geen verzonnen cijfers) -->
-  <aside class="trustbar" aria-label="Zo werkt Studio EEF">
-    <div class="container trustbar-grid">
-      <div class="trustbar-item" data-reveal>
-        <span class="trustbar-label">Offerte</span>
-        <p class="trustbar-feit">Offerte binnen 2 werkdagen</p>
-      </div>
-      <div class="trustbar-item" data-reveal>
-        <span class="trustbar-label">Werkplek</span>
-        <p class="trustbar-feit">Elke dag netjes opgeruimd</p>
-      </div>
-      <div class="trustbar-item" data-reveal>
-        <span class="trustbar-label">Aanspreekpunt</span>
-        <p class="trustbar-feit">Altijd dezelfde schilder</p>
-      </div>
-    </div>
-  </aside>
-
-  <!-- DIENSTEN als verfstalen -->
-  <section class="section" id="diensten">
-    <div class="container">
-      <p class="eyebrow">Diensten</p>
-      <h2 class="section-title">Wat we voor je schilderen</h2>
-      <div class="chips">
-        <article class="chip" data-reveal>
-          <div class="chip-band" style="--band:#D6AF29">
-            <span class="chip-code">EEF&#8209;01</span>
-          </div>
-          <div class="chip-body">
+  <!-- ============================================================
+       DIENSTEN — geen kaarten, geen nummers: rijen met een lijn
+       ============================================================ -->
+  <section class="sectie" id="diensten">
+    <div class="wrap split">
+      <p class="label">Diensten</p>
+      <div>
+        <h2>Wat we voor&nbsp;je schilderen</h2>
+        <ul class="diensten">
+          <li>
             <h3>Binnenschilderwerk</h3>
             <p>Muren, plafonds, kozijnen en deuren. Van schuren en gronden tot de laatste laag.</p>
-          </div>
-        </article>
-        <article class="chip" data-reveal>
-          <div class="chip-band" style="--band:#424631">
-            <span class="chip-code">EEF&#8209;02</span>
-          </div>
-          <div class="chip-body">
+          </li>
+          <li>
             <h3>Buitenschilderwerk</h3>
             <p>Gevels, kozijnen en houtwerk buiten. Weerbestendig en kleurecht &mdash; een laag die jaren meegaat.</p>
-          </div>
-        </article>
-        <article class="chip" data-reveal>
-          <div class="chip-band" style="--band:#F37C96">
-            <span class="chip-code">EEF&#8209;03</span>
-          </div>
-          <div class="chip-body">
+          </li>
+          <li class="dienst-met-foto">
             <h3>Onderhoud &amp; kleine klussen</h3>
             <p>Vensterbanken, deuren en retouches. Ook als het om &eacute;&eacute;n kozijn of &eacute;&eacute;n muur gaat.</p>
-          </div>
-        </article>
+            <img class="dienst-foto" src="assets/img/kleine-klus.jpg" alt="Eef haalt met een verfstripper oude verf van een kozijn" width="720" height="480" loading="lazy" decoding="async">
+          </li>
+        </ul>
       </div>
     </div>
   </section>
 
-  <!-- WERK: impressies -->
-  <section class="section section-kalk" id="werk">
-    <div class="container">
-      <p class="eyebrow">Impressies</p>
-      <h2 class="section-title">Kleur aan de muur</h2>
+  <!-- ============================================================
+       WERK — de enige foto's op de pagina
+       ============================================================ -->
+  <section class="sectie sectie-kalk" id="werk">
+    <div class="wrap">
+      <div class="split">
+        <p class="label">Werk</p>
+        <div>
+          <h2>Kleur aan de muur</h2>
+          <p class="sectie-noot">Impressies in de huisstijlkleuren. Foto&rsquo;s van uitgevoerd werk komen hier zodra ze er zijn.</p>
+        </div>
+      </div>
       <div class="werk-grid">
-        <figure class="werk-card" data-reveal>
-          <img src="assets/img/werk-woonkamer.jpg" alt="Woonkamer met vers geschilderde kalkwitte muren en zonnig licht" width="1216" height="832" loading="lazy" decoding="async">
-          <figcaption>
-            <span class="werk-tag">Impressie</span>
-            Woonkamer &middot; muren en plafond in kalkwit
-          </figcaption>
+        <figure>
+          <img src="assets/img/werk-woonkamer.jpg" alt="Impressie: woonkamer met kalkwitte muren en zonnig licht" width="1216" height="832" loading="lazy" decoding="async">
+          <figcaption>Woonkamer &middot; muren en plafond in kalkwit</figcaption>
         </figure>
-        <figure class="werk-card" data-reveal>
-          <img src="assets/img/werk-gevel.jpg" alt="Rijtjeshuis met vers geschilderde olijfgroene gevel en witte kozijnen" width="1216" height="832" loading="lazy" decoding="async">
-          <figcaption>
-            <span class="werk-tag">Impressie</span>
-            Gevel &amp; kozijnen &middot; olijf met wit
-          </figcaption>
+        <figure>
+          <img src="assets/img/werk-gevel.jpg" alt="Impressie: rijtjeshuis met een olijfgroene gevel en witte kozijnen" width="1216" height="832" loading="lazy" decoding="async">
+          <figcaption>Gevel &amp; kozijnen &middot; olijf met wit</figcaption>
         </figure>
-        <figure class="werk-card" data-reveal>
-          <img src="assets/img/werk-detail.jpg" alt="Verfroller brengt een mosterdgele laag aan op een muur" width="1216" height="832" loading="lazy" decoding="async">
-          <figcaption>
-            <span class="werk-tag">Impressie</span>
-            Detail &middot; tweede laag in mosterd
-          </figcaption>
+        <figure>
+          <img src="assets/img/werk-detail.jpg" alt="Impressie: verfroller brengt een mosterdgele laag aan op een muur" width="1216" height="832" loading="lazy" decoding="async">
+          <figcaption>Detail &middot; tweede laag in mosterd</figcaption>
         </figure>
       </div>
     </div>
   </section>
 
-  <!-- WERKWIJZE: een echte volgorde, dus nummers -->
-  <section class="section section-inkt" id="werkwijze">
-    <div class="container">
-      <p class="eyebrow eyebrow-licht">Werkwijze</p>
-      <h2 class="section-title section-title-licht">Van eerste bezoek tot laatste laag</h2>
-      <ol class="steps">
-        <li data-reveal>
-          <span class="step-no">1</span>
-          <h3>Kijken</h3>
-          <p>We komen langs, bekijken het werk en denken mee over kleur.</p>
-        </li>
-        <li data-reveal>
-          <span class="step-no">2</span>
-          <h3>Offerte</h3>
-          <p>Binnen twee werkdagen ligt er een heldere offerte voor je klaar. Geen verrassingen achteraf.</p>
-        </li>
-        <li data-reveal>
-          <span class="step-no">3</span>
-          <h3>Afplakken</h3>
-          <p>We prikken een datum en plakken alles af: vloeren, randen, beslag. We beginnen pas als je huis beschermd is.</p>
-        </li>
-        <li data-reveal>
-          <span class="step-no">4</span>
-          <h3>Schilderen</h3>
-          <p>Elke laag krijgt de tijd om goed te drogen. Aan het einde van de dag ruimen we alles op.</p>
-        </li>
-        <li data-reveal>
-          <span class="step-no">5</span>
-          <h3>Opleveren</h3>
-          <p>Samen lopen we het werk na. Ben je tevreden? Dan pas zijn we klaar.</p>
-        </li>
-      </ol>
+  <!-- ============================================================
+       WERKWIJZE — een echte volgorde, dus nummers
+       ============================================================ -->
+  <section class="sectie sectie-inkt" id="werkwijze">
+    <div class="wrap split">
+      <p class="label label-licht">Werkwijze</p>
+      <div>
+        <h2>Van eerste bezoek tot laatste laag</h2>
+        <ol class="stappen">
+          <li>
+            <h3>Kijken</h3>
+            <p>We komen langs, bekijken het werk en denken mee over kleur.</p>
+          </li>
+          <li>
+            <h3>Offerte</h3>
+            <p>Binnen twee werkdagen ligt er een heldere offerte voor je klaar. Geen verrassingen achteraf.</p>
+          </li>
+          <li>
+            <h3>Afplakken</h3>
+            <p>We prikken een datum en plakken alles af: vloeren, randen, beslag. We beginnen pas als je huis beschermd is.</p>
+          </li>
+          <li>
+            <h3>Schilderen</h3>
+            <p>Elke laag krijgt de tijd om goed te drogen. Aan het einde van de dag ruimen we alles op.</p>
+          </li>
+          <li>
+            <h3>Opleveren</h3>
+            <p>Samen lopen we het werk na. Ben je tevreden? Dan pas zijn we klaar.</p>
+          </li>
+        </ol>
+      </div>
     </div>
   </section>
 
-  <!-- OVER -->
-  <section class="section" id="over">
-    <div class="container over-grid">
-      <div class="over-logo" data-reveal>
-        <img src="assets/logo.svg" alt="Logotegel van Studio Eef: verfstalen in mosterd, roze en olijf op een inkt-tegel" width="440" height="440">
-      </div>
-      <div class="over-copy" data-reveal>
-        <p class="eyebrow">Over EEF</p>
-        <h2 class="section-title">Een schilder die je huis behandelt alsof het zijn eigen huis is</h2>
-        <div class="over-text">
+  <!-- ============================================================
+       OVER
+       ============================================================ -->
+  <section class="sectie" id="over">
+    <div class="wrap split">
+      <p class="label">Over EEF</p>
+      <div class="over">
+        <div>
+          <h2>Een schilder die je huis behandelt alsof het haar eigen huis is</h2>
           <!-- TODO: eigenaar, werkgebied en ervaring invullen -->
           <p>Studio EEF is een klein schildersbedrijf. Van de eerste afspraak tot de laatste kwaststreek heb je altijd met dezelfde schilder te maken.</p>
           <!-- TODO: werkgebied invullen zodra bekend -->
           <p>We werken in en om <strong class="todo" title="Placeholder — nog in te vullen">[plaats + regio]</strong>. Ook klussen waar anderen het bijltje erbij neerleggen &mdash; &eacute;&eacute;n kozijn, een trappenhuis, een tuinhek dat al jaren wacht &mdash; pakken we gewoon aan.</p>
         </div>
+        <img class="over-foto" src="assets/img/eef-bus.jpg" alt="Eef naast haar bus, met het Studio EEF-logo op de zijkant" width="1600" height="1200" loading="lazy" decoding="async">
       </div>
     </div>
   </section>
 
-  <!-- CONTACT -->
-  <section class="section section-olijf" id="contact">
-    <div class="container">
-      <p class="eyebrow eyebrow-licht">Contact</p>
-      <h2 class="section-title section-title-licht">Vertel wat er geschilderd moet worden</h2>
-      <p class="contact-sub">Bel, mail of app &mdash; binnen &eacute;&eacute;n werkdag heb je antwoord.</p>
-      <div class="contact-actions">
-        <!-- TODO: echte gegevens invullen (href én zichtbare tekst) — gemarkeerd met class="todo" -->
-        <a class="contact-card" data-reveal href="tel:0612345678" data-todo="telefoonnummer">
-          <span class="contact-label">Bel</span>
-          <span class="contact-value"><span class="todo" title="Placeholder — nog in te vullen">06 12 34 56 78</span></span>
-        </a>
-        <a class="contact-card" data-reveal href="mailto:hallo@studio-eef.nl" data-todo="e-mailadres">
-          <span class="contact-label">Mail</span>
-          <span class="contact-value"><span class="todo" title="Placeholder — nog in te vullen">hallo@studio-eef.nl</span></span>
-        </a>
-        <a class="contact-card" data-reveal href="https://wa.me/31612345678" target="_blank" rel="noopener" data-todo="whatsapp-nummer (staat in de link)">
-          <span class="contact-label">App</span>
-          <span class="contact-value"><span class="todo" title="Placeholder — het nummer zit in de link">Stuur een appje</span></span>
-        </a>
+  <!-- ============================================================
+       CONTACT
+       ============================================================ -->
+  <section class="sectie sectie-olijf" id="contact">
+    <div class="wrap split">
+      <p class="label label-licht">Contact</p>
+      <div>
+        <h2>Vertel wat er geschilderd moet worden</h2>
+        <p class="sectie-noot noot-licht">Bel, mail of app &mdash; binnen &eacute;&eacute;n werkdag heb je antwoord.</p>
+        <div class="contact-grid">
+          <!-- TODO: echte gegevens invullen (href én zichtbare tekst) — gemarkeerd met class="todo" -->
+          <a class="contact" href="tel:0612345678" data-todo="telefoonnummer">
+            <span class="contact-label">Bel</span>
+            <span class="contact-waarde"><span class="todo" title="Placeholder — nog in te vullen">06 12 34 56 78</span></span>
+          </a>
+          <a class="contact" href="mailto:hallo@studio-eef.nl" data-todo="e-mailadres">
+            <span class="contact-label">Mail</span>
+            <span class="contact-waarde"><span class="todo" title="Placeholder — nog in te vullen">hallo@studio-eef.nl</span></span>
+          </a>
+          <a class="contact" href="https://wa.me/31612345678" target="_blank" rel="noopener" data-todo="whatsapp-nummer (staat in de link)">
+            <span class="contact-label">App</span>
+            <span class="contact-waarde"><span class="todo" title="Placeholder — het nummer zit in de link">Stuur een appje</span></span>
+          </a>
+        </div>
       </div>
     </div>
   </section>
+
 </main>
 
-<footer class="footer">
-  <div class="container footer-inner">
-    <div class="footer-brand">
-      <img class="footer-mark" src="assets/logo.svg" alt="" width="38" height="38">
-      <span>Studio EEF &mdash; schilderwerken</span>
-    </div>
+<footer class="voet">
+  <div class="wrap voet-inner">
+    <span class="voet-merk">Studio EEF &mdash; schilderwerken</span>
     <!-- TODO: KvK, BTW en adres invullen (gemarkeerd met class="todo") -->
-    <span><span class="todo" title="Placeholder — nog in te vullen">KvK 00000000</span> &middot; <span class="todo" title="Placeholder — nog in te vullen">BTW NL000000000B01</span> &middot; <span class="todo" title="Placeholder — nog in te vullen">[adres], [plaats]</span></span>
+    <span class="voet-legal"><span class="todo" title="Placeholder — nog in te vullen">KvK 00000000</span> &middot; <span class="todo" title="Placeholder — nog in te vullen">BTW NL000000000B01</span> &middot; <span class="todo" title="Placeholder — nog in te vullen">[adres], [plaats]</span></span>
   </div>
 </footer>
 
-<!-- MOBIELE CTA-BALK: alleen <=640px; verdwijnt zodra #contact in beeld is -->
-<div class="mobiel-cta" aria-label="Snelle acties">
+<!-- MOBIELE ACTIEBALK: alleen op smalle schermen -->
+<div class="mobiel-balk">
   <!-- TODO: telefoonnummer invullen zodra bekend — zelfde placeholder als de header-knop -->
-  <a class="mobiel-cta-knop mobiel-cta-bel" href="tel:0612345678" data-todo="telefoonnummer">Bel</a>
-  <a class="mobiel-cta-knop mobiel-cta-offerte" href="#contact">Offerte</a>
+  <a class="knop knop-rand" href="tel:0612345678" data-todo="telefoonnummer" title="Placeholder — het telefoonnummer in deze link moet nog ingevuld worden">Bel</a>
+  <a class="knop knop-mosterd" href="#contact">Offerte</a>
 </div>
 
-<script src="js/main.js" defer></script>
+<!-- De pagina werkt volledig zonder JavaScript. Twee kleine regeltjes:
+     1) het mobiele menu sluit na het kiezen van een link;
+     2) de hero-video wordt geladen in de maat die bij het scherm past
+        (1,2 MB breed / 298 KB smal) en niet bij prefers-reduced-motion —
+        dan blijft de poster staan. -->
+<script>
+  document.querySelectorAll('.menu-nav a').forEach(function (link) {
+    link.addEventListener('click', function () {
+      var menu = link.closest('details');
+      if (menu) { menu.open = false; }
+    });
+  });
+
+  (function () {
+    var video = document.querySelector('.hero-media');
+    if (!video) { return; }
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) { return; }
+    var breed = window.matchMedia('(min-width: 700px)').matches;
+    video.src = breed ? video.dataset.src : (video.dataset.srcKlein || video.dataset.src);
+    var poging = video.play();
+    if (poging && poging.catch) { poging.catch(function () { /* poster blijft staan */ }); }
+  })();
+</script>
+
 </body>
 </html>

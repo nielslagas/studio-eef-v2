@@ -1,144 +1,206 @@
-# Studio EEF — site v2 "Verse verf"
+# site-v3 — "Afplakrand"
 
-Statische één-pager (Nederlands, geen build-stap, geen libraries).
-Open `index.html` in een browser; verder is er niets nodig.
-Ontwerpbrief: `ONTWERP-V2.md`. Versie 1 (archief): `../site-v1/`.
+Derde opzet van de Studio EEF-site: bewust rustig, strak en professioneel.
+Eén idee: egale kleurvlakken die elkaar in exacte rechte lijnen raken — de rand
+zoals hij overblijft als de afplaktape eraf gaat. Onderbouwing en keuzes staan in
+`ONTWERP-V3.md`.
 
-## Structuur
+**Status: voorstel ter beoordeling.** Niet live, niet gepromoveerd. v2 staat nog
+in `site/` en blijft de actieve site; v1 in `site-v1/`.
+
+## Openen
+
+Open `index.html` in een browser. Er is geen build-stap, geen dependencies en de
+pagina **werkt volledig zonder JavaScript**: de menuknop is een
+`<details>`-element en de enige animatie is pure CSS. Het enige scriptje op de
+pagina (4 regels, onderaan `index.html`) sluit het mobiele menu nadat een link is
+gekozen — zonder dat scriptje blijft dat menu open over de inhoud staan en sluit
+de bezoeker het met de menuknop.
+
+## Bestanden
 
 ```
-index.html          één-pager: header, hero+kwast, marquee, trustbar,
-                    diensten, werk, werkwijze, over, contact, footer,
-                    mobiele CTA-balk
-                    (nav: Diensten · Werk · Werkwijze · Over EEF · Contact)
-css/style.css       tokens, basis, header, hero-signature, trustbar,
-                    secties, scroll-reveals, mobiele CTA
-js/main.js          kwast-signature (offset-path + rAF-fallback),
-                    header-scrollstate, scroll-reveals (IO one-shot),
-                    mobiele CTA-IO
-assets/logo.svg     B-tegel: Eefs eigen logotegel (uit logo-keuze/ gekopieerd)
-assets/favicon.svg  bands-variant van de B-tegel (16px-leesbaar)
-assets/img/         hero-materiaal (AI: hero-hout.jpg, verfstreek-mosterd.png
-                    1200×669, kwast-ronde.png 420×234 — gedownscaled naar
-                    weergavegrootte, sept. 2026) + werk-*.jpg AI-impressies
-                    (loading="lazy") — echte projectfoto's volgen (werk-*.jpg
-                    niet vervangen)
+index.html          de hele pagina
+css/style.css       alle stijlen, tokens in :root
+assets/logo.svg     Eefs originele merktekstegel — byte-identiek aan
+                    site/assets/logo.svg (SHA-256 AE40E7E7…47DE), nooit aanpassen
+assets/favicon.svg  de bestaande favicon-variant uit site/assets/, ongewijzigd
+assets/img/         werk-woonkamer.jpg, werk-gevel.jpg, werk-detail.jpg
+                    (ongewijzigd overgenomen uit site/assets/img/ — regel 2)
+                    eef-bus.jpg (1600x1200, 545 KB — échte foto van Eef naast
+                    haar bus, door de eigenaar aangeleverd en opgeknapt met
+                    topazlabs/image-upscale; het logo staat op de bus)
+                    kleine-klus.jpg (720x480, 70 KB — échte foto van Eef met de
+                    verfstripper op een kozijn, staat bij de dienst "Onderhoud &
+                    kleine klussen"; origineel als img-gen/kleine-klus-bron.jpg)
+assets/video/       hero.mp4 (382 KB, 1080x1080, 4 s, lus) en hero-mobiel.mp4
+                    (119 KB, 540x540) — de ECHTE clip van de kwast op het kozijn,
+                    opgeschaald met prunaai/p-video-upscale; hero-poster.jpg
+                    (48 KB). De eerdere AI-hero staat in img-gen/hero-ai-*.mp4
+ONTWERP-V3.md       ontwerpbrief en verantwoording
 ```
 
-## Huisstijl (tokens in `:root`)
+**Echte foto's gaan vóór AI-beeld.** De eigenaar leverde in november 2026 twee
+eigen opnames aan: de foto van Eef bij haar bus (staat nu vol-breed in de
+Over-sectie) en een clip van een kwast op een kozijn. De originelen staan als
+`img-gen/eef-bus-bron.jpg` en `img-gen/werk-kwast-bron.mp4`; de bewerkte versies
+staan in `assets/` of klaar in `img-gen/` (`werk-kwast-720.mp4`, 188 KB). Beide
+kwamen via WhatsApp binnen en zijn dus gecomprimeerd — de foto op 1600x1200, de
+video op 368x368. De video is met `prunaai/p-video-upscale` naar 1080p gebracht
+en daarna teruggecomprimeerd; de foto met `topazlabs/image-upscale` (1:1, géén
+gezichtsverandering — `prunaai/p-image-upscale` maakte Eefs gezicht zichtbaar
+anders). Script: `_upscale_media.py`. Voor groter gebruik blijft het origineel
+van de telefoon nodig.
 
-| Token | Waarde | Gebruik |
-| --- | --- | --- |
-| `--olijf` | `#424631` | canvas contact-sectie, dienstkleur |
-| `--mosterd` | `#D6AF29` | verse verf: CTA's, streek, cirkels, marquee |
-| `--roze` | `#F37C96` | scherp accent (o.a. druppel in logo) |
-| `--inkt` | `#231F20` | groot canvas: hero, header, werkwijze, footer |
-| `--papier` | `#FAF8F4` | lichte secties, tekst op donker |
-| `--gold-soft` | `#E8C558` | mosterd-tekst op donker (9,7:1 op inkt) |
-| `--kalkwit` | `#F1EDE4` | licht canvas: hele pagina (sinds sept. 2026 geen wit als vlakkleur — wens van Eef) |
-| `--linnen` | `#F6F1E5` | kaartvlakken (diensten, werk) op kalkwit |
-| `--kalk-diep` | `#E9E0CB` | werk-band: warme onderscheidende ondergrond |
-| `--houtblauw` | `#3E5C76` | materiaal: dakpannen, kwast-ferrule |
-| `--hout` | `#B08A5E` | materiaal: hero-plank (inkt erop: 5,2:1, AA groot) |
+**Het logo is heilig.** Er wordt in v3 niets aan Eefs tegel hertekend, herkleurd
+of weggelaten: de tegel staat ongewijzigd in de kop (34px). In de Over-sectie
+staat nu in plaats van de tegel de foto van Eef — waarop het logo op de bus te
+zien is. Wie de tegel daar terug wil, kan dat met één regel (`over-merk` in
+plaats van `over-foto`). De voettekst draagt alleen het woordmerk, omdat een
+inkt-tegel op een inkt-achtergrond wegvalt — een keuze over de *context*, niet
+over het logo.
 
-Contrastuitgangspunten: inkt op mosterd 7,8:1; papier op inkt 15,4:1;
-hero-kop (inkt) staat op het foto-hout onder de inkt-gradient-overlay —
-de overlay garandeert het contrast (donkerste banden boven/onder); nooit
-goud/mosterd als kleine tekstkleur op licht, nooit olijf-op-inkt voor
-kritieke onderdelen. Logo: olijf #6A7150 op inkt ≈ 3,18:1, puur decoratief.
+**De hero-video** is de eigen clip van de kwast op het kozijn (zie `ONTWERP-V3.md`
+voor waarom die als vierkant venster staat en niet als volle achtergrond). Het
+bronbestand uit WhatsApp is opgeschaald met `_upscale_media.py`
+(`prunaai/p-video-upscale`), daarna gecomprimeerd met een lokale ffmpeg
+(`npm install ffmpeg-static --prefix _tools`, staat in `.gitignore`):
+
+```pwsh
+_tools/node_modules/ffmpeg-static/ffmpeg.exe -i img-gen/werk-kwast-pruna-1080.mp4 `
+  -an -vf scale=1080:1080 -c:v libx264 -crf 30 -preset slow -pix_fmt yuv420p `
+  -movflags +faststart site-v3/assets/video/hero.mp4
+```
+
+De eerdere, gegenereerde hero (Friese gevel → verfvlak) is met
+`_gen_hero_video.py` gemaakt en staat nog in `img-gen/hero-ai-*.mp4`; terugzetten
+is een kwestie van die bestanden weer in `assets/video/` zetten.
+
+## Huisstijl
+
+Vijf tokens (regel 3), plus gedocumenteerde afgeleiden — zie de tabel in
+`ONTWERP-V3.md`. Kleurstelling: **maximaal één accent per sectie.** Roze alleen
+in de kleurenband (3%) en het merkteken; mosterd als accent (mosterdstrook in de
+hero, stapnummers, primaire knop), nooit als kleine tekstkleur op licht.
+
+Contrast (nagerekend, WCAG 2.1):
+
+| Combinatie | Ratio |
+| --- | --- |
+| inkt op papier | 15,4:1 |
+| inkt op kalkwit | 14,0:1 |
+| inkt op mosterd (de strook) | 7,8:1 |
+| papier op inkt | 15,4:1 |
+| papier op olijf | 9,2:1 |
+| `--inkt-zwak` op papier / kalkwit | 5,3:1 |
+| `--papier-68` op olijf / inkt | 5,3:1 / 7,5:1 |
+| `--papier-78` op inkt | 9,8:1 |
+| mosterd op olijf (contact-hover) | 4,7:1 |
+| hero-tekst op het videobeeld, beginbeeld (gevel) | 10,9:1 (kleine tekst 9,5:1) |
+| hero-tekst op het videobeeld, eindbeeld (verf) | 14,3:1 |
+
+De twee videorijen zijn gemeten op de pagina zelf, op beide uitersten van de clip,
+met de tekst even verborgen (`_vision/contrast-check.ps1`) — anders meet je de
+antialiasing van je eigen letters in plaats van de achtergrond.
 
 ## Typografie
 
-- **Archivo** 700, `font-stretch` 112–115% — koppen, clamp ≈ 2,8–5,5rem,
-  `line-height` 1,02, negatieve tracking (−0,015em).
+- **Archivo** (display, 600/700, `font-stretch: 112%`) — koppen, labels, knoppen,
+  waarden.
 - **Atkinson Hyperlegible** — lopende tekst.
-- **IBM Plex Mono** — eyebrow-labels, EEF-codes, verfstaalnamen.
-- Zelfde Google Fonts-link als v1 (`display=swap`).
+- IBM Plex Mono uit v1/v2 is geschrapt: een derde familie voegde geen informatie
+  toe.
 
-## Motion (kort)
+## Motion
 
-- Easing-tokens: `--ease-out: cubic-bezier(0.23, 1, 0.32, 1)` en
-  `--ease-in-out: cubic-bezier(0.77, 0, 0.175, 1)`.
-- Hero-signature (materiaal nu fotorealistisch, motion-concept ongewijzigd):
-  kwast over de houten plank, ±2,2s, één keer bij load. Het plank-oppervlak
-  is `img/hero-hout.jpg` (AI-macro, 1664×600, cover) met een donkere
-  inkt-gradient-overlay voor tekstcontrast en
-  `filter: saturate(.9) brightness(.95)`. De mosterd streek is
-  `img/verfstreek-mosterd.png` (transparante rembg-cut-out, over de volle
-  breedte, `object-fit: cover; object-position: 50% 52%`) boven op een
-  mosterd-basislak die de droge uitlopende rand aanvult; de streek loopt
-  — zoals in het v2-concept — over de volle plankbreedte achter de
-  middelste titelregel, met rechts de organische dry-brush-uitloop mét
-  druiper en links het strakke begin aan de plankrand); de kwast is de
-  fotorealistische ronde kwast met mosterdresten
-  (`img/kwast-ronde.png`, cut-out; bron 1664×928, getoond op
-  `clamp(88px, 11vw, 140px)` breed — width/height-attributen 140×78,
-  vrijwel dezelfde ratio — met de haarpunt linksonder als offset-anchor
-  die het pad volgt). Kop + streek worden onthuld door één clip-wipe, synchroon
-  met de kwast; daarna eenmalig natte-glans-sheen en druppel. De
-  getekende druppel blijft hangen als accent. De afplaktape rechts op
-  de plank is in sept. 2026 op verzoek van de eigenaar volledig
-  verwijderd (HTML + CSS). CSS `offset-path` met
-  JS-fallback (`getPointAtLength` + rAF, zelfde curve). Zonder JS of
-  bij `prefers-reduced-motion`: direct de geschilderde eindstand.
-- Marquee: mosterd band, schuin −1,5°, `linear`, pauzeert op hover,
-  statisch bij reduced motion.
-- Trustbar direct onder de marquee: drie procesfeiten uit de eigen
-  v1-copy ("Offerte binnen 2 werkdagen" · "Elke dag netjes opgeruimd"
-  · "Altijd dezelfde schilder"), statisch, mono-labels, mosterd
-  accentlijn — geen verzonnen cijfers (benchmark-directive).
-- Scroll-reveals: IntersectionObserver zet één keer `.zichtbaar`
-  (daarna `unobserve`); CSS doet `clip-path: inset(0 100% 0 0) →
-  inset(0)` (460ms ease-out) met stagger-delays van 60/120/180/240ms per groep.
-  Initial hidden alléén onder `html.js-reveal` → zonder JS zichtbaar;
-  geen oneindige dashoffset-loops (Safari-valkuil).
-- Breakpoints (sept. 2026, desktop is leidend): navigatie-omschakeling
-  (nav → mobiel menu) pas bij **720px** (was 900px), zodat een gewoon
-  niet-gemaximaliseerd venster de volledige desktop-nav houdt. Grid-
-  omslagen (2 kolommen enz.) blijven op 900px; mobiele CTA-balk op 640px.
-- Mobiele CTA-balk (≤640px): "Bel" (tel:-TODO-link) + "Offerte"
-  (#contact); verdwijnt via IO zodra #contact in beeld is, safe-area
-  bewust; reduced motion: zelfde gedrag zonder transitie.
-- Micro: buttons `scale(0.97)` op `:active` (160ms), nav-onderstreep
-  als `scaleX`-kwastveeg (200ms), kaart-lift ≤ 4px. Hover-motion
-  alléén binnen `@media (hover: hover) and (pointer: fine)`.
-- Geanimeerd wordt uitsluitend `transform` / `opacity` / `clip-path`.
+Eén gebaar in de opmaak: de mosterdstrook achter "laag verf" wordt één keer
+aangebracht (`clip-path` van rechts naar links, 820 ms, 260 ms vertraging).
+Het vierkante werkvenster rechts in de hero speelt de clip in een **lus** (de
+kwaststreek herhaalt zich; de camera staat stil, dus geen zichtbare naad). Op
+mobiel wordt de 540px-variant geladen; zonder JavaScript of bij
+`prefers-reduced-motion` blijft de poster staan. Verder alleen
+hover/focus-microinteracties van 160 ms.
 
-> De interactieve Kleuren-gevel (v2) is in sept. 2026 in opdracht van de
-> eigenaar volledig van de site verwijderd (sectie, navlinks, JS en CSS).
+## TODO-conventie (regel 1)
 
-## Logo (B-keuze, eigen tegel van Eef)
+Zelfde set als v1/v2, andere markering: **7× `class="todo"`** (plaats + regio,
+telefoon, e-mail, app, KvK, BTW, adres) en **5× `data-todo`** (Bel-knop in de
+kop, de drie contactlinks, Bel-knop in de mobiele actiebalk). De markering is een
+stippellijn in `currentColor` in plaats van de mosterd-halo uit v1/v2: nog
+steeds duidelijk, veel rustiger.
 
-- `assets/logo.svg`: Eefs eigen tegel (keuze B uit `logo-keuze/`), 1-op-1
-  gekopieerd uit `logo-keuze/logo-opgeschoond.svg`: inkt-tegel met
-  mosterd/roze/olijf verfstalen en de verticale "STUDIO"-letters in wit.
-  Enige ingreep in het origineel was de olijf-contrastfix **#6A7150**
-  (olijf-op-inkt ≈ 3,18:1 — puur decoratief, geen tekst/informatie in
-  die kleur, dus geen contrast-eis). De kwastveeg-wordmark van v2 is
-  hiermee uit de site verdwenen (de kwast leeft voort in de hero).
-- Header én footer: dezelfde tegel (`assets/logo.svg`) — header op 46px,
-  footer op 38px, beide met een dunne papieren rand (`box-shadow`-ring).
-  De bands-variant (`favicon.svg`) is nu alléén nog favicon; hij stond
-  eerst ook in de footer en is daar vervangen omdat hij niet leest als
-  hetzelfde logo (eigenaar, sept. 2026).
-  "Studio Eef" staat in Archivo ernaast. Over-sectie: de grote plek
-  (±440px) toont dezelfde tegel. De "onze vier kleuren"-strook onder
-  het logo is in sept. 2026 op verzoek van de eigenaar verwijderd.
-- `assets/favicon.svg`: vereenvoudigde bands-variant van de B-tegel
-  (v1-bouw als referentie): alleen de kleurbanden op posities uit de
-  tegel — mosterd/roze per rij, olijf-accenten (#6A7150) en rechts de
-  lange olijfstam. De STUDIO-letters en taps-toelopende randjes vallen
-  weg: onleesbaar/ruis op 16px.
+## Testen
 
-## TODO's voor de eigenaar
+```pwsh
+node _vision/console-test.js "file:///D:/Projects/Eva Aukema/Studio-Eef/site-v3/index.html" 1280 900
+node _vision/console-test.js "file:///D:/Projects/Eva Aukema/Studio-Eef/site-v3/index.html" 390 844
+node _vision/anchor-test.js werkwijze 390 "file:///D:/Projects/Eva Aukema/Studio-Eef/site-v3/index.html"
+node _vision/screenshot-full.js "file:///D:/Projects/Eva Aukema/Studio-Eef/site-v3/index.html" 1280 _vision/check-v3-desktop.png
+```
 
-Zoek op `class="todo"`, `data-todo` of `TODO` in `index.html`:
-telefoonnummer (header + contact + JSON-LD), e-mail, WhatsApp-link,
-KvK/BTW/adres in de footer, `[plaats + regio]` bij Over, en de
-placeholdergegevens in de JSON-LD in de `<head>`.
+Twee bekende, onschuldige afwijkingen in de testuitvoer:
 
-TODO-telconventie: **elementen** met `class="todo"` of `data-todo`
-tellen — 7 class-elementen ([plaats+regio], tel, mail, app, KvK, BTW,
-adres) + 5 data-todo-elementen. Commentaar-regels met de letterlijke
-tekst `class="todo"` matchen mee in naive greps en horen níet tot de
-elementtelling.
+- `"NETWERK: laden mislukt: net::ERR_ABORTED Media"` — de test sluit de browser
+  terwijl de video nog streamt. Geen fout in de pagina.
+- Een lazy-load afbeelding onder de vouw meldt soms `ok: false`; dat is de
+  laadtiming, niet een kapotte afbeelding (controleer met de full-page screenshot).
+
+**Videoframes bekijken zonder videospeler** (essentieel: een clip kan halverwege
+stukgaan of tekst hallucineren, en dat zie je alleen in de frames):
+
+```pwsh
+# _vision/_frames.html toont frames uit een mp4 naast elkaar
+node _vision/screenshot-full.js "file:///D:/Projects/Eva Aukema/Studio-Eef/_vision/_frames.html?src=../img-gen/hero-video-huis-1.mp4&t=0.1,2.5,4.9" 1500 _vision/frames.png
+```
+
+**Een willekeurig frame in de pagina zelf bekijken** (vierde parameter van
+`screenshot-full.js` is JavaScript dat vóór de capture draait):
+
+```pwsh
+$js = "(async function(){var v=document.querySelector('.hero-media');v.currentTime=1.0;await new Promise(function(r){v.addEventListener('seeked',r,{once:true})});v.pause()})()"
+node _vision/screenshot-full.js "file:///D:/Projects/Eva Aukema/Studio-Eef/site-v3/index.html" 1280 _vision/hero-huis.png $js
+```
+
+**Let op bij mobiele screenshots voor de vision-meting:** verberg de vaste
+actiebalk, anders schuift die in de full-page capture over de KvK/BTW-regel in de
+voettekst en denkt het vision-model dat die regel ontbreekt (is precies één keer
+gebeurd):
+
+```pwsh
+$js = "document.querySelector('.mobiel-balk').style.display='none';document.body.style.paddingBottom='0'"
+```
+
+Kwaliteitsronde met vision-eindoordeel en code-review:
+
+```pwsh
+powershell -File _vision/assess-v3-final.ps1 -Alleen vision   # of: review | alles
+```
+
+## Metingen
+
+- **vision-eindoordeel** (deepseek-v4-flash-vision-exp), meting na de video-hero:
+  **7,5/10 desktop, 8,5/10 mobiel** — rapporten `_vision/final-v3-desktop.txt`,
+  `_vision/final-v3-mobile.txt`. De video wordt positief beoordeeld ("het
+  eindbeeld draagt de typografie goed", contrast ruim voldoende, "de
+  mosterdstrook is nu dé signatuur"). Het enige structurele minpunt in álle
+  metingen is de sectie Werk: AI-impressies die als stock lezen (regel 2, niet
+  zelf op te lossen). Eén opmerking is onderzocht en verworpen: het egaal donkere
+  eindbeeld zou "mat" lezen terwijl de copy "fris" belooft. Twee alternatieven
+  zijn gegenereerd (natte verfbaan, haarscherpe afplakrand) en allebei slechter —
+  te licht, en de rand viel midden in de kop. Het egale olijfvlak is teruggezet,
+  byte-identiek aan de gemeten versie. Zie `ONTWERP-V3.md` voor de details.
+- **De mobiel-meting had één keer een artefact**: de vaste actiebalk dekte in de
+  full-page screenshot de KvK/BTW-regel, waarna het model rapporteerde dat de
+  voettekst die regel mist. In het echt staat hij er (gecontroleerd zonder balk);
+  sindsdien is de body-padding 92px en staat de workaround in dit README.
+- **code-review** (deepseek-v4-pro): **GOED-MET-OPMERKINGEN** —
+  `_vision/review-v3.txt`. Alle vijf bevindingen zijn verwerkt:
+  1. de papieren ring/schaduw om het logo in de voettekst is weg; de voettekst
+     draagt nu alleen het woordmerk (het logo blijft onaangeroerd);
+  2. de Bel-placeholders in kop en actiebalk hebben een `title`;
+  3. het mobiele menu sluit na het kiezen van een link;
+  4. de alt-teksten van de werkbeelden beginnen met "Impressie:";
+  5. de dode `@media (min-width: 981px)`-regel is verwijderd.
+- **tests**: `console-test.js` 1280×900 en 390×844 → geen console-fouten, geen
+  gebroken afbeeldingen; `anchor-test.js` op `#werkwijze` (390) en `#contact`
+  (1280) → ankers landen onder de sticky kop.
