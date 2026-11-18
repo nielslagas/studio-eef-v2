@@ -79,7 +79,7 @@ onrustige hero, te veel decoratie (badges, pillen, halo's, marquee), en AI-foto'
 als werk doorgaan. v3 is daarom volledig getypeerd: geen AI-beeld in de hero, geen
 rondingen, geen schaduwen, geen badges/pillen, en nul JavaScript.
 Bewust zo (geen fouten): placeholders (telefoon, e-mail, app, KvK/BTW/adres,
-[plaats + regio]) zijn gemarkeerd met een stippellijn (class="todo") — die horen zo;
+[plaats + regio]) zijn gemarkeerd met een stippellijn (class="todo") - die horen zo;
 de werkfoto's zijn AI-impressies en dat staat er als noot bij; de sectie Werkwijze
 heeft nummers omdat het een echte volgorde is.
 
@@ -99,7 +99,7 @@ $p1 = @"
 Je bent vision-inspector en geeft het EINDOORDEEL over v3 op DESKTOP (volledige pagina
 in plakken van boven naar beneden, met kleine overlap). $context
 
-LET OP — dit is de Herziening na eerdere metingen. Wat er sindsdien is veranderd:
+LET OP - dit is de Herziening na eerdere metingen. Wat er sindsdien is veranderd:
 (1) de mosterdstrook achter "laag verf" loopt over de volle regelhoogte en breder
 door dan de woorden; (2) de Over-sectie toont nu een echte foto van Eef naast haar
 bus (met het logo op de bus) in plaats van de logo-tegel, en de kop zegt daar "haar
@@ -108,7 +108,7 @@ eigen huis"; (3) de hero is opnieuw opgebouwd, zie de uitleg hierboven.
 Beoordeel IN HET NEDERLANDS per sectie bij naam: hero (incl. het vierkante
 werkvenster en de mosterdstrook), de kleurenband onder de hero, diensten, werk,
 werkwijze, over EEF, contact, voettekst.
-Let op hiërarchie, witruimte, contrast, huisstijlgebruik en storende elementen.
+Let op hierarchie, witruimte, contrast, huisstijlgebruik en storende elementen.
 Beantwoord daarnaast expliciet:
 (a) komt de pagina rustig en professioneel over, of ruikt het naar een generieke
     AI/template-look? Wees streng en concreet;
@@ -121,9 +121,9 @@ Beantwoord daarnaast expliciet:
 (c) is het merkteken (inkt-tegel met drie balken in mosterd/olijf/roze) op zijn
     echte formaat (34px in de kop, 118px in de Over-sectie) bruikbaar en consistent?
 (d) wat is het zwakste punt van de hele pagina, met sectienaam en concrete reden?
-(e) leest de mosterdstrook nog als dé signature, nu de hero een vierkant werkvenster
+(e) leest de mosterdstrook nog als de signature, nu de hero een vierkant werkvenster
     heeft in plaats van een volle achtergrond?
-Eindig met "OORDEEL:" gevolgd door een rapportcijfer (1-10) en één zin samenvatting.
+Eindig met "OORDEEL:" gevolgd door een rapportcijfer (1-10) en een zin samenvatting.
 "@
 if ($Alleen -in @('alles', 'vision')) {
   Invoke-DeepSeek 'final-v3-desktop' 'deepseek-v4-flash-vision-exp' 0.3 16000 (@(@{ type = 'text'; text = $p1 }) + (Get-Slices 'D:\Projects\Eva Aukema\Studio-Eef\_vision\check-v3-desktop.png' 1250 90 | ForEach-Object { @{ type = 'image_url'; image_url = @{ url = $_ } } }))
@@ -133,16 +133,16 @@ Je bent vision-inspector en geeft het EINDOORDEEL over v3 op MOBIEL (390px, voll
 pagina in plakken van boven naar beneden, met kleine overlap). $context
 
 De vaste actiebalk onderaan (Bel/Offerte) valt op een full-page screenshot buiten
-beeld — beoordeel die niet.
+beeld - beoordeel die niet.
 Beoordeel IN HET NEDERLANDS per sectie bij naam: hero, kleurenband, diensten, werk,
-werkwijze, over, contact, voettekst. Let op leesbaarheid, hiërarchie, witruimte,
+werkwijze, over, contact, voettekst. Let op leesbaarheid, hierarchie, witruimte,
 contrast, aanraakbare knoppen en storende elementen (afgekapte tekst, te krappe
 marges, rare regelafbrekingen rond de mosterdlaag). Beantwoord daarnaast expliciet:
 (a) voelt dit op mobiel rustig en professioneel?; (b) breekt de mosterdlaag achter
 "laag verf" netjes af over de regel, of oogt het rommelig?; (c) komt het vierkante
 werkvenster op mobiel goed uit (formaat, plek onder de tekst) of maakt het de hero
 te lang?; (d) wat is het zwakste punt op mobiel, met sectienaam?
-Eindig met "OORDEEL:" gevolgd door een rapportcijfer (1-10) en één zin samenvatting.
+Eindig met "OORDEEL:" gevolgd door een rapportcijfer (1-10) en een zin samenvatting.
 "@
 if ($Alleen -in @('alles', 'vision')) {
   Invoke-DeepSeek 'final-v3-mobile' 'deepseek-v4-flash-vision-exp' 0.3 16000 (@(@{ type = 'text'; text = $p2 }) + (Get-Slices 'D:\Projects\Eva Aukema\Studio-Eef\_vision\check-v3-mobile.png' 1100 80 | ForEach-Object { @{ type = 'image_url'; image_url = @{ url = $_ } } }))
@@ -151,25 +151,25 @@ if ($Alleen -in @('alles', 'vision')) {
 $html = [System.IO.File]::ReadAllText((Join-Path $root 'index.html'))
 $css  = [System.IO.File]::ReadAllText((Join-Path $root 'css\style.css'))
 $p3 = @"
-Je bent code-reviewer voor een statische Nederlandse één-pager (vanilla HTML/CSS,
+Je bent code-reviewer voor een statische Nederlandse een-pager (vanilla HTML/CSS,
 geen build-stap, nul JavaScript). $context
 
 Hieronder staan index.html en css/style.css volledig. Reken GEEN contrastgetallen
-na — die zijn al gecontroleerd en staan in site-v3/README.md; noem alleen een
+na - die zijn al gecontroleerd en staan in site-v3/README.md; noem alleen een
 combinatie als je er een ziet die daar ontbreekt.
 
 Antwoord in het Nederlands, maximaal 500 woorden, in precies deze vorm, en begin
 direct met punt 1 (geen inleiding, geen afweging vooraf):
 
-1. VIJF BEVINDINGEN — per bevinding: bestand + selector/regel + waarom het een
+1. VIJF BEVINDINGEN - per bevinding: bestand + selector/regel + waarom het een
    probleem is. Let op cascade en specificity (ook tussen de media queries), dode
    of tegenstrijdige regels, ontbrekende hover/focus/active-staten, aria en
    alt-teksten, of de ankers bestaan, de <details>-menumarkup, en restjes van
    eerdere versies (v1/v2).
-2. QUICK WINS — maximaal 4, klein en concreet.
-3. OORDEEL: GOED / GOED-MET-OPMERKINGEN / AFKEUR — plus één zin.
+2. QUICK WINS - maximaal 4, klein en concreet.
+3. OORDEEL: GOED / GOED-MET-OPMERKINGEN / AFKEUR - plus een zin.
 
-Pas NIETS aan — alleen review.
+Pas NIETS aan - alleen review.
 
 --- index.html ---
 $html

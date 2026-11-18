@@ -1,4 +1,4 @@
-# Eén screenshot naar DeepSeek V4 Flash Vision sturen met een vraag.
+# Een screenshot naar DeepSeek V4 Flash Vision sturen met een vraag.
 # Gebruik: .\ask-vision.ps1 -Image pad.png -Vraag "..."
 param(
   [Parameter(Mandatory = $true)][string]$Image,

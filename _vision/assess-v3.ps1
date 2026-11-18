@@ -65,10 +65,10 @@ function Get-Slices([string]$path, [int]$sliceH, [int]$overlap) {
 $kleuren = "Huisstijl: olijf #424631, mosterd #D6AF29, roze #F37C96, inkt #231F20, papier #FAF8F4. Nederlandse een-pager van schilderbedrijf Studio EEF."
 
 $pHero = @"
-Je bent vision inspector. Deze uitsnede toont de herontworpen 'gevelstaal'-kaart in de hero van $kleuren. De kaart was eerst een simpel streepjeshuis en is nu opgezet als een verfstaal: kopband in de actieve kleur (met ringgat en de kleurnaam 'Mosterd'), daaronder een geïllustreerde Nederlandse gevel die meekleurt, en zes kleurstalen met namen.
+Je bent vision inspector. Deze uitsnede toont de herontworpen 'gevelstaal'-kaart in de hero van $kleuren. De kaart was eerst een simpel streepjeshuis en is nu opgezet als een verfstaal: kopband in de actieve kleur (met ringgat en de kleurnaam 'Mosterd'), daaronder een geillustreerde Nederlandse gevel die meekleurt, en zes kleurstalen met namen.
 
 Beoordeel IN HET NEDERLANDS, concreet en kritisch:
-1) Kopband: hiërarchie van GEVELSTAAL-label, ringgat en kleurnaam; contrast van de tekst op de band.
+1) Kopband: hierarchie van GEVELSTAAL-label, ringgat en kleurnaam; contrast van de tekst op de band.
 2) Huisillustratie: leest het als een vakmatig getekende gevel of nog als kleutertekening? Kijk naar lijnvoering, baksteenstructuur, vensters, deur, dak, stoep, en of elementen correct op elkaar aansluiten (raakvlakken, uitlijningen, overlappende onderdelen).
 3) Stalenrij: zijn alle zes namen volledig leesbaar (let specifiek op 'Prima-roze')? Oogt de rij netjes uitgelijnd?
 4) Totale kaart: witruimte, samenhang met de rest van de huisstijl, storende elementen.

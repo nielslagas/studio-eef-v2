@@ -1,4 +1,4 @@
-# Veilige gh-pages-deploy voor Studio EEF — publiceert site-v3.
+# Veilige gh-pages-deploy voor Studio EEF - publiceert site-v3.
 #
 # Gebruik:
 #   pwsh _vision/deploy-gh-pages.ps1              -> DROOGLOOP: bouwt en controleert, pusht NIET
@@ -36,7 +36,7 @@ if (Test-Path "$root\logo-keuze") {
 }
 Remove-Item "$tmp\_inspect-*.png" -ErrorAction SilentlyContinue
 
-# harde sanity-checks vóór de push: deploy moet de site volledig bevatten
+# harde sanity-checks v??r de push: deploy moet de site volledig bevatten
 $must = @(
   "index.html",
   "css\style.css",
@@ -61,7 +61,7 @@ if (-not $changed) { "niets gewijzigd - geen deploy nodig"; return }
 
 "gewijzigd t.o.v. gh-pages: $((($changed -split "`n").Count)) bestanden"
 if (-not $Bevestig) {
-  "DROOGLOOP — niets gepusht. Voeg -Bevestig toe om echt te publiceren."
+  "DROOGLOOP - niets gepusht. Voeg -Bevestig toe om echt te publiceren."
   return
 }
 

@@ -74,7 +74,7 @@ Eerdere zwaktes die zou moeten zijn opgelost:
 - de Over-sectie oogde onevenwichtig (nu logo-tegel met vier-kleurenstrip eronder);
 - placeholder-gegevens (KvK, [plaats + regio]) zijn nu gemarkeerd met een mosterthalo + stippellijn.
 
-Beoordeel IN HET NEDERLANDS: 1) zijn de genoemde reparaties zichtbaar gelukt? 2) hiërarchie, witruimte, contrast en huisstijl-gebruik nu goed? 3) blijven er zwaktes of nieuwe problemen over (noem ze concreet)? Eindig met "OORDEEL:" gevolgd door een rapportcijfer (1-10) en een zinsnijd samenvatting.
+Beoordeel IN HET NEDERLANDS: 1) zijn de genoemde reparaties zichtbaar gelukt? 2) hierarchie, witruimte, contrast en huisstijl-gebruik nu goed? 3) blijven er zwaktes of nieuwe problemen over (noem ze concreet)? Eindig met "OORDEEL:" gevolgd door een rapportcijfer (1-10) en een zinsnijd samenvatting.
 "@
 Invoke-VisionAgent 'final-desktop' $p1 (Get-Slices (Join-Path $root '_inspect-desktop-v2.png') 1250 90)
 

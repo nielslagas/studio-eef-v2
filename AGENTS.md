@@ -201,6 +201,12 @@ als ANSI, waarna `Set-Content -Encoding UTF8` de tekst dubbel codeert (accenten
 en streepjes worden mojibake, plus een BOM). Gebruik de edit-tool, of
 `[System.IO.File]::ReadAllText`/`WriteAllText`.
 
+**Tweede valkuil, zelfde oorzaak:** Windows PowerShell 5.1 leest `.ps1`-bestanden
+als ANSI. Een script dat als UTF-8 zonder BOM is opgeslagen en een streepje of
+accent bevat, klapt bij het parsen ("Unexpected token"). Houd scripts in
+`_vision/` daarom **ASCII-only** — dat is ook de reden voor de eerdere commit
+"Admin: ASCII-only (ANSI-parse-fix)".
+
 ## status
 
 - **v3 "Afplakrand" (voorstel, in `site-v3/`)** — sept. 2026, gebouwd nadat de

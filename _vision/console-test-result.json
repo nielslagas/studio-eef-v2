@@ -1,6 +1,6 @@
 {
   "url": "file:///D:/Projects/Eva Aukema/Studio-Eef/site-v3/index.html",
-  "viewport": "390x844",
+  "viewport": "1280x900",
   "console": [],
   "failures": [],
   "pagina": {
@@ -16,15 +16,15 @@
       },
       {
         "src": "werk-woonkamer.jpg",
-        "ok": false
+        "ok": true
       },
       {
         "src": "werk-gevel.jpg",
-        "ok": false
+        "ok": true
       },
       {
         "src": "werk-detail.jpg",
-        "ok": false
+        "ok": true
       },
       {
         "src": "eef-bus.jpg",
@@ -32,18 +32,6 @@
       }
     ],
     "afbeeldingenKaput": [
-      {
-        "src": "werk-woonkamer.jpg",
-        "ok": false
-      },
-      {
-        "src": "werk-gevel.jpg",
-        "ok": false
-      },
-      {
-        "src": "werk-detail.jpg",
-        "ok": false
-      },
       {
         "src": "eef-bus.jpg",
         "ok": false
